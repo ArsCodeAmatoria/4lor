@@ -8,6 +8,7 @@ DataViz is a modern web application for data visualization and analysis, built w
 - **Advanced Visualizations**: Create stunning visualizations with Chart.js and Nivo
 - **Data Analysis**: Analyze complex datasets with powerful tools
 - **Research & Insights**: Access the latest research on data visualization
+- **Pivot Tables**: Explore data from different angles with interactive pivot tables
 
 ## Tech Stack
 
@@ -20,6 +21,10 @@ DataViz is a modern web application for data visualization and analysis, built w
 - **Charts**: 
   - [Chart.js](https://www.chartjs.org/)
   - [Nivo](https://nivo.rocks/)
+- **Data Analysis**:
+  - [WebDataRocks](https://www.webdatarocks.com/) for pivot tables
+- **Content Management**:
+  - [Sanity](https://www.sanity.io/) for blog and research content
 
 ## Getting Started
 
@@ -67,7 +72,8 @@ dataviz/
 │   │   └── page.tsx          # Home page
 │   ├── components/           # React components
 │   │   ├── ui/               # UI components from shadcn/ui
-│   │   └── navigation.tsx    # Navigation component
+│   │   ├── navigation.tsx    # Navigation component
+│   │   └── PivotTable.tsx    # WebDataRocks pivot table component
 │   └── lib/                  # Utility functions
 └── public/                   # Static assets
 ```
@@ -90,5 +96,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [shadcn/ui](https://ui.shadcn.com/) for the beautiful UI components
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
 - [Chart.js](https://www.chartjs.org/) and [Nivo](https://nivo.rocks/) for the visualization libraries
+- [WebDataRocks](https://www.webdatarocks.com/) for the pivot table functionality
 - [Framer Motion](https://www.framer.com/motion/) for the animations
 - [Lucide Icons](https://lucide.dev/) for the icons
+- [Sanity](https://www.sanity.io/) for the content management system
