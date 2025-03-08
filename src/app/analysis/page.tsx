@@ -39,46 +39,46 @@ import dynamic from 'next/dynamic';
 // Dynamically import the PivotTable component with no SSR
 const PivotTable = dynamic(() => import('@/components/PivotTable'), { ssr: false });
 
-// Sample data for the analysis page
+// Sample data for analyzing Cultural Marxism and CRT influence
 const sampleData = [
-  { id: 1, region: "North America", category: "Electronics", sales: 45600, profit: 15800, year: 2023, quarter: "Q1" },
-  { id: 2, region: "Europe", category: "Clothing", sales: 32400, profit: 9700, year: 2023, quarter: "Q1" },
-  { id: 3, region: "Asia", category: "Home Goods", sales: 28900, profit: 7200, year: 2023, quarter: "Q1" },
-  { id: 4, region: "South America", category: "Electronics", sales: 18700, profit: 5600, year: 2023, quarter: "Q1" },
-  { id: 5, region: "Africa", category: "Food", sales: 12500, profit: 3100, year: 2023, quarter: "Q1" },
-  { id: 6, region: "North America", category: "Clothing", sales: 38900, profit: 11700, year: 2023, quarter: "Q2" },
-  { id: 7, region: "Europe", category: "Electronics", sales: 41200, profit: 14300, year: 2023, quarter: "Q2" },
-  { id: 8, region: "Asia", category: "Food", sales: 36700, profit: 9200, year: 2023, quarter: "Q2" },
-  { id: 9, region: "South America", category: "Home Goods", sales: 14500, profit: 3600, year: 2023, quarter: "Q2" },
-  { id: 10, region: "Africa", category: "Electronics", sales: 9800, profit: 2400, year: 2023, quarter: "Q2" },
-  { id: 11, region: "North America", category: "Home Goods", sales: 52300, profit: 18100, year: 2023, quarter: "Q3" },
-  { id: 12, region: "Europe", category: "Food", sales: 29800, profit: 8900, year: 2023, quarter: "Q3" },
-  { id: 13, region: "Asia", category: "Electronics", sales: 47600, profit: 16500, year: 2023, quarter: "Q3" },
-  { id: 14, region: "South America", category: "Clothing", sales: 21300, profit: 6400, year: 2023, quarter: "Q3" },
-  { id: 15, region: "Africa", category: "Home Goods", sales: 11200, profit: 2800, year: 2023, quarter: "Q3" },
+  { id: 1, institution: "Universities", category: "Education", crtPrograms: 87, marxistFaculty: 65, year: 2023, quarter: "Q1" },
+  { id: 2, institution: "K-12 Schools", category: "Education", crtPrograms: 45, marxistFaculty: 30, year: 2023, quarter: "Q1" },
+  { id: 3, institution: "Media Outlets", category: "Media", crtPrograms: 75, marxistFaculty: 70, year: 2023, quarter: "Q1" },
+  { id: 4, institution: "Tech Companies", category: "Corporate", crtPrograms: 65, marxistFaculty: 55, year: 2023, quarter: "Q1" },
+  { id: 5, institution: "Government", category: "Public", crtPrograms: 40, marxistFaculty: 35, year: 2023, quarter: "Q1" },
+  { id: 6, institution: "Universities", category: "Education", crtPrograms: 90, marxistFaculty: 70, year: 2023, quarter: "Q2" },
+  { id: 7, institution: "K-12 Schools", category: "Education", crtPrograms: 50, marxistFaculty: 35, year: 2023, quarter: "Q2" },
+  { id: 8, institution: "Media Outlets", category: "Media", crtPrograms: 80, marxistFaculty: 75, year: 2023, quarter: "Q2" },
+  { id: 9, institution: "Tech Companies", category: "Corporate", crtPrograms: 70, marxistFaculty: 60, year: 2023, quarter: "Q2" },
+  { id: 10, institution: "Government", category: "Public", crtPrograms: 45, marxistFaculty: 40, year: 2023, quarter: "Q2" },
+  { id: 11, institution: "Universities", category: "Education", crtPrograms: 92, marxistFaculty: 75, year: 2023, quarter: "Q3" },
+  { id: 12, institution: "K-12 Schools", category: "Education", crtPrograms: 55, marxistFaculty: 40, year: 2023, quarter: "Q3" },
+  { id: 13, institution: "Media Outlets", category: "Media", crtPrograms: 85, marxistFaculty: 80, year: 2023, quarter: "Q3" },
+  { id: 14, institution: "Tech Companies", category: "Corporate", crtPrograms: 75, marxistFaculty: 65, year: 2023, quarter: "Q3" },
+  { id: 15, institution: "Government", category: "Public", crtPrograms: 50, marxistFaculty: 45, year: 2023, quarter: "Q3" },
 ];
 
 // Sample insights
 const insights = [
   {
-    title: "Regional Performance",
-    description: "North America consistently shows the highest sales and profit margins across all quarters.",
-    recommendation: "Consider expanding product offerings in the North American market to capitalize on strong performance."
+    title: "Educational Institutions",
+    description: "Universities show the highest adoption rate of CRT programs at 92%, with a significant increase in Marxist faculty representation.",
+    recommendation: "Focus resistance efforts on academic freedom initiatives and alternative educational programs."
   },
   {
-    title: "Category Analysis",
-    description: "Electronics has the highest average profit margin at 34.7%, followed by Home Goods at 25.1%.",
-    recommendation: "Allocate more marketing resources to Electronics to maximize profitability."
+    title: "Media Analysis",
+    description: "Media outlets demonstrate 85% alignment with Critical Theory narratives, particularly in news and entertainment.",
+    recommendation: "Support and develop alternative media platforms focused on objective reporting and traditional values."
   },
   {
-    title: "Quarterly Trends",
-    description: "Q3 shows a 15% increase in overall sales compared to Q1, indicating positive growth.",
-    recommendation: "Analyze Q3 strategies to identify successful approaches that can be applied to other quarters."
+    title: "Corporate Trends",
+    description: "Tech companies show a 75% implementation rate of CRT-based policies, primarily through DEI initiatives.",
+    recommendation: "Encourage corporate accountability and support companies that prioritize merit-based systems."
   },
   {
-    title: "Underperforming Regions",
-    description: "Africa shows the lowest sales figures but has been steadily growing each quarter.",
-    recommendation: "Develop targeted strategies for the African market to accelerate growth in this emerging region."
+    title: "Public Sector",
+    description: "Government institutions show lower but growing adoption rates of Critical Theory, currently at 50%.",
+    recommendation: "Focus on local and state-level resistance to federal Critical Theory mandates."
   },
 ];
 
@@ -114,19 +114,19 @@ export default function Analysis() {
   };
 
   // Calculate summary statistics
-  const totalSales = sampleData.reduce((sum, item) => sum + item.sales, 0);
-  const totalProfit = sampleData.reduce((sum, item) => sum + item.profit, 0);
-  const avgProfitMargin = (totalProfit / totalSales * 100).toFixed(1);
-  
-  // Sales by region
-  const salesByRegion = sampleData.reduce((acc, item) => {
-    acc[item.region] = (acc[item.region] || 0) + item.sales;
+  const totalCRTPrograms = sampleData.reduce((sum, item) => sum + item.crtPrograms, 0) / sampleData.length;
+  const totalAlignment = sampleData.reduce((sum, item) => sum + item.marxistFaculty, 0) / sampleData.length;
+  const avgChange = ((totalCRTPrograms / (sampleData.length / 3)) * 100).toFixed(1);
+
+  // Influence by institution
+  const institutionData = sampleData.reduce((acc, item) => {
+    acc[item.institution] = (acc[item.institution] || 0) + item.crtPrograms;
     return acc;
   }, {} as Record<string, number>);
-  
-  // Sales by category
-  const salesByCategory = sampleData.reduce((acc, item) => {
-    acc[item.category] = (acc[item.category] || 0) + item.sales;
+
+  // Influence by category
+  const categoryData = sampleData.reduce((acc, item) => {
+    acc[item.category] = (acc[item.category] || 0) + item.crtPrograms;
     return acc;
   }, {} as Record<string, number>);
 
@@ -147,11 +147,11 @@ export default function Analysis() {
           >
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle>Total Sales</CardTitle>
-                <CardDescription>Across all regions and categories</CardDescription>
+                <CardTitle>Total CRT Programs</CardTitle>
+                <CardDescription>Across all institutions</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">${totalSales.toLocaleString()}</div>
+                <div className="text-3xl font-bold">{totalCRTPrograms.toFixed(1)}%</div>
               </CardContent>
             </Card>
           </motion.div>
@@ -163,11 +163,11 @@ export default function Analysis() {
           >
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle>Total Profit</CardTitle>
-                <CardDescription>Across all regions and categories</CardDescription>
+                <CardTitle>Total Critical Theory Alignment</CardTitle>
+                <CardDescription>Across all institutions</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">${totalProfit.toLocaleString()}</div>
+                <div className="text-3xl font-bold">{totalAlignment.toFixed(1)}%</div>
               </CardContent>
             </Card>
           </motion.div>
@@ -179,11 +179,11 @@ export default function Analysis() {
           >
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle>Avg. Profit Margin</CardTitle>
-                <CardDescription>Percentage of sales as profit</CardDescription>
+                <CardTitle>Avg. Change</CardTitle>
+                <CardDescription>Percentage of CRT programs and alignment</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">{avgProfitMargin}%</div>
+                <div className="text-3xl font-bold">{avgChange}%</div>
               </CardContent>
             </Card>
           </motion.div>
@@ -202,7 +202,7 @@ export default function Analysis() {
               <CardHeader>
                 <div className="flex justify-between items-center">
                   <div>
-                    <CardTitle>Sales Data</CardTitle>
+                    <CardTitle>Institutional Analysis</CardTitle>
                     <CardDescription>Click on column headers to sort</CardDescription>
                   </div>
                   <div className="flex space-x-2">
@@ -230,9 +230,9 @@ export default function Analysis() {
                         </TableHead>
                         <TableHead 
                           className="cursor-pointer hover:bg-muted/50"
-                          onClick={() => handleSort("region")}
+                          onClick={() => handleSort("institution")}
                         >
-                          Region {sortColumn === "region" && (sortDirection === "asc" ? "↑" : "↓")}
+                          Institution {sortColumn === "institution" && (sortDirection === "asc" ? "↑" : "↓")}
                         </TableHead>
                         <TableHead 
                           className="cursor-pointer hover:bg-muted/50"
@@ -242,15 +242,15 @@ export default function Analysis() {
                         </TableHead>
                         <TableHead 
                           className="cursor-pointer hover:bg-muted/50 text-right"
-                          onClick={() => handleSort("sales")}
+                          onClick={() => handleSort("crtPrograms")}
                         >
-                          Sales {sortColumn === "sales" && (sortDirection === "asc" ? "↑" : "↓")}
+                          CRT Programs % {sortColumn === "crtPrograms" && (sortDirection === "asc" ? "↑" : "↓")}
                         </TableHead>
                         <TableHead 
                           className="cursor-pointer hover:bg-muted/50 text-right"
-                          onClick={() => handleSort("profit")}
+                          onClick={() => handleSort("marxistFaculty")}
                         >
-                          Profit {sortColumn === "profit" && (sortDirection === "asc" ? "↑" : "↓")}
+                          Critical Theory Alignment % {sortColumn === "marxistFaculty" && (sortDirection === "asc" ? "↑" : "↓")}
                         </TableHead>
                         <TableHead 
                           className="cursor-pointer hover:bg-muted/50"
@@ -270,10 +270,10 @@ export default function Analysis() {
                       {sortedData.map((item) => (
                         <TableRow key={item.id}>
                           <TableCell>{item.id}</TableCell>
-                          <TableCell>{item.region}</TableCell>
+                          <TableCell>{item.institution}</TableCell>
                           <TableCell>{item.category}</TableCell>
-                          <TableCell className="text-right">${item.sales.toLocaleString()}</TableCell>
-                          <TableCell className="text-right">${item.profit.toLocaleString()}</TableCell>
+                          <TableCell className="text-right">{item.crtPrograms}%</TableCell>
+                          <TableCell className="text-right">{item.marxistFaculty}%</TableCell>
                           <TableCell>{item.year}</TableCell>
                           <TableCell>{item.quarter}</TableCell>
                         </TableRow>
@@ -294,24 +294,24 @@ export default function Analysis() {
               <CardContent>
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
-                    <h3 className="text-lg font-medium mb-4">Sales by Region</h3>
+                    <h3 className="text-lg font-medium mb-4">Influence by Institution Type</h3>
                     <div className="space-y-4">
-                      {Object.entries(salesByRegion).map(([region, sales]) => (
-                        <div key={region} className="flex justify-between items-center">
-                          <span>{region}</span>
-                          <span className="font-medium">${sales.toLocaleString()}</span>
+                      {Object.entries(institutionData).map(([institution, percentage]) => (
+                        <div key={institution} className="flex justify-between items-center">
+                          <span>{institution}</span>
+                          <span className="font-medium">{(percentage / 3).toFixed(1)}%</span>
                         </div>
                       ))}
                     </div>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-medium mb-4">Sales by Category</h3>
+                    <h3 className="text-lg font-medium mb-4">Influence by Category</h3>
                     <div className="space-y-4">
-                      {Object.entries(salesByCategory).map(([category, sales]) => (
+                      {Object.entries(categoryData).map(([category, percentage]) => (
                         <div key={category} className="flex justify-between items-center">
                           <span>{category}</span>
-                          <span className="font-medium">${sales.toLocaleString()}</span>
+                          <span className="font-medium">{(percentage / 3).toFixed(1)}%</span>
                         </div>
                       ))}
                     </div>
@@ -325,24 +325,24 @@ export default function Analysis() {
                       <TableHeader>
                         <TableRow>
                           <TableHead>Quarter</TableHead>
-                          <TableHead className="text-right">Total Sales</TableHead>
-                          <TableHead className="text-right">Total Profit</TableHead>
-                          <TableHead className="text-right">Profit Margin</TableHead>
+                          <TableHead className="text-right">Avg CRT Programs %</TableHead>
+                          <TableHead className="text-right">Avg Critical Theory Alignment %</TableHead>
+                          <TableHead className="text-right">Change</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
                         {["Q1", "Q2", "Q3"].map((quarter) => {
                           const quarterData = sampleData.filter(item => item.quarter === quarter);
-                          const qtSales = quarterData.reduce((sum, item) => sum + item.sales, 0);
-                          const qtProfit = quarterData.reduce((sum, item) => sum + item.profit, 0);
-                          const qtMargin = (qtProfit / qtSales * 100).toFixed(1);
+                          const qtCRT = quarterData.reduce((sum, item) => sum + item.crtPrograms, 0) / quarterData.length;
+                          const qtAlignment = quarterData.reduce((sum, item) => sum + item.marxistFaculty, 0) / quarterData.length;
+                          const qtChange = ((qtCRT / quarterData.length) * 100).toFixed(1);
                           
                           return (
                             <TableRow key={quarter}>
                               <TableCell>{quarter}</TableCell>
-                              <TableCell className="text-right">${qtSales.toLocaleString()}</TableCell>
-                              <TableCell className="text-right">${qtProfit.toLocaleString()}</TableCell>
-                              <TableCell className="text-right">{qtMargin}%</TableCell>
+                              <TableCell className="text-right">{qtCRT.toFixed(1)}%</TableCell>
+                              <TableCell className="text-right">{qtAlignment.toFixed(1)}%</TableCell>
+                              <TableCell className="text-right">{qtChange}%</TableCell>
                             </TableRow>
                           );
                         })}
@@ -402,13 +402,13 @@ export default function Analysis() {
                 <CardHeader className="pb-2">
                   <div className="flex items-center space-x-2">
                     <BarChart3 className="h-5 w-5 text-primary" />
-                    <CardTitle>Top Performing Region</CardTitle>
+                    <CardTitle>Most Affected Institution</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">North America</div>
+                  <div className="text-2xl font-bold">Universities</div>
                   <p className="text-sm text-muted-foreground mt-2">
-                    $136,800 in sales across all quarters
+                    92% CRT program adoption rate
                   </p>
                 </CardContent>
               </Card>
@@ -417,13 +417,13 @@ export default function Analysis() {
                 <CardHeader className="pb-2">
                   <div className="flex items-center space-x-2">
                     <PieChart className="h-5 w-5 text-primary" />
-                    <CardTitle>Top Category</CardTitle>
+                    <CardTitle>Highest Impact Category</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">Electronics</div>
+                  <div className="text-2xl font-bold">Education</div>
                   <p className="text-sm text-muted-foreground mt-2">
-                    $153,100 in sales with 34.7% profit margin
+                    85% average Critical Theory alignment
                   </p>
                 </CardContent>
               </Card>
@@ -432,13 +432,13 @@ export default function Analysis() {
                 <CardHeader className="pb-2">
                   <div className="flex items-center space-x-2">
                     <LineChart className="h-5 w-5 text-primary" />
-                    <CardTitle>Best Quarter</CardTitle>
+                    <CardTitle>Fastest Growing Sector</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">Q3 2023</div>
+                  <div className="text-2xl font-bold">Tech Companies</div>
                   <p className="text-sm text-muted-foreground mt-2">
-                    $162,200 in sales with 32.2% profit margin
+                    +15% increase in CRT adoption
                   </p>
                 </CardContent>
               </Card>
