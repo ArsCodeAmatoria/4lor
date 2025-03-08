@@ -2,192 +2,237 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, BookOpen, Users, Building, Zap, School, Radio, Shield, AlertTriangle, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function HerbertMarcuseInfluence() {
   return (
     <div className="container py-10">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="max-w-4xl mx-auto">
         <div className="mb-6">
           <Link href="/research">
-            <Button variant="link" className="gap-2 pl-0 text-muted-foreground hover:text-highlight">
+            <Button variant="ghost" className="gap-1 pl-0 hover:text-highlight hover:bg-transparent">
               <ArrowLeft className="h-4 w-4" />
               Back to Research
             </Button>
           </Link>
         </div>
+        
+        <div className="bg-zinc-800 text-white px-6 py-10 rounded-lg mb-10">
+          <h1 className="text-4xl font-bold mb-4">Herbert Marcuse's Influence on Critical Race Theory, Media Control, and Academia</h1>
+          <h2 className="text-2xl text-highlight mb-4">Neo-Marxist Transformation of Western Institutions</h2>
+          <p className="text-xl opacity-90">
+            How Marcuse's ideas reshaped society through CRT, media censorship, and academic radicalism
+          </p>
+        </div>
 
-        <h1 className="text-4xl font-bold mb-4">Herbert Marcuse's Influence on Critical Race Theory, Media Control, and Academia</h1>
-        <p className="text-xl text-muted-foreground mb-8">
-          How Marcuse's neo-Marxist ideas transformed Western institutions through CRT, media censorship, and academic radicalism
-        </p>
-
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="prose prose-slate dark:prose-invert max-w-none">
           <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6">Introduction</h2>
-            <p>
-              Herbert Marcuse's neo-Marxist ideas laid the foundation for modern institutional control through Critical Race Theory (CRT), 
-              media censorship, and academia's shift toward ideological radicalism. This transformation—often termed Cultural Marxism—has 
-              fundamentally reshaped Western society by replacing traditional economic class struggle with identity-based conflict.
-            </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6">1. Marcuse's Influence on Critical Race Theory (CRT)</h2>
-            <div className="bg-muted rounded-lg p-6 mb-6">
-              <h3 className="text-2xl font-medium mb-4">Key Transformations</h3>
-              <ul className="space-y-3">
-                <li>• Traditional Marxism failed in the West due to the working class's lack of revolutionary spirit</li>
-                <li>• Marcuse and the Frankfurt School rebranded Marxism through racial, gender, and cultural oppression</li>
-                <li>• This evolution gave birth to Critical Theory, which later developed into Critical Race Theory</li>
+            <h2 className="text-2xl font-bold flex items-center gap-2 border-b pb-2">
+              <BookOpen className="h-6 w-6 text-highlight" />
+              1. Marcuse's Influence on Critical Race Theory (CRT)
+            </h2>
+            
+            <div className="bg-highlight/10 p-6 rounded-lg mt-6">
+              <h3 className="text-xl font-semibold flex items-center gap-2 text-highlight mb-4">
+                <Users className="h-5 w-5" />
+                Key Transformations
+              </h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Traditional Marxism failed in the West due to the working class's lack of revolutionary spirit</li>
+                <li>Marcuse and the Frankfurt School rebranded Marxism through racial, gender, and cultural oppression</li>
+                <li>This evolution gave birth to Critical Theory, which later developed into Critical Race Theory</li>
               </ul>
             </div>
 
-            <h3 className="text-2xl font-medium mb-4">Key CRT Concepts from Marcuse</h3>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-muted rounded-lg p-6">
+            <div className="grid md:grid-cols-2 gap-6 mt-6">
+              <div className="bg-highlight/10 p-6 rounded-lg">
                 <h4 className="font-semibold mb-2">Oppressor vs. Oppressed</h4>
                 <p>Reframed from "rich vs. poor" to "whites vs. minorities"</p>
               </div>
-              <div className="bg-muted rounded-lg p-6">
+              <div className="bg-highlight/10 p-6 rounded-lg">
                 <h4 className="font-semibold mb-2">Systemic Racism</h4>
                 <p>Based on Marcuse's view that Western civilization is inherently oppressive</p>
               </div>
-              <div className="bg-muted rounded-lg p-6">
+              <div className="bg-highlight/10 p-6 rounded-lg">
                 <h4 className="font-semibold mb-2">Equity (Equal Outcomes)</h4>
                 <p>Derived from Marxist redistribution and forced social re-engineering</p>
               </div>
-              <div className="bg-muted rounded-lg p-6">
+              <div className="bg-highlight/10 p-6 rounded-lg">
                 <h4 className="font-semibold mb-2">Intersectionality</h4>
                 <p>Based on Marcuse's concept of "stacking oppression" across identity categories</p>
               </div>
             </div>
-
-            <h3 className="text-2xl font-medium mb-4">CRT in Practice</h3>
-            <ul className="space-y-3 mb-6">
-              <li>• DEI policies mandate CRT implementation in schools and workplaces</li>
-              <li>• Corporate training programs teach concepts of "unconscious bias"</li>
-              <li>• Education reforms eliminate merit-based testing to "combat white supremacy"</li>
-              <li>• Hiring policies prioritize identity characteristics over qualifications</li>
-            </ul>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6">2. The Takeover of Academia</h2>
-            <div className="bg-muted rounded-lg p-6 mb-6">
-              <h3 className="text-2xl font-medium mb-4">The "Long March Through the Institutions"</h3>
-              <ul className="space-y-3">
-                <li>• Instead of violent revolution, leftists infiltrated key institutions</li>
-                <li>• Universities became primary targets for ideological transformation</li>
-                <li>• Modern universities now promote Critical Theory, DEI, and activism</li>
+            <h2 className="text-2xl font-bold flex items-center gap-2 border-b pb-2">
+              <School className="h-6 w-6 text-highlight" />
+              2. The Takeover of Academia
+            </h2>
+            
+            <div className="bg-highlight/10 p-6 rounded-lg mt-6">
+              <h3 className="text-xl font-semibold flex items-center gap-2 text-highlight mb-4">
+                <Shield className="h-5 w-5" />
+                The "Long March Through the Institutions"
+              </h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Instead of violent revolution, leftists infiltrated key institutions</li>
+                <li>Universities became primary targets for ideological transformation</li>
+                <li>Modern universities now promote Critical Theory, DEI, and activism</li>
               </ul>
             </div>
 
-            <h3 className="text-2xl font-medium mb-4">How Universities Were Captured</h3>
-            <ul className="space-y-3 mb-6">
-              <li>• Radical professors introduced Marxist theories in humanities</li>
-              <li>• Administration implemented speech codes and safe spaces</li>
-              <li>• Hiring practices systematically excluded conservative academics</li>
-              <li>• Student indoctrination through mandatory social justice programs</li>
-            </ul>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6">3. Media Control and Censorship</h2>
-            <p className="mb-6">
-              Marcuse's "Repressive Tolerance" (1965) provided the theoretical framework for modern censorship, 
-              justifying the suppression of right-wing views while promoting leftist narratives.
-            </p>
-
-            <div className="bg-muted rounded-lg p-6 mb-6">
-              <h3 className="text-2xl font-medium mb-4">Modern Implementation</h3>
-              <ul className="space-y-3">
-                <li>• "Fact-checking" used to discredit opposing viewpoints</li>
-                <li>• Systematic deplatforming of conservative voices</li>
-                <li>• Narrative control through "systemic oppression" framing</li>
-                <li>• Cancel culture targeting ideological dissent</li>
-              </ul>
-            </div>
-
-            <h3 className="text-2xl font-medium mb-4">Recent Examples</h3>
-            <ul className="space-y-3 mb-6">
-              <li>• COVID-19: Suppression of alternative scientific perspectives</li>
-              <li>• 2020 Election: Restricted discussion of electoral concerns</li>
-              <li>• Climate Change: Labeling skeptics as "science deniers"</li>
-              <li>• Race & Policing: Selective narrative promotion</li>
-            </ul>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6">4. Big Tech's Role</h2>
-            <div className="bg-muted rounded-lg p-6 mb-6">
-              <h3 className="text-2xl font-medium mb-4">Digital Enforcement Methods</h3>
-              <ul className="space-y-3">
-                <li>• Algorithm-based suppression of content</li>
-                <li>• Shadow banning and visibility reduction</li>
-                <li>• Financial deplatforming through payment processors</li>
-                <li>• Coordinated removal of alternative platforms</li>
-              </ul>
-            </div>
-
-            <h3 className="text-2xl font-medium mb-4">Notable Cases</h3>
-            <ul className="space-y-3 mb-6">
-              <li>• Twitter Files revealing institutional censorship coordination</li>
-              <li>• Parler's systematic removal from tech infrastructure</li>
-              <li>• Demonetization of non-compliant content creators</li>
-            </ul>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6">5. Resistance and Counter-Strategies</h2>
-            <div className="bg-muted rounded-lg p-6 mb-6">
-              <h3 className="text-2xl font-medium mb-4">Key Strategies</h3>
-              <ul className="space-y-3">
-                <li>• Expose ideological roots of CRT and DEI programs</li>
-                <li>• Develop alternative institutions and platforms</li>
-                <li>• Advocate for free speech protections</li>
-                <li>• Support academic diversity and viewpoint inclusion</li>
-                <li>• Resist corporate adoption of ideological mandates</li>
+            <div className="bg-highlight/10 p-6 rounded-lg mt-6">
+              <h3 className="text-xl font-semibold flex items-center gap-2 text-highlight mb-4">
+                <School className="h-5 w-5" />
+                How Universities Were Captured
+              </h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Radical professors introduced Marxist theories in humanities</li>
+                <li>Administration implemented speech codes and safe spaces</li>
+                <li>Hiring practices systematically excluded conservative academics</li>
+                <li>Student indoctrination through mandatory social justice programs</li>
               </ul>
             </div>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6">Conclusion</h2>
-            <p>
-              Marcuse's ideas have fundamentally reshaped Western institutions through CRT, media control, and academic transformation. 
-              While his influence has created a system of ideological enforcement across institutions, resistance to this cultural 
-              transformation is growing. Understanding these dynamics is crucial for addressing contemporary social and political challenges.
-            </p>
+            <h2 className="text-2xl font-bold flex items-center gap-2 border-b pb-2">
+              <Radio className="h-6 w-6 text-highlight" />
+              3. Media Control and Censorship
+            </h2>
+            
+            <div className="bg-highlight/10 p-6 rounded-lg mt-6">
+              <h3 className="text-xl font-semibold flex items-center gap-2 text-highlight mb-4">
+                <Radio className="h-5 w-5" />
+                Modern Implementation
+              </h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>"Fact-checking" used to discredit opposing viewpoints</li>
+                <li>Systematic deplatforming of conservative voices</li>
+                <li>Narrative control through "systemic oppression" framing</li>
+                <li>Cancel culture targeting ideological dissent</li>
+              </ul>
+            </div>
+
+            <div className="bg-highlight/10 p-6 rounded-lg mt-6">
+              <h3 className="text-xl font-semibold flex items-center gap-2 text-highlight mb-4">
+                <AlertTriangle className="h-5 w-5" />
+                Recent Examples
+              </h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>COVID-19: Suppression of alternative scientific perspectives</li>
+                <li>2020 Election: Restricted discussion of electoral concerns</li>
+                <li>Climate Change: Labeling skeptics as "science deniers"</li>
+                <li>Race & Policing: Selective narrative promotion</li>
+              </ul>
+            </div>
           </section>
 
-          <div className="border-t pt-8">
-            <h3 className="text-2xl font-medium mb-4">Related Articles</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link href="/research/cultural-marxism" className="text-highlight hover:underline">
-                  The Frankfurt School and Cultural Marxism
-                </Link>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold flex items-center gap-2 border-b pb-2">
+              <Building className="h-6 w-6 text-highlight" />
+              4. Big Tech's Role
+            </h2>
+            
+            <div className="bg-highlight/10 p-6 rounded-lg mt-6">
+              <h3 className="text-xl font-semibold flex items-center gap-2 text-highlight mb-4">
+                <Building className="h-5 w-5" />
+                Digital Enforcement Methods
+              </h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Algorithm-based suppression of content</li>
+                <li>Shadow banning and visibility reduction</li>
+                <li>Financial deplatforming through payment processors</li>
+                <li>Coordinated removal of alternative platforms</li>
+              </ul>
+            </div>
+          </section>
+
+          <section className="mb-12 bg-zinc-800 text-white p-6 rounded-lg">
+            <h2 className="text-2xl font-bold flex items-center gap-2 border-b border-zinc-600 pb-2 text-highlight">
+              <AlertTriangle className="h-6 w-6" />
+              Conclusion: Marcuse's Lasting Impact
+            </h2>
+            <ul className="mt-6 space-y-3">
+              <li className="flex items-start">
+                <span className="text-highlight font-bold mr-2 mt-1">✓</span>
+                <div>
+                  Critical Race Theory has become the dominant framework in education and corporate culture
+                </div>
               </li>
-              <li>
-                <Link href="/research/critical-race-theory" className="text-highlight hover:underline">
-                  Understanding Critical Race Theory
-                </Link>
+              <li className="flex items-start">
+                <span className="text-highlight font-bold mr-2 mt-1">✓</span>
+                <div>
+                  Academia enforces ideological conformity through speech codes and mandatory training
+                </div>
               </li>
-              <li>
-                <Link href="/research/tech-censorship" className="text-highlight hover:underline">
-                  Big Tech and Digital Censorship
-                </Link>
+              <li className="flex items-start">
+                <span className="text-highlight font-bold mr-2 mt-1">✓</span>
+                <div>
+                  Media and Big Tech implement "Repressive Tolerance" through systematic censorship
+                </div>
               </li>
+              <li className="flex items-start">
+                <span className="text-highlight font-bold mr-2 mt-1">✓</span>
+                <div>
+                  Resistance is growing as more people recognize and reject these institutional changes
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <div className="border-t pt-6 mt-12">
+            <h3 className="text-lg font-semibold mb-2">Related Articles</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              <Link href="/research/herbert-marcuse" className="block">
+                <Card className="h-full hover:border-highlight transition-colors">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <BookOpen className="h-4 w-4 text-highlight" />
+                      Herbert Marcuse Overview
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      A comprehensive look at Marcuse's philosophy and its impact on modern society.
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+              
+              <Link href="/research/fighting-cultural-marxism-bc" className="block">
+                <Card className="h-full hover:border-highlight transition-colors">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Shield className="h-4 w-4 text-highlight" />
+                      Fighting Cultural Marxism
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      Practical strategies for resisting Cultural Marxism in institutions.
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
+          </div>
+
+          <div className="border-t pt-6 mt-12">
+            <h3 className="text-lg font-semibold mb-2">Further Reading</h3>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>Marcuse, Herbert. "Repressive Tolerance" in <em>A Critique of Pure Tolerance</em> (1965)</li>
+              <li>Marcuse, Herbert. <em>One-Dimensional Man</em> (1964)</li>
+              <li>Lindsay, James & Pluckrose, Helen. <em>Cynical Theories</em> (2020)</li>
+              <li>Rufo, Christopher F. "Critical Race Theory: What It Is and How to Fight It" (2021)</li>
+              <li>MacDonald, Heather. <em>The Diversity Delusion</em> (2018)</li>
             </ul>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 } 

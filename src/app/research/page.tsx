@@ -15,6 +15,17 @@ import { BookOpen, Calendar, User, Tag, ArrowRight, Users, Building, Globe, Tren
 const articles = [
   {
     id: 1,
+    title: "The Kalergi Plan: Global Implementation and the Push for a Post-National World",
+    excerpt: "An analysis of how Richard von Coudenhove-Kalergi's vision aligns with modern globalist agendas for mass migration and elite governance.",
+    author: "Dr. Michael Thompson",
+    date: "May 25, 2023",
+    category: "Global Governance",
+    tags: ["Mass Migration", "Elite Control", "UN", "WEF", "EU"],
+    readTime: "15 min read",
+    href: "/research/kalergi-plan"
+  },
+  {
+    id: 2,
     title: "Herbert Marcuse: The Father of Cultural Marxism",
     excerpt: "An analysis of Herbert Marcuse's influence on Cultural Marxism, Critical Race Theory, academia, and media censorship.",
     author: "Dr. James Wilson",
@@ -25,7 +36,7 @@ const articles = [
     href: "/research/herbert-marcuse"
   },
   {
-    id: 2,
+    id: 3,
     title: "Fighting Cultural Marxism in British Columbia",
     excerpt: "A comprehensive guide to resisting CRT, censorship, and institutional control in BC's education system, media, and government.",
     author: "Dr. Sarah Anderson",
@@ -36,7 +47,7 @@ const articles = [
     href: "/research/fighting-cultural-marxism-bc"
   },
   {
-    id: 3,
+    id: 4,
     title: "Fighting Cultural Marxism in Canada",
     excerpt: "A comprehensive guide to resisting CRT, censorship, and institutional control in Canadian education, media, and government.",
     author: "Dr. Michael Thompson",
@@ -47,7 +58,7 @@ const articles = [
     href: "/research/fighting-cultural-marxism-canada"
   },
   {
-    id: 4,
+    id: 5,
     title: "Yuval Noah Harari, the WEF, and the Great Reset",
     excerpt: "How Harari's vision aligns with Klaus Schwab's Great Reset agenda for AI governance, surveillance, and global control.",
     author: "Dr. Sarah Johnson",
@@ -58,7 +69,7 @@ const articles = [
     href: "/research/harari-wef-great-reset"
   },
   {
-    id: 5,
+    id: 6,
     title: "Yuval Noah Harari: WEF's Futurist & AI-Driven Globalism Advocate",
     excerpt: "An analysis of Yuval Noah Harari's influence on the WEF and his vision for AI-driven global governance, transhumanism, and the end of human autonomy.",
     author: "Dr. Michael Chen",
@@ -69,7 +80,7 @@ const articles = [
     href: "/research/yuval-noah-harari"
   },
   {
-    id: 6,
+    id: 7,
     title: "The World Economic Forum's Great Reset Initiative",
     excerpt: "A critical examination of the WEF's Great Reset initiative and its implications for national sovereignty and individual freedoms.",
     author: "Dr. Thomas Wilson",
@@ -80,7 +91,7 @@ const articles = [
     href: "#"
   },
   {
-    id: 7,
+    id: 8,
     title: "ESG Mandates: Impact on Market Freedom",
     excerpt: "This paper analyzes how Environmental, Social, and Governance (ESG) mandates affect market dynamics and corporate decision-making.",
     author: "Dr. Emily Rodriguez",
@@ -91,7 +102,7 @@ const articles = [
     href: "#"
   },
   {
-    id: 8,
+    id: 9,
     title: "The Long March Through the Institutions",
     excerpt: "A historical analysis of how neo-Marxist ideas infiltrated and transformed Western educational, media, and cultural institutions.",
     author: "Alex Thompson",
@@ -135,6 +146,39 @@ export default function Research() {
                     <div className="inline-block bg-highlight px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
                       New Analysis
                     </div>
+                    <h2 className="text-2xl font-bold mb-2">The Kalergi Plan: Global Implementation</h2>
+                    <p className="opacity-90 mb-4">
+                      How Richard von Coudenhove-Kalergi's vision aligns with modern globalist agendas for mass migration and elite governance.
+                    </p>
+                    <div className="flex space-x-3">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                        Mass Migration
+                      </span>
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                        Elite Control
+                      </span>
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                        Global Governance
+                      </span>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <Link href="/research/kalergi-plan">
+                      <Button className="bg-highlight text-white hover:bg-amber-600">
+                        Read Analysis
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-zinc-800 text-white px-6 py-8 rounded-lg">
+                <div className="flex flex-col h-full justify-between">
+                  <div>
+                    <div className="inline-block bg-highlight px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
+                      Featured Analysis
+                    </div>
                     <h2 className="text-2xl font-bold mb-2">Herbert Marcuse's Influence on Critical Race Theory</h2>
                     <p className="opacity-90 mb-4">
                       How Marcuse's ideas shaped modern academia, media censorship, and identity politics through Critical Race Theory.
@@ -153,39 +197,6 @@ export default function Research() {
                   </div>
                   <div className="mt-4">
                     <Link href="/research/herbert-marcuse">
-                      <Button className="bg-highlight text-white hover:bg-amber-600">
-                        Read Analysis
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-zinc-800 text-white px-6 py-8 rounded-lg">
-                <div className="flex flex-col h-full justify-between">
-                  <div>
-                    <div className="inline-block bg-highlight px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
-                      Featured Analysis
-                    </div>
-                    <h2 className="text-2xl font-bold mb-2">Yuval Noah Harari, the WEF, and the Great Reset</h2>
-                    <p className="opacity-90 mb-4">
-                      Discover how Harari's vision aligns with Klaus Schwab's Great Reset agenda for AI governance, surveillance, and global control.
-                    </p>
-                    <div className="flex space-x-3">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
-                        Great Reset
-                      </span>
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
-                        AI Governance
-                      </span>
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
-                        Globalism
-                      </span>
-                    </div>
-                  </div>
-                  <div className="mt-4">
-                    <Link href="/research/harari-wef-great-reset">
                       <Button className="bg-highlight text-white hover:bg-amber-600">
                         Read Analysis
                         <ArrowRight className="h-4 w-4 ml-2" />
