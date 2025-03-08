@@ -60,8 +60,29 @@ const lineChartOptions = {
       type: 'linear' as const,
       display: true,
       position: 'left' as const,
+      grid: {
+        color: 'rgba(255, 255, 255, 0.1)',
+      },
+      ticks: {
+        color: '#888888',
+      }
     },
+    x: {
+      grid: {
+        color: 'rgba(255, 255, 255, 0.1)',
+      },
+      ticks: {
+        color: '#888888',
+      }
+    }
   },
+  plugins: {
+    legend: {
+      labels: {
+        color: '#888888',
+      }
+    }
+  }
 };
 
 const institutionalBreakdown = [
@@ -82,7 +103,7 @@ const impactMetrics = [
 export default function CorruptionAnalysis() {
   return (
     <div className="container py-10">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <div className="mb-6">
           <Link href="/">
             <Button variant="ghost" className="gap-1 pl-0 hover:text-highlight hover:bg-transparent">
@@ -100,163 +121,149 @@ export default function CorruptionAnalysis() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 mb-10">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-highlight" />
-                Corruption Trend Analysis
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="h-[300px] relative">
-              <Line options={lineChartOptions} data={yearlyCorruptionData} />
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Building className="h-5 w-5 text-highlight" />
-                Institutional Breakdown
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="h-[300px]">
-              <ResponsivePie
-                data={institutionalBreakdown}
-                margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
-                innerRadius={0.5}
-                padAngle={0.7}
-                cornerRadius={3}
-                activeOuterRadiusOffset={8}
-                colors={{ scheme: 'nivo' }}
-                borderWidth={1}
-                borderColor={{ theme: 'background' }}
-                arcLinkLabelsSkipAngle={10}
-                arcLinkLabelsTextColor="#888888"
-                arcLinkLabelsThickness={2}
-                arcLinkLabelsColor={{ from: 'color' }}
-                arcLabelsSkipAngle={10}
-                arcLabelsTextColor="#ffffff"
-                theme={{
-                  labels: {
-                    text: {
-                      fontSize: 14,
-                      fill: '#888888'
-                    }
-                  }
-                }}
-              />
-            </CardContent>
-          </Card>
-        </div>
-
-        <Card className="mb-10">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-highlight" />
-              Impact on Key Metrics
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="h-[300px]">
-            <ResponsiveBar
-              data={impactMetrics}
-              keys={['value']}
-              indexBy="category"
-              margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
-              padding={0.3}
-              valueScale={{ type: 'linear' }}
-              colors={{ scheme: 'nivo' }}
-              borderColor={{ theme: 'background' }}
-              axisTop={null}
-              axisRight={null}
-              axisBottom={{
-                tickSize: 5,
-                tickPadding: 5,
-                tickRotation: -45,
-              }}
-              axisLeft={{
-                tickSize: 5,
-                tickPadding: 5,
-                tickRotation: 0,
-              }}
-              labelSkipWidth={12}
-              labelSkipHeight={12}
-              labelTextColor="#ffffff"
-              theme={{
-                axis: {
-                  ticks: {
-                    text: {
-                      fill: '#888888'
-                    }
-                  }
-                }
-              }}
-            />
-          </CardContent>
-        </Card>
-
         <div className="prose prose-slate dark:prose-invert max-w-none">
           <section className="mb-12">
             <h2 className="text-2xl font-bold flex items-center gap-2 border-b pb-2">
-              <Scale className="h-6 w-6 text-highlight" />
-              Key Findings
+              <TrendingUp className="h-6 w-6 text-highlight" />
+              1. Corruption Trend Analysis
             </h2>
             
             <div className="bg-highlight/10 p-6 rounded-lg mt-6">
               <h3 className="text-xl font-semibold flex items-center gap-2 text-highlight mb-4">
-                <AlertTriangle className="h-5 w-5" />
-                Trend Analysis
+                <Scale className="h-5 w-5" />
+                Historical Trends
               </h3>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Corruption scores have increased by 73% since 2018</li>
-                <li>Reported incidents of institutional subversion up 137%</li>
-                <li>Education sector shows highest vulnerability to ideological capture</li>
-                <li>Media control mechanisms have strengthened significantly</li>
-              </ul>
+              <div className="h-[300px] relative bg-zinc-900/50 p-4 rounded-lg">
+                <Line options={lineChartOptions} data={yearlyCorruptionData} />
+              </div>
             </div>
 
             <div className="bg-highlight/10 p-6 rounded-lg mt-6">
               <h3 className="text-xl font-semibold flex items-center gap-2 text-highlight mb-4">
-                <Landmark className="h-5 w-5" />
-                Institutional Impact
+                <AlertTriangle className="h-5 w-5" />
+                Key Observations
               </h3>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Education: DEI mandates and CRT implementation (35% of total impact)</li>
-                <li>Media: Narrative control and censorship (28% of total impact)</li>
-                <li>Government: Policy capture and regulatory control (22% of total impact)</li>
-                <li>Corporate: ESG and stakeholder capitalism (15% of total impact)</li>
+                <li>Corruption scores have increased by 73% since 2018</li>
+                <li>Reported incidents of institutional subversion up 137%</li>
+                <li>Acceleration in both metrics since 2020</li>
+                <li>Projected to continue rising through 2024</li>
               </ul>
+            </div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold flex items-center gap-2 border-b pb-2">
+              <Building className="h-6 w-6 text-highlight" />
+              2. Institutional Impact Analysis
+            </h2>
+            
+            <div className="bg-highlight/10 p-6 rounded-lg mt-6">
+              <h3 className="text-xl font-semibold flex items-center gap-2 text-highlight mb-4">
+                <Globe className="h-5 w-5" />
+                Sector Distribution
+              </h3>
+              <div className="h-[300px] relative bg-zinc-900/50 p-4 rounded-lg">
+                <ResponsivePie
+                  data={institutionalBreakdown}
+                  margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+                  innerRadius={0.5}
+                  padAngle={0.7}
+                  cornerRadius={3}
+                  activeOuterRadiusOffset={8}
+                  colors={{ scheme: 'nivo' }}
+                  borderWidth={1}
+                  borderColor={{ theme: 'background' }}
+                  arcLinkLabelsSkipAngle={10}
+                  arcLinkLabelsTextColor="#888888"
+                  arcLinkLabelsThickness={2}
+                  arcLinkLabelsColor={{ from: 'color' }}
+                  arcLabelsSkipAngle={10}
+                  arcLabelsTextColor="#ffffff"
+                  theme={{
+                    labels: {
+                      text: {
+                        fontSize: 14,
+                        fill: '#888888'
+                      }
+                    }
+                  }}
+                />
+              </div>
+            </div>
+
+            <div className="bg-highlight/10 p-6 rounded-lg mt-6">
+              <h3 className="text-xl font-semibold flex items-center gap-2 text-highlight mb-4">
+                <AlertTriangle className="h-5 w-5" />
+                Severity Assessment
+              </h3>
+              <div className="h-[300px] relative bg-zinc-900/50 p-4 rounded-lg">
+                <ResponsiveBar
+                  data={impactMetrics}
+                  keys={['value']}
+                  indexBy="category"
+                  margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
+                  padding={0.3}
+                  valueScale={{ type: 'linear' }}
+                  colors={{ scheme: 'nivo' }}
+                  borderColor={{ theme: 'background' }}
+                  axisTop={null}
+                  axisRight={null}
+                  axisBottom={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: -45,
+                  }}
+                  axisLeft={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                  }}
+                  labelSkipWidth={12}
+                  labelSkipHeight={12}
+                  labelTextColor="#ffffff"
+                  theme={{
+                    axis: {
+                      ticks: {
+                        text: {
+                          fill: '#888888'
+                        }
+                      }
+                    }
+                  }}
+                />
+              </div>
             </div>
           </section>
 
           <section className="mb-12 bg-zinc-800 text-white p-6 rounded-lg">
             <h2 className="text-2xl font-bold flex items-center gap-2 border-b border-zinc-600 pb-2 text-highlight">
               <AlertTriangle className="h-6 w-6" />
-              Recommendations
+              Conclusions & Recommendations
             </h2>
             <ul className="mt-6 space-y-3">
               <li className="flex items-start">
                 <span className="text-highlight font-bold mr-2 mt-1">✓</span>
                 <div>
-                  Implement stronger institutional safeguards against ideological capture
+                  Education sector shows highest vulnerability to ideological capture (35%)
                 </div>
               </li>
               <li className="flex items-start">
                 <span className="text-highlight font-bold mr-2 mt-1">✓</span>
                 <div>
-                  Develop alternative platforms and institutions resistant to subversion
+                  Media control mechanisms have strengthened significantly (28%)
                 </div>
               </li>
               <li className="flex items-start">
                 <span className="text-highlight font-bold mr-2 mt-1">✓</span>
                 <div>
-                  Strengthen transparency and accountability mechanisms
+                  Government institutions show increasing signs of subversion (22%)
                 </div>
               </li>
               <li className="flex items-start">
                 <span className="text-highlight font-bold mr-2 mt-1">✓</span>
                 <div>
-                  Support initiatives promoting viewpoint diversity and academic freedom
+                  Corporate sector adopting ideological mandates through ESG and DEI (15%)
                 </div>
               </li>
             </ul>
@@ -281,17 +288,17 @@ export default function CorruptionAnalysis() {
                 </Card>
               </Link>
               
-              <Link href="/research/fighting-cultural-marxism-bc" className="block">
+              <Link href="/research/kalergi-plan" className="block">
                 <Card className="h-full hover:border-highlight transition-colors">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-base flex items-center gap-2">
-                      <Shield className="h-4 w-4 text-highlight" />
-                      Fighting Institutional Capture
+                      <Globe className="h-4 w-4 text-highlight" />
+                      The Kalergi Plan
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      Practical strategies for resisting ideological subversion in institutions.
+                      Global implementation of institutional subversion through mass migration and elite control.
                     </p>
                   </CardContent>
                 </Card>
