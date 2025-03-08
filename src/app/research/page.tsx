@@ -9,37 +9,48 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Calendar, User, Tag, ArrowRight, Users, Building, Globe, TrendingUp, Brain, Cpu } from "lucide-react";
+import { BookOpen, Calendar, User, Tag, ArrowRight, Users, Building, Globe, TrendingUp, Brain, Cpu, AlertTriangle } from "lucide-react";
 
 // Research articles
 const articles = [
   {
     id: 1,
     title: "Herbert Marcuse: The Father of Cultural Marxism",
-    excerpt: "An analysis of Herbert Marcuse's influence on Cultural Marxism and how his ideas transformed Marxism from economic theory to cultural revolution.",
+    excerpt: "An analysis of Herbert Marcuse's influence on Cultural Marxism, Critical Race Theory, academia, and media censorship.",
     author: "Dr. James Wilson",
     date: "May 15, 2023",
     category: "Cultural Marxism",
-    tags: ["Frankfurt School", "Critical Theory", "Repressive Tolerance"],
-    readTime: "10 min read",
+    tags: ["Frankfurt School", "Critical Theory", "Repressive Tolerance", "Critical Race Theory"],
+    readTime: "15 min read",
     href: "/research/herbert-marcuse"
   },
   {
     id: 2,
-    title: "Yuval Noah Harari: WEF's Futurist & AI-Driven Globalism Advocate",
-    excerpt: "An analysis of Yuval Noah Harari's influence on the WEF and his vision for AI-driven global governance, transhumanism, and the end of human autonomy.",
+    title: "Yuval Noah Harari, the WEF, and the Great Reset",
+    excerpt: "How Harari's vision aligns with Klaus Schwab's Great Reset agenda for AI governance, surveillance, and global control.",
     author: "Dr. Sarah Johnson",
-    date: "May 10, 2023",
+    date: "May 18, 2023",
     category: "WEF Analysis",
-    tags: ["AI Governance", "Transhumanism", "Global Control"],
+    tags: ["Great Reset", "AI Governance", "Globalism"],
     readTime: "12 min read",
-    href: "/research/yuval-noah-harari"
+    href: "/research/harari-wef-great-reset"
   },
   {
     id: 3,
+    title: "Yuval Noah Harari: WEF's Futurist & AI-Driven Globalism Advocate",
+    excerpt: "An analysis of Yuval Noah Harari's influence on the WEF and his vision for AI-driven global governance, transhumanism, and the end of human autonomy.",
+    author: "Dr. Michael Chen",
+    date: "May 10, 2023",
+    category: "WEF Analysis",
+    tags: ["AI Governance", "Transhumanism", "Global Control"],
+    readTime: "11 min read",
+    href: "/research/yuval-noah-harari"
+  },
+  {
+    id: 4,
     title: "The World Economic Forum's Great Reset Initiative",
     excerpt: "A critical examination of the WEF's Great Reset initiative and its implications for national sovereignty and individual freedoms.",
-    author: "Dr. Michael Chen",
+    author: "Dr. Thomas Wilson",
     date: "April 22, 2023",
     category: "WEF Analysis",
     tags: ["Great Reset", "Stakeholder Capitalism", "Global Governance"],
@@ -47,7 +58,7 @@ const articles = [
     href: "#"
   },
   {
-    id: 4,
+    id: 5,
     title: "ESG Mandates: Impact on Market Freedom",
     excerpt: "This paper analyzes how Environmental, Social, and Governance (ESG) mandates affect market dynamics and corporate decision-making.",
     author: "Dr. Emily Rodriguez",
@@ -58,7 +69,7 @@ const articles = [
     href: "#"
   },
   {
-    id: 5,
+    id: 6,
     title: "The Long March Through the Institutions",
     excerpt: "A historical analysis of how neo-Marxist ideas infiltrated and transformed Western educational, media, and cultural institutions.",
     author: "Alex Thompson",
@@ -66,17 +77,6 @@ const articles = [
     category: "Institutional Analysis",
     tags: ["Education", "Media", "Cultural Institutions"],
     readTime: "15 min read",
-    href: "#"
-  },
-  {
-    id: 6,
-    title: "Identity Politics vs. Class Struggle",
-    excerpt: "An examination of how traditional Marxist class struggle was replaced by identity-based politics in modern leftist movements.",
-    author: "Dr. Thomas Wilson",
-    date: "January 18, 2023",
-    category: "Cultural Marxism",
-    tags: ["Identity Politics", "Class Struggle", "Neo-Marxism"],
-    readTime: "11 min read",
     href: "#"
   }
 ];
@@ -105,21 +105,31 @@ export default function Research() {
         </div>
         
         <div className="grid gap-6 md:grid-cols-2 mb-10">
-          <div className="bg-highlight text-white px-6 py-8 rounded-lg">
+          <div className="bg-zinc-800 text-white px-6 py-8 rounded-lg">
             <div className="flex flex-col h-full justify-between">
               <div>
-                <h2 className="text-2xl font-bold mb-2">Cultural Marxism</h2>
-                <h3 className="text-xl font-semibold mb-3">Herbert Marcuse: The Father of Cultural Marxism</h3>
-                <p className="opacity-90 mb-4">
-                  Discover how Herbert Marcuse's ideas transformed Marxism from economic theory to cultural revolution, laying the foundation for modern identity politics.
-                </p>
-              </div>
-              <div className="flex items-center mt-4">
-                <div className="bg-white/20 p-3 rounded-lg mr-3">
-                  <BookOpen className="h-8 w-8" />
+                <div className="inline-block bg-highlight px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
+                  New Analysis
                 </div>
+                <h2 className="text-2xl font-bold mb-2">Herbert Marcuse's Influence on Critical Race Theory</h2>
+                <p className="opacity-90 mb-4">
+                  How Marcuse's ideas shaped modern academia, media censorship, and identity politics through Critical Race Theory.
+                </p>
+                <div className="flex space-x-3">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                    Critical Race Theory
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                    Academia
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                    Media Censorship
+                  </span>
+                </div>
+              </div>
+              <div className="mt-4">
                 <Link href="/research/herbert-marcuse">
-                  <Button className="bg-white text-highlight hover:bg-gray-100">
+                  <Button className="bg-highlight text-white hover:bg-amber-600">
                     Read Analysis
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -131,22 +141,81 @@ export default function Research() {
           <div className="bg-zinc-800 text-white px-6 py-8 rounded-lg">
             <div className="flex flex-col h-full justify-between">
               <div>
-                <h2 className="text-2xl font-bold mb-2">World Economic Forum</h2>
-                <h3 className="text-xl font-semibold mb-3">Yuval Noah Harari: WEF's Futurist & AI Advocate</h3>
-                <p className="opacity-90 mb-4">
-                  Explore how the WEF's top advisor envisions a future of AI governance, transhumanism, and the end of human autonomy.
-                </p>
-              </div>
-              <div className="flex items-center mt-4">
-                <div className="bg-white/20 p-3 rounded-lg mr-3">
-                  <Brain className="h-8 w-8" />
+                <div className="inline-block bg-highlight px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
+                  Featured Analysis
                 </div>
-                <Link href="/research/yuval-noah-harari">
+                <h2 className="text-2xl font-bold mb-2">Yuval Noah Harari, the WEF, and the Great Reset</h2>
+                <p className="opacity-90 mb-4">
+                  Discover how Harari's vision aligns with Klaus Schwab's Great Reset agenda for AI governance, surveillance, and global control.
+                </p>
+                <div className="flex space-x-3">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                    Great Reset
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                    AI Governance
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                    Globalism
+                  </span>
+                </div>
+              </div>
+              <div className="mt-4">
+                <Link href="/research/harari-wef-great-reset">
                   <Button className="bg-highlight text-white hover:bg-amber-600">
                     Read Analysis
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
                 </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-zinc-800 text-white px-6 py-8 rounded-lg mb-10">
+          <div className="flex flex-col md:flex-row gap-6 items-center">
+            <div className="md:w-2/3">
+              <div className="inline-block bg-highlight px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
+                Featured Analysis
+              </div>
+              <h2 className="text-2xl font-bold mb-2">Yuval Noah Harari, the WEF, and the Great Reset</h2>
+              <p className="opacity-90 mb-4">
+                Discover how Harari's vision aligns with Klaus Schwab's Great Reset agenda for AI governance, surveillance, and global control.
+              </p>
+              <div className="flex space-x-3">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                  Great Reset
+                </span>
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                  AI Governance
+                </span>
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/20 text-highlight">
+                  Globalism
+                </span>
+              </div>
+              <div className="mt-4">
+                <Link href="/research/harari-wef-great-reset">
+                  <Button className="bg-highlight text-white hover:bg-amber-600">
+                    Read Analysis
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="md:w-1/3 flex justify-center">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-white/20 p-4 rounded-lg">
+                  <Brain className="h-10 w-10" />
+                </div>
+                <div className="bg-white/20 p-4 rounded-lg">
+                  <Globe className="h-10 w-10" />
+                </div>
+                <div className="bg-white/20 p-4 rounded-lg">
+                  <AlertTriangle className="h-10 w-10" />
+                </div>
+                <div className="bg-white/20 p-4 rounded-lg">
+                  <Cpu className="h-10 w-10" />
+                </div>
               </div>
             </div>
           </div>
@@ -367,6 +436,25 @@ export default function Research() {
               </CardFooter>
             </Card>
           </div>
+        </div>
+        
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <Link href="/research/herbert-marcuse-influence">
+            <Card className="hover:border-highlight transition-colors">
+              <CardHeader>
+                <CardTitle>Herbert Marcuse's Influence</CardTitle>
+                <CardDescription>
+                  Analysis of Marcuse's impact on CRT, media control, and academic transformation
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Explore how Marcuse's neo-Marxist ideas shaped modern institutions through Critical Race Theory,
+                  media censorship, and academia's ideological shift.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
       </div>
     </div>
