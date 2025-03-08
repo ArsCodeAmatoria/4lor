@@ -6,12 +6,13 @@ import {
   CardTitle 
 } from "@/components/ui/card";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, Quote, Users, Building, Zap } from "lucide-react";
+import { ArrowLeft, BookOpen, Quote, Users, Building, Zap, School, Radio, Shield, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export const metadata = {
   title: "Herbert Marcuse: The Father of Cultural Marxism | 4lor",
-  description: "An analysis of Herbert Marcuse's influence on Cultural Marxism and modern society",
+  description: "An analysis of Herbert Marcuse's influence on Cultural Marxism, Critical Race Theory, academia, and media censorship",
 };
 
 export default function HerbertMarcusePage() {
@@ -123,6 +124,250 @@ export default function HerbertMarcusePage() {
           
           <section className="mb-12">
             <h2 className="text-2xl font-bold flex items-center gap-2 border-b pb-2">
+              <Shield className="h-6 w-6 text-highlight" />
+              Marcuse's Influence on Critical Race Theory
+            </h2>
+            
+            <div className="bg-zinc-100 p-6 rounded-lg mt-6">
+              <h3 className="text-xl font-semibold mb-4">Marxism Repackaged as Racial Struggle</h3>
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="md:w-2/3">
+                  <p className="mb-4">
+                    Marcuse's ideas were combined with racial theory by academics like Derrick Bell (founder of CRT) 
+                    and Kimberlé Crenshaw (creator of intersectionality).
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>
+                      Instead of "bourgeois vs. proletariat," CRT reframed struggle as "whites vs. minorities."
+                    </li>
+                    <li>
+                      White people became the new "oppressors," and minorities became the "revolutionary class."
+                    </li>
+                    <li>
+                      CRT divides society into identity groups, prioritizing race over merit or individualism.
+                    </li>
+                  </ul>
+                  <p className="mt-4 font-medium">
+                    <span className="text-highlight">Marcuse's Connection:</span> CRT is an extension of Marcuse's belief 
+                    that the West must be dismantled through identity-based conflict.
+                  </p>
+                </div>
+                <div className="md:w-1/3 flex flex-col justify-center">
+                  <div className="bg-white p-4 rounded-lg shadow-md">
+                    <h4 className="text-sm font-bold text-center mb-2">Traditional Marxism vs. CRT</h4>
+                    <div className="text-xs space-y-2">
+                      <div className="flex justify-between">
+                        <span>Class Struggle</span>
+                        <span>→</span>
+                        <span>Racial Struggle</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Bourgeoisie</span>
+                        <span>→</span>
+                        <span>White People</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Proletariat</span>
+                        <span>→</span>
+                        <span>Minorities</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Class Consciousness</span>
+                        <span>→</span>
+                        <span>Racial Consciousness</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold">The Victimhood Hierarchy & Intersectionality</h3>
+              <p className="mt-2">
+                CRT and intersectionality rank people based on race, gender, sexuality, and oppression levels.
+              </p>
+              <ul className="list-disc pl-6 mt-2 space-y-2">
+                <li>
+                  Straight white men are the top oppressors, while black, LGBTQ, and female identities are the most oppressed.
+                </li>
+                <li>
+                  Marcuse's ideology inspired the creation of a "new proletariat" (marginalized identity groups).
+                </li>
+                <li>
+                  This hierarchy determines whose voices are prioritized and who must be "decentered" in discourse.
+                </li>
+              </ul>
+              <p className="mt-4 font-medium">
+                <span className="text-highlight">Marcuse's Connection:</span> This matches his belief that the working class 
+                failed as revolutionaries, so racial and gender minorities must replace them.
+              </p>
+            </div>
+            
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold">CRT & "Repressive Tolerance" – Silencing Dissent</h3>
+              <p className="mt-2">
+                CRT justifies censorship of dissenting views by labeling them as racist, sexist, or oppressive.
+              </p>
+              <ul className="list-disc pl-6 mt-2 space-y-2">
+                <li>
+                  DEI (Diversity, Equity, Inclusion) policies enforce CRT through hiring, speech codes, and curriculum changes.
+                </li>
+                <li>
+                  Schools and corporations force CRT training and punish those who disagree.
+                </li>
+                <li>
+                  Terms like "white fragility" and "white privilege" are used to silence criticism of CRT.
+                </li>
+              </ul>
+              <p className="mt-4 font-medium">
+                <span className="text-highlight">Marcuse's Connection:</span> This is directly from his "Repressive Tolerance" 
+                theory—only leftist ideas should be tolerated, while right-wing, conservative, or merit-based views must be suppressed.
+              </p>
+            </div>
+          </section>
+          
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold flex items-center gap-2 border-b pb-2">
+              <School className="h-6 w-6 text-highlight" />
+              Marcuse's Influence on Academia
+            </h2>
+            
+            <div className="mt-6">
+              <h3 className="text-xl font-semibold">The Long March Through the Institutions</h3>
+              <p className="mt-2">
+                Inspired by Marcuse's Frankfurt School colleague, Rudi Dutschke, the "Long March Through the Institutions" 
+                strategy infiltrated universities, media, and government.
+              </p>
+              <ul className="list-disc pl-6 mt-2 space-y-2">
+                <li>
+                  Instead of armed revolution, Marxists took control of academia and used it to indoctrinate students.
+                </li>
+                <li>
+                  This led to leftist ideological dominance in fields like sociology, gender studies, history, law, and journalism.
+                </li>
+                <li>
+                  Universities became centers for spreading neo-Marxist ideology throughout society.
+                </li>
+              </ul>
+              <p className="mt-4 font-medium">
+                <span className="text-highlight">Marcuse's Connection:</span> Universities became centers of radicalization 
+                for Marxist ideology, fulfilling his vision.
+              </p>
+            </div>
+            
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold">"Repressive Tolerance" & Campus Speech Control</h3>
+              <p className="mt-2">
+                Marcuse's 1965 essay "Repressive Tolerance" justified the suppression of right-wing speech.
+              </p>
+              <ul className="list-disc pl-6 mt-2 space-y-2">
+                <li>
+                  Today, universities ban conservative speakers, enforce speech codes, and promote safe spaces to protect 
+                  students from "harmful ideas" (i.e., non-leftist views).
+                </li>
+                <li>
+                  Conservatives are attacked, fired, or de-platformed in academia.
+                </li>
+                <li>
+                  Campus protests shut down events featuring speakers who challenge leftist orthodoxy.
+                </li>
+              </ul>
+              <p className="mt-4 font-medium">
+                <span className="text-highlight">Marcuse's Connection:</span> His argument for leftist-only speech is the 
+                foundation of campus cancel culture.
+              </p>
+            </div>
+            
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold">The Rise of Postmodernism & Critical Theories</h3>
+              <p className="mt-2">
+                Marcuse's work influenced postmodernists like Michel Foucault and Jacques Derrida, who introduced 
+                Critical Theory, Queer Theory, and Radical Feminism.
+              </p>
+              <ul className="list-disc pl-6 mt-2 space-y-2">
+                <li>
+                  All of these fields reject objectivity, logic, and Western civilization, aligning with Marcuse's 
+                  belief that Western culture is "inherently oppressive."
+                </li>
+                <li>
+                  These theories now dominate humanities departments and are spreading to STEM fields.
+                </li>
+                <li>
+                  Academic journals now prioritize "critical" perspectives over empirical research.
+                </li>
+              </ul>
+              <p className="mt-4 font-medium">
+                <span className="text-highlight">Marcuse's Connection:</span> His anti-Western ideology led to the 
+                spread of woke critical theories in universities.
+              </p>
+            </div>
+          </section>
+          
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold flex items-center gap-2 border-b pb-2">
+              <Radio className="h-6 w-6 text-highlight" />
+              Marcuse's Influence on Media Censorship & Big Tech
+            </h2>
+            
+            <div className="mt-6">
+              <h3 className="text-xl font-semibold">The Justification for Censorship</h3>
+              <p className="mt-2">
+                Marcuse's theory claims free speech should not apply to the right.
+              </p>
+              <ul className="list-disc pl-6 mt-2 space-y-2">
+                <li>
+                  He argued that tolerating conservative views leads to oppression, so censorship is necessary.
+                </li>
+                <li>
+                  This influenced Big Tech's censorship policies (Twitter, Facebook, YouTube, etc.).
+                </li>
+              </ul>
+              <div className="bg-zinc-100 p-4 rounded-lg mt-4">
+                <h4 className="font-medium mb-2">Examples:</h4>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>
+                    Social media deplatformed Trump but allowed violent leftist activists to remain.
+                  </li>
+                  <li>
+                    COVID-19 narratives were strictly controlled, suppressing dissenting voices.
+                  </li>
+                  <li>
+                    Election integrity concerns were labeled "disinformation" and censored.
+                  </li>
+                </ul>
+              </div>
+              <p className="mt-4 font-medium">
+                <span className="text-highlight">Marcuse's Connection:</span> His philosophy became the justification 
+                for "hate speech" laws and tech censorship.
+              </p>
+            </div>
+            
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold">Control of Legacy Media</h3>
+              <p className="mt-2">
+                The media frames right-wing ideas as "dangerous" and justifies leftist bias.
+              </p>
+              <ul className="list-disc pl-6 mt-2 space-y-2">
+                <li>
+                  The New York Times, Washington Post, CNN, and MSNBC all promote Marcusean ideas.
+                </li>
+                <li>
+                  ESG (Environmental, Social, Governance) policies force corporations to push leftist narratives.
+                </li>
+                <li>
+                  Journalists are trained in schools dominated by Marcuse's ideology, creating a self-reinforcing cycle.
+                </li>
+              </ul>
+              <p className="mt-4 font-medium">
+                <span className="text-highlight">Marcuse's Connection:</span> The media has been weaponized to promote 
+                only leftist-approved content, fulfilling his vision of leftist speech dominance.
+              </p>
+            </div>
+          </section>
+          
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold flex items-center gap-2 border-b pb-2">
               <Building className="h-6 w-6 text-highlight" />
               Marcuse's Influence on Modern Society
             </h2>
@@ -181,19 +426,30 @@ export default function HerbertMarcusePage() {
             </div>
           </section>
           
-          <section className="mb-12 bg-zinc-100 p-6 rounded-lg">
-            <h2 className="text-2xl font-bold flex items-center gap-2 border-b border-zinc-300 pb-2">
-              <Zap className="h-6 w-6 text-highlight" />
+          <section className="mb-12 bg-zinc-800 text-white p-6 rounded-lg">
+            <h2 className="text-2xl font-bold flex items-center gap-2 border-b border-zinc-600 pb-2">
+              <AlertTriangle className="h-6 w-6 text-highlight" />
               Conclusion: Marcuse's Lasting Impact
             </h2>
             <p className="mt-4">
-              Marcuse's Cultural Marxism has led to the modern "Woke Revolution," where identity replaces class 
-              as the core of political struggle. His theories transformed Marxism from an economic ideology into 
-              a cultural movement, influencing social justice activism, cancel culture, and institutional censorship.
+              Herbert Marcuse's ideas completely reshaped the West, leading to wokeness, speech suppression, and institutional Marxism.
             </p>
-            <p className="mt-4 font-medium">
-              While traditional economic Marxism failed in the West, Marcuse's cultural Marxism succeeded, 
-              reshaping institutions from within.
+            <ul className="list-disc pl-6 mt-4 space-y-2">
+              <li>
+                Critical Race Theory (CRT) is directly influenced by Marcuse's identity-based Marxism.
+              </li>
+              <li>
+                Academia enforces Marcusean ideology, silencing dissent and indoctrinating students.
+              </li>
+              <li>
+                Big Tech and mainstream media use "Repressive Tolerance" to justify censorship.
+              </li>
+              <li>
+                Corporate and government DEI policies enforce Marcuse's "victimhood hierarchy."
+              </li>
+            </ul>
+            <p className="mt-4 font-medium text-highlight">
+              Marcuse's ideas are not just theory—they are now the dominant ideology in Western institutions.
             </p>
           </section>
           
@@ -204,6 +460,8 @@ export default function HerbertMarcusePage() {
               <li>Marcuse, Herbert. <em>Eros and Civilization</em> (1955)</li>
               <li>Marcuse, Herbert. "Repressive Tolerance" in <em>A Critique of Pure Tolerance</em> (1965)</li>
               <li>Lind, William S. "The Origins of Political Correctness" (2000)</li>
+              <li>Lindsay, James & Pluckrose, Helen. <em>Cynical Theories: How Activist Scholarship Made Everything About Race, Gender, and Identity</em> (2020)</li>
+              <li>Rufo, Christopher F. "Critical Race Theory: What It Is and How to Fight It" (2021)</li>
             </ul>
           </div>
         </div>

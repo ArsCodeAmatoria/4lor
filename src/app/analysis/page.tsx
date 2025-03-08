@@ -30,14 +30,8 @@ import {
   LineChart, 
   PieChart, 
   Download, 
-  Filter, 
-  SlidersHorizontal, 
-  Search 
+  Filter
 } from "lucide-react";
-import dynamic from 'next/dynamic';
-
-// Dynamically import the PivotTable component with no SSR
-// const PivotTable = dynamic(() => import('@/components/PivotTable'), { ssr: false });
 
 // Sample data for analyzing Cultural Marxism and CRT influence
 const sampleData = [

@@ -9,11 +9,29 @@ import {
   CardTitle 
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ResponsiveBar } from '@nivo/bar';
-import { ResponsiveLine } from '@nivo/line';
-import { ResponsivePie } from '@nivo/pie';
-import { ResponsiveSankey } from '@nivo/sankey';
 import { motion } from "framer-motion";
+import dynamic from 'next/dynamic';
+
+// Dynamically import Nivo components
+const ResponsiveBar = dynamic(() => import('@nivo/bar').then(mod => mod.ResponsiveBar), {
+  ssr: false,
+  loading: () => <div className="h-[500px] flex items-center justify-center">Loading chart...</div>
+});
+
+const ResponsiveLine = dynamic(() => import('@nivo/line').then(mod => mod.ResponsiveLine), {
+  ssr: false,
+  loading: () => <div className="h-[500px] flex items-center justify-center">Loading chart...</div>
+});
+
+const ResponsivePie = dynamic(() => import('@nivo/pie').then(mod => mod.ResponsivePie), {
+  ssr: false,
+  loading: () => <div className="h-[500px] flex items-center justify-center">Loading chart...</div>
+});
+
+const ResponsiveSankey = dynamic(() => import('@nivo/sankey').then(mod => mod.ResponsiveSankey), {
+  ssr: false,
+  loading: () => <div className="h-[500px] flex items-center justify-center">Loading chart...</div>
+});
 
 // Data for institutional influence over time
 const institutionalInfluenceData = [
