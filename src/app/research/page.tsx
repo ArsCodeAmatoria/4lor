@@ -26,6 +26,28 @@ const articles = [
   },
   {
     id: 2,
+    title: "Fighting Cultural Marxism in British Columbia",
+    excerpt: "A comprehensive guide to resisting CRT, censorship, and institutional control in BC's education system, media, and government.",
+    author: "Dr. Sarah Anderson",
+    date: "May 21, 2023",
+    category: "Resistance Strategies",
+    tags: ["British Columbia", "CRT", "Censorship", "Education Reform"],
+    readTime: "20 min read",
+    href: "/research/fighting-cultural-marxism-bc"
+  },
+  {
+    id: 3,
+    title: "Fighting Cultural Marxism in Canada",
+    excerpt: "A comprehensive guide to resisting CRT, censorship, and institutional control in Canadian education, media, and government.",
+    author: "Dr. Michael Thompson",
+    date: "May 20, 2023",
+    category: "Resistance Strategies",
+    tags: ["Canada", "CRT", "Censorship", "Institutional Reform"],
+    readTime: "18 min read",
+    href: "/research/fighting-cultural-marxism-canada"
+  },
+  {
+    id: 4,
     title: "Yuval Noah Harari, the WEF, and the Great Reset",
     excerpt: "How Harari's vision aligns with Klaus Schwab's Great Reset agenda for AI governance, surveillance, and global control.",
     author: "Dr. Sarah Johnson",
@@ -36,7 +58,7 @@ const articles = [
     href: "/research/harari-wef-great-reset"
   },
   {
-    id: 3,
+    id: 5,
     title: "Yuval Noah Harari: WEF's Futurist & AI-Driven Globalism Advocate",
     excerpt: "An analysis of Yuval Noah Harari's influence on the WEF and his vision for AI-driven global governance, transhumanism, and the end of human autonomy.",
     author: "Dr. Michael Chen",
@@ -47,7 +69,7 @@ const articles = [
     href: "/research/yuval-noah-harari"
   },
   {
-    id: 4,
+    id: 6,
     title: "The World Economic Forum's Great Reset Initiative",
     excerpt: "A critical examination of the WEF's Great Reset initiative and its implications for national sovereignty and individual freedoms.",
     author: "Dr. Thomas Wilson",
@@ -58,7 +80,7 @@ const articles = [
     href: "#"
   },
   {
-    id: 5,
+    id: 7,
     title: "ESG Mandates: Impact on Market Freedom",
     excerpt: "This paper analyzes how Environmental, Social, and Governance (ESG) mandates affect market dynamics and corporate decision-making.",
     author: "Dr. Emily Rodriguez",
@@ -69,7 +91,7 @@ const articles = [
     href: "#"
   },
   {
-    id: 6,
+    id: 8,
     title: "The Long March Through the Institutions",
     excerpt: "A historical analysis of how neo-Marxist ideas infiltrated and transformed Western educational, media, and cultural institutions.",
     author: "Alex Thompson",
