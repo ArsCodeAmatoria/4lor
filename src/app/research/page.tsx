@@ -439,6 +439,22 @@ export default function Research() {
         </div>
         
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <Link href="/research/resisting-cultural-marxism">
+            <Card className="hover:border-highlight transition-colors">
+              <CardHeader>
+                <CardTitle>Resisting Cultural Marxism</CardTitle>
+                <CardDescription>
+                  Practical strategies for fighting CRT, censorship, and institutional control
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Learn effective methods to counter Cultural Marxism's influence in education,
+                  media, corporations, and government institutions.
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
           <Link href="/research/herbert-marcuse-influence">
             <Card className="hover:border-highlight transition-colors">
               <CardHeader>
