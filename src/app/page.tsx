@@ -25,6 +25,8 @@ import {
   CardHeader, 
   CardTitle 
 } from "@/components/ui/card";
+import { CorrelationHeatmap } from "@/components/CorrelationHeatmap";
+import { CorrelationAnalysis } from "@/components/CorrelationAnalysis"
 
 export default function Home() {
   return (
@@ -324,10 +326,35 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Correlation Analysis Section */}
+      <div className="flex justify-center bg-background">
+        <div className="w-full max-w-7xl">
+          <section className="w-full py-12 md:py-24">
+            <div className="container px-4 md:px-6 mx-auto">
+              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <div className="space-y-2">
+                  <div className="inline-block bg-highlight px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
+                    Data Analysis
+                  </div>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                    Correlation Analysis
+                  </h2>
+                  <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    Exploring the relationships between WEF initiatives and Cultural Marxist concepts through data-driven analysis
+                  </p>
+                </div>
+              </div>
+              
+              <CorrelationAnalysis />
+            </div>
+          </section>
+        </div>
+      </div>
+
       {/* CTA Section */}
       <div className="flex justify-center bg-background">
         <div className="w-full max-w-7xl">
-          <section className="w-full py-12 md:py-24 lg:py-32">
+          <section className="w-full py-12 md:py-24">
             <div className="container px-4 md:px-6 mx-auto">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
