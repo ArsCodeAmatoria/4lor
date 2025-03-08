@@ -6,9 +6,8 @@ import {
   CardTitle 
 } from "@/components/ui/card";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, Quote, Users, Building, Zap, School, Radio, Shield, AlertTriangle } from "lucide-react";
+import { ArrowLeft, BookOpen, Users, Building, Zap, School, Radio, Shield, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const metadata = {
