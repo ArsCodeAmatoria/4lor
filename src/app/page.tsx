@@ -29,13 +29,22 @@ import { CorrelationHeatmap } from "@/components/CorrelationHeatmap";
 import { CorrelationAnalysis } from "@/components/CorrelationAnalysis"
 import { CorruptionCharts } from "@/components/CorruptionCharts"
 
+// Add Hammer and Sickle SVG component
+function HammerAndSickle() {
+  return (
+    <div className="text-[20rem] text-highlight font-bold">
+      ☭
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
       <div className="flex justify-center bg-background">
         <div className="w-full max-w-7xl">
-          <section className="w-full py-12 md:py-24 lg:py-32">
+          <section className="w-full py-6 md:py-12 lg:py-16">
             <div className="container px-4 md:px-6 mx-auto">
               <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
                 <div className="flex flex-col justify-center space-y-4">
@@ -65,23 +74,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="grid grid-cols-2 gap-4 md:gap-8">
-                    <div className="flex flex-col gap-4">
-                      <div className="rounded-lg bg-highlight/10 p-8 border border-highlight/20 hover:bg-highlight/20 transition-colors">
-                        <BookOpen className="h-12 w-12 text-highlight" />
-                      </div>
-                      <div className="rounded-lg bg-highlight/10 p-8 border border-highlight/20 hover:bg-highlight/20 transition-colors">
-                        <Building className="h-12 w-12 text-highlight" />
-                      </div>
-                    </div>
-                    <div className="flex flex-col gap-4 pt-4">
-                      <div className="rounded-lg bg-highlight/10 p-8 border border-highlight/20 hover:bg-highlight/20 transition-colors">
-                        <Globe className="h-12 w-12 text-highlight" />
-                      </div>
-                      <div className="rounded-lg bg-highlight/10 p-8 border border-highlight/20 hover:bg-highlight/20 transition-colors">
-                        <TrendingUp className="h-12 w-12 text-highlight" />
-                      </div>
-                    </div>
+                  <div className="rounded-lg bg-highlight/5 p-12 hover:bg-highlight/10 transition-colors">
+                    <HammerAndSickle />
                   </div>
                 </div>
               </div>
@@ -457,6 +451,15 @@ export default function Home() {
                       </div>
                     </CardContent>
                   </Card>
+                </div>
+
+                <div className="flex justify-center mt-8">
+                  <Link href="/dashboard">
+                    <Button size="lg" className="bg-white text-highlight hover:bg-white/90">
+                      Explore Full Dashboard
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </section>

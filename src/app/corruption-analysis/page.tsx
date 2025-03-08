@@ -16,9 +16,7 @@ import {
   Title,
   Tooltip,
   Legend,
-  ScriptableContext,
-  ChartArea,
-  ScriptableScaleContext
+  Filler
 } from 'chart.js';
 
 ChartJS.register(
@@ -28,7 +26,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 );
 
 // Enhanced sample data for charts
