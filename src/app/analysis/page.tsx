@@ -37,7 +37,7 @@ import {
 import dynamic from 'next/dynamic';
 
 // Dynamically import the PivotTable component with no SSR
-const PivotTable = dynamic(() => import('@/components/PivotTable'), { ssr: false });
+// const PivotTable = dynamic(() => import('@/components/PivotTable'), { ssr: false });
 
 // Sample data for analyzing Cultural Marxism and CRT influence
 const sampleData = [
@@ -190,10 +190,9 @@ export default function Analysis() {
         </div>
         
         <Tabs defaultValue="data" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-4 mb-8">
+          <TabsList className="grid w-full grid-cols-3 mb-8">
             <TabsTrigger value="data">Raw Data</TabsTrigger>
             <TabsTrigger value="summary">Summary</TabsTrigger>
-            <TabsTrigger value="pivot">Pivot Table</TabsTrigger>
             <TabsTrigger value="insights">Insights</TabsTrigger>
           </TabsList>
           
@@ -349,20 +348,6 @@ export default function Analysis() {
                       </TableBody>
                     </Table>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="pivot" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Interactive Pivot Table</CardTitle>
-                <CardDescription>Analyze data with WebDataRocks pivot table</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="h-[600px]">
-                  <PivotTable data={sampleData} height="550px" />
                 </div>
               </CardContent>
             </Card>

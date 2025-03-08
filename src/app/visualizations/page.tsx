@@ -102,6 +102,36 @@ const influenceFlowData = {
   ],
 };
 
+// Add new data for WEF influence
+const wefInfluenceData = [
+  {
+    id: 'Great Reset Agenda',
+    color: 'hsl(340, 70%, 50%)',
+    data: [
+      { x: 'Stakeholder Capitalism', y: 85 },
+      { x: 'Digital Identity', y: 78 },
+      { x: 'Climate Action', y: 92 },
+      { x: 'Global Governance', y: 88 },
+      { x: 'AI Regulation', y: 75 },
+      { x: 'Social Credit', y: 70 },
+      { x: 'CBDCs', y: 82 },
+    ],
+  },
+  {
+    id: 'Implementation Progress',
+    color: 'hsl(229, 70%, 50%)',
+    data: [
+      { x: 'Stakeholder Capitalism', y: 65 },
+      { x: 'Digital Identity', y: 55 },
+      { x: 'Climate Action', y: 75 },
+      { x: 'Global Governance', y: 60 },
+      { x: 'AI Regulation', y: 45 },
+      { x: 'Social Credit', y: 35 },
+      { x: 'CBDCs', y: 50 },
+    ],
+  },
+];
+
 export default function Visualizations() {
   const [activeTab, setActiveTab] = useState("trends");
 
@@ -115,11 +145,12 @@ export default function Visualizations() {
         <h1 className="text-3xl font-bold mb-6">Data Visualizations</h1>
         
         <Tabs defaultValue="trends" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-4 mb-8">
+          <TabsList className="grid w-full grid-cols-5 mb-8">
             <TabsTrigger value="trends">Historical Trends</TabsTrigger>
             <TabsTrigger value="components">CRT Components</TabsTrigger>
             <TabsTrigger value="distribution">Ideological Distribution</TabsTrigger>
             <TabsTrigger value="flow">Influence Flow</TabsTrigger>
+            <TabsTrigger value="wef">WEF Agenda</TabsTrigger>
           </TabsList>
           
           <TabsContent value="trends" className="space-y-6">
@@ -339,6 +370,79 @@ export default function Visualizations() {
                     labelOrientation="horizontal"
                     labelPadding={16}
                     labelTextColor={{ from: 'color', modifiers: [['darker', 1]] }}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+          
+          <TabsContent value="wef" className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>WEF Great Reset Analysis</CardTitle>
+                <CardDescription>Comparing WEF agenda goals with actual implementation progress</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="h-[500px]">
+                  <ResponsiveBar
+                    data={wefInfluenceData[0].data.map((item, i) => ({
+                      category: item.x,
+                      'Agenda Goals': item.y,
+                      'Implementation': wefInfluenceData[1].data[i].y,
+                    }))}
+                    keys={['Agenda Goals', 'Implementation']}
+                    indexBy="category"
+                    margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+                    padding={0.3}
+                    groupMode="grouped"
+                    valueScale={{ type: 'linear' }}
+                    indexScale={{ type: 'band', round: true }}
+                    colors={{ scheme: 'paired' }}
+                    borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+                    axisTop={null}
+                    axisRight={null}
+                    axisBottom={{
+                      tickSize: 5,
+                      tickPadding: 5,
+                      tickRotation: -45,
+                      legend: 'Category',
+                      legendPosition: 'middle',
+                      legendOffset: 45
+                    }}
+                    axisLeft={{
+                      tickSize: 5,
+                      tickPadding: 5,
+                      tickRotation: 0,
+                      legend: 'Progress (%)',
+                      legendPosition: 'middle',
+                      legendOffset: -40
+                    }}
+                    labelSkipWidth={12}
+                    labelSkipHeight={12}
+                    legends={[
+                      {
+                        dataFrom: 'keys',
+                        anchor: 'bottom-right',
+                        direction: 'column',
+                        justify: false,
+                        translateX: 120,
+                        translateY: 0,
+                        itemsSpacing: 2,
+                        itemWidth: 100,
+                        itemHeight: 20,
+                        itemDirection: 'left-to-right',
+                        itemOpacity: 0.85,
+                        symbolSize: 20,
+                        effects: [
+                          {
+                            on: 'hover',
+                            style: {
+                              itemOpacity: 1
+                            }
+                          }
+                        ]
+                      }
+                    ]}
                   />
                 </div>
               </CardContent>
