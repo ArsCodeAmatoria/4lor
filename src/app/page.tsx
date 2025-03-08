@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/card";
 import { CorrelationHeatmap } from "@/components/CorrelationHeatmap";
 import { CorrelationAnalysis } from "@/components/CorrelationAnalysis"
+import { CorruptionCharts } from "@/components/CorruptionCharts"
 
 export default function Home() {
   return (
@@ -348,6 +349,177 @@ export default function Home() {
               <CorrelationAnalysis />
             </div>
           </section>
+        </div>
+      </div>
+
+      {/* Political Corruption Analysis Section */}
+      <div className="bg-zinc-900">
+        <div className="flex justify-center">
+          <div className="w-full max-w-7xl">
+            <section className="w-full py-12 md:py-24">
+              <div className="container px-4 md:px-6 mx-auto">
+                <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                  <div className="space-y-2">
+                    <div className="inline-block bg-red-500 px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
+                      Critical Investigation
+                    </div>
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
+                      Political Corruption Analysis
+                    </h2>
+                    <p className="max-w-[900px] text-zinc-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                      Examining the systematic erosion of democratic institutions through ideological subversion and global influence
+                    </p>
+                  </div>
+                </div>
+
+                <CorruptionCharts />
+
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
+                  <Card className="bg-zinc-800 border-none text-white">
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-xl">Institutional Capture</CardTitle>
+                        <div className="text-3xl font-bold text-red-500">76%</div>
+                      </div>
+                      <CardDescription className="text-zinc-400">
+                        of key institutions show significant ideological infiltration
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm text-zinc-300">
+                        <li>• Systematic placement of ideologically aligned officials</li>
+                        <li>• Policy manipulation through bureaucratic control</li>
+                        <li>• Erosion of traditional checks and balances</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-zinc-800 border-none text-white">
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-xl">Policy Subversion</CardTitle>
+                        <div className="text-3xl font-bold text-red-500">89%</div>
+                      </div>
+                      <CardDescription className="text-zinc-400">
+                        alignment between WEF agendas and policy changes
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm text-zinc-300">
+                        <li>• Direct influence on legislative processes</li>
+                        <li>• Coordinated policy implementation across nations</li>
+                        <li>• Bypass of democratic consultation processes</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-zinc-800 border-none text-white">
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-xl">Democratic Erosion</CardTitle>
+                        <div className="text-3xl font-bold text-red-500">67%</div>
+                      </div>
+                      <CardDescription className="text-zinc-400">
+                        decline in effective democratic representation
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm text-zinc-300">
+                        <li>• Weakening of local governance structures</li>
+                        <li>• Centralization of decision-making power</li>
+                        <li>• Reduced public accountability measures</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Card className="bg-zinc-800 border-none text-white">
+                    <CardHeader>
+                      <CardTitle className="text-xl">Key Findings</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-4 text-zinc-300">
+                        <li className="flex items-start gap-3">
+                          <div className="bg-red-500/20 p-1 rounded mt-1">
+                            <TrendingUp className="h-4 w-4 text-red-500" />
+                          </div>
+                          <div>
+                            <strong className="block text-white">Accelerating Centralization</strong>
+                            Systematic consolidation of power through coordinated policy implementation across multiple domains
+                          </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="bg-red-500/20 p-1 rounded mt-1">
+                            <Building className="h-4 w-4 text-red-500" />
+                          </div>
+                          <div>
+                            <strong className="block text-white">Institutional Subversion</strong>
+                            Strategic placement of ideologically aligned individuals in key positions of power
+                          </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="bg-red-500/20 p-1 rounded mt-1">
+                            <Globe className="h-4 w-4 text-red-500" />
+                          </div>
+                          <div>
+                            <strong className="block text-white">Global Coordination</strong>
+                            Evidence of synchronized policy implementation across different nations and institutions
+                          </div>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-zinc-800 border-none text-white">
+                    <CardHeader>
+                      <CardTitle className="text-xl">Impact Analysis</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-4 text-zinc-300">
+                        <li className="flex items-start gap-3">
+                          <div className="bg-red-500/20 p-1 rounded mt-1">
+                            <BookOpen className="h-4 w-4 text-red-500" />
+                          </div>
+                          <div>
+                            <strong className="block text-white">Ideological Framework</strong>
+                            Cultural Marxist concepts used to justify policy changes and institutional restructuring
+                          </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="bg-red-500/20 p-1 rounded mt-1">
+                            <Layers className="h-4 w-4 text-red-500" />
+                          </div>
+                          <div>
+                            <strong className="block text-white">Systemic Integration</strong>
+                            Deep integration of WEF initiatives into governance structures and policy frameworks
+                          </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="bg-red-500/20 p-1 rounded mt-1">
+                            <Database className="h-4 w-4 text-red-500" />
+                          </div>
+                          <div>
+                            <strong className="block text-white">Data-Driven Evidence</strong>
+                            Quantitative analysis reveals patterns of coordinated institutional capture
+                          </div>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="flex justify-center mt-8">
+                  <Link href="/corruption-analysis">
+                    <Button size="lg" className="bg-red-500 text-white hover:bg-red-600">
+                      View Detailed Analysis
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
 
