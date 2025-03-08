@@ -9,92 +9,134 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Calendar, User, Tag, ArrowRight } from "lucide-react";
+import { BookOpen, Calendar, User, Tag, ArrowRight, Users, Building, Globe, TrendingUp } from "lucide-react";
 
-// Sample research articles
+// Research articles
 const articles = [
   {
     id: 1,
-    title: "The Impact of Data Visualization on Decision Making",
-    excerpt: "This study examines how effective data visualization can significantly improve decision-making processes in organizations.",
-    author: "Dr. Sarah Johnson",
-    date: "March 15, 2023",
-    category: "Data Science",
-    tags: ["Visualization", "Decision Making", "Business Intelligence"],
-    readTime: "8 min read"
+    title: "Herbert Marcuse: The Father of Cultural Marxism",
+    excerpt: "An analysis of Herbert Marcuse's influence on Cultural Marxism and how his ideas transformed Marxism from economic theory to cultural revolution.",
+    author: "Dr. James Wilson",
+    date: "May 15, 2023",
+    category: "Cultural Marxism",
+    tags: ["Frankfurt School", "Critical Theory", "Repressive Tolerance"],
+    readTime: "10 min read",
+    href: "/research/herbert-marcuse"
   },
   {
     id: 2,
-    title: "Trends in Interactive Data Visualization Techniques",
-    excerpt: "An exploration of emerging trends in interactive data visualization and their applications in various industries.",
-    author: "Michael Chen",
-    date: "February 22, 2023",
-    category: "Visualization",
-    tags: ["Interactive", "Trends", "Technology"],
-    readTime: "12 min read"
+    title: "The World Economic Forum's Great Reset Initiative",
+    excerpt: "A critical examination of the WEF's Great Reset initiative and its implications for national sovereignty and individual freedoms.",
+    author: "Dr. Sarah Johnson",
+    date: "April 22, 2023",
+    category: "WEF Analysis",
+    tags: ["Great Reset", "Stakeholder Capitalism", "Global Governance"],
+    readTime: "12 min read",
+    href: "#"
   },
   {
     id: 3,
-    title: "Ethical Considerations in Data Visualization",
-    excerpt: "This paper discusses the ethical implications of data visualization and how to present data in a responsible manner.",
+    title: "ESG Mandates: Impact on Market Freedom",
+    excerpt: "This paper analyzes how Environmental, Social, and Governance (ESG) mandates affect market dynamics and corporate decision-making.",
     author: "Dr. Emily Rodriguez",
-    date: "January 10, 2023",
-    category: "Ethics",
-    tags: ["Ethics", "Responsibility", "Best Practices"],
-    readTime: "10 min read"
+    date: "March 10, 2023",
+    category: "Economic Impact",
+    tags: ["ESG", "Corporate Governance", "Market Distortion"],
+    readTime: "9 min read",
+    href: "#"
   },
   {
     id: 4,
-    title: "Comparative Analysis of Data Visualization Libraries",
-    excerpt: "A comprehensive comparison of popular data visualization libraries and frameworks for web applications.",
+    title: "The Long March Through the Institutions",
+    excerpt: "A historical analysis of how neo-Marxist ideas infiltrated and transformed Western educational, media, and cultural institutions.",
     author: "Alex Thompson",
-    date: "December 5, 2022",
-    category: "Development",
-    tags: ["Libraries", "Frameworks", "Comparison"],
-    readTime: "15 min read"
+    date: "February 5, 2023",
+    category: "Institutional Analysis",
+    tags: ["Education", "Media", "Cultural Institutions"],
+    readTime: "15 min read",
+    href: "#"
   },
   {
     id: 5,
-    title: "The Psychology of Color in Data Visualization",
-    excerpt: "An examination of how color choices in data visualization affect user perception and interpretation of data.",
-    author: "Dr. James Wilson",
-    date: "November 18, 2022",
-    category: "Psychology",
-    tags: ["Color Theory", "Perception", "User Experience"],
-    readTime: "9 min read"
+    title: "Identity Politics vs. Class Struggle",
+    excerpt: "An examination of how traditional Marxist class struggle was replaced by identity-based politics in modern leftist movements.",
+    author: "Dr. Michael Chen",
+    date: "January 18, 2023",
+    category: "Cultural Marxism",
+    tags: ["Identity Politics", "Class Struggle", "Neo-Marxism"],
+    readTime: "11 min read",
+    href: "#"
   },
   {
     id: 6,
-    title: "Accessibility in Data Visualization",
-    excerpt: "Best practices for creating accessible data visualizations that can be understood by users with various disabilities.",
+    title: "Public-Private Partnerships in Global Governance",
+    excerpt: "Analysis of how public-private partnerships are reshaping global governance structures and challenging democratic accountability.",
     author: "Sophia Martinez",
-    date: "October 30, 2022",
-    category: "Accessibility",
-    tags: ["Accessibility", "Inclusive Design", "Best Practices"],
-    readTime: "11 min read"
+    date: "December 30, 2022",
+    category: "WEF Analysis",
+    tags: ["Global Governance", "Public-Private", "Democracy"],
+    readTime: "13 min read",
+    href: "#"
   }
 ];
 
-// Sample categories
+// Categories
 const categories = [
-  { name: "Data Science", count: 12 },
-  { name: "Visualization", count: 18 },
-  { name: "Ethics", count: 7 },
-  { name: "Development", count: 15 },
-  { name: "Psychology", count: 5 },
-  { name: "Accessibility", count: 8 },
-  { name: "Business Intelligence", count: 10 },
+  { name: "Cultural Marxism", count: 14 },
+  { name: "WEF Analysis", count: 12 },
+  { name: "Institutional Analysis", count: 9 },
+  { name: "Economic Impact", count: 11 },
+  { name: "Global Governance", count: 8 },
+  { name: "Critical Theory", count: 7 },
+  { name: "Stakeholder Capitalism", count: 6 },
 ];
 
 export default function Research() {
   return (
     <div className="container py-10">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Research & Insights</h1>
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-4">Research & Insights</h1>
+          
+          <p className="text-xl text-muted-foreground">
+            Explore our critical analysis of Cultural Marxism and the World Economic Forum, examining their intellectual origins, influence, and real-world consequences.
+          </p>
+        </div>
         
-        <p className="text-xl text-muted-foreground mb-8">
-          Explore our latest research articles, case studies, and insights on data visualization and analysis.
-        </p>
+        <div className="bg-highlight text-white px-6 py-8 rounded-lg mb-10">
+          <div className="flex flex-col md:flex-row gap-6 items-center">
+            <div className="md:w-2/3">
+              <h2 className="text-2xl font-bold mb-2">Featured Analysis</h2>
+              <h3 className="text-xl font-semibold mb-3">Herbert Marcuse: The Father of Cultural Marxism</h3>
+              <p className="opacity-90 mb-4">
+                Discover how Herbert Marcuse's ideas transformed Marxism from economic theory to cultural revolution, laying the foundation for modern identity politics and institutional transformation.
+              </p>
+              <Link href="/research/herbert-marcuse">
+                <Button className="bg-white text-highlight hover:bg-gray-100">
+                  Read Analysis
+                  <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+            <div className="md:w-1/3 flex justify-center">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-white/20 p-4 rounded-lg">
+                  <BookOpen className="h-10 w-10" />
+                </div>
+                <div className="bg-white/20 p-4 rounded-lg">
+                  <Users className="h-10 w-10" />
+                </div>
+                <div className="bg-white/20 p-4 rounded-lg">
+                  <Building className="h-10 w-10" />
+                </div>
+                <div className="bg-white/20 p-4 rounded-lg">
+                  <Globe className="h-10 w-10" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <Tabs defaultValue="articles" className="w-full mb-10">
           <TabsList className="grid w-full grid-cols-3 mb-8">
@@ -106,7 +148,7 @@ export default function Research() {
           <TabsContent value="articles" className="space-y-6">
             <div className="grid gap-6 md:grid-cols-2">
               {articles.map((article) => (
-                <Card key={article.id} className="flex flex-col h-full">
+                <Card key={article.id} className="flex flex-col h-full border-t-4 border-t-highlight">
                   <CardHeader>
                     <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-2">
                       <span className="flex items-center">
@@ -133,7 +175,7 @@ export default function Research() {
                       {article.tags.map((tag, index) => (
                         <span 
                           key={index} 
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-highlight/10 text-highlight"
                         >
                           {tag}
                         </span>
@@ -142,10 +184,12 @@ export default function Research() {
                   </CardContent>
                   <CardFooter className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">{article.readTime}</span>
-                    <Button variant="ghost" size="sm" className="gap-1">
-                      Read More
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
+                    <Link href={article.href}>
+                      <Button variant="ghost" size="sm" className="gap-1 hover:text-highlight">
+                        Read More
+                        <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </Link>
                   </CardFooter>
                 </Card>
               ))}
@@ -157,18 +201,18 @@ export default function Research() {
               <CardHeader>
                 <CardTitle>Case Studies</CardTitle>
                 <CardDescription>
-                  Real-world examples of how data visualization has transformed businesses
+                  Real-world examples of Cultural Marxism and WEF influence
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
                   Our case studies section is currently being updated with new content. 
-                  Please check back soon for detailed case studies on how organizations 
-                  have leveraged data visualization to drive business outcomes.
+                  Please check back soon for detailed case studies examining the real-world 
+                  impact of Cultural Marxism and WEF policies on various institutions and societies.
                 </p>
               </CardContent>
               <CardFooter>
-                <Button variant="outline">Subscribe for Updates</Button>
+                <Button variant="outline" className="hover:text-highlight hover:border-highlight">Subscribe for Updates</Button>
               </CardFooter>
             </Card>
           </TabsContent>
@@ -178,18 +222,18 @@ export default function Research() {
               <CardHeader>
                 <CardTitle>Whitepapers</CardTitle>
                 <CardDescription>
-                  In-depth research papers on data visualization and analysis
+                  In-depth research papers on Cultural Marxism and the WEF
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
                   Our whitepapers section is currently being updated with new content. 
                   Please check back soon for comprehensive research papers on various 
-                  aspects of data visualization and analysis.
+                  aspects of Cultural Marxism, the WEF, and their impact on society.
                 </p>
               </CardContent>
               <CardFooter>
-                <Button variant="outline">Subscribe for Updates</Button>
+                <Button variant="outline" className="hover:text-highlight hover:border-highlight">Subscribe for Updates</Button>
               </CardFooter>
             </Card>
           </TabsContent>
@@ -201,20 +245,20 @@ export default function Research() {
               <CardHeader>
                 <CardTitle>Featured Research</CardTitle>
                 <CardDescription>
-                  Our most impactful research on data visualization
+                  Our most impactful research on Cultural Marxism and the WEF
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="border-b pb-4">
-                    <h3 className="text-lg font-medium">The Future of Data Visualization</h3>
+                    <h3 className="text-lg font-medium">The Frankfurt School and Western Institutions</h3>
                     <p className="text-muted-foreground mt-2">
-                      This comprehensive study explores emerging trends and technologies 
-                      that will shape the future of data visualization over the next decade.
+                      This comprehensive study explores how the Frankfurt School's critical theory 
+                      has influenced Western educational institutions, media, and cultural organizations.
                     </p>
                     <div className="flex justify-between items-center mt-4">
                       <span className="text-sm text-muted-foreground">Published: April 2023</span>
-                      <Button variant="link" size="sm" className="gap-1">
+                      <Button variant="link" size="sm" className="gap-1 hover:text-highlight">
                         Read Full Study
                         <ArrowRight className="h-4 w-4" />
                       </Button>
@@ -222,14 +266,14 @@ export default function Research() {
                   </div>
                   
                   <div className="border-b pb-4">
-                    <h3 className="text-lg font-medium">Data Visualization in Healthcare</h3>
+                    <h3 className="text-lg font-medium">Stakeholder Capitalism: A Critical Analysis</h3>
                     <p className="text-muted-foreground mt-2">
-                      An examination of how data visualization is transforming healthcare 
-                      delivery, patient outcomes, and medical research.
+                      An examination of the WEF's stakeholder capitalism model and its 
+                      implications for market freedom, corporate governance, and economic outcomes.
                     </p>
                     <div className="flex justify-between items-center mt-4">
                       <span className="text-sm text-muted-foreground">Published: March 2023</span>
-                      <Button variant="link" size="sm" className="gap-1">
+                      <Button variant="link" size="sm" className="gap-1 hover:text-highlight">
                         Read Full Study
                         <ArrowRight className="h-4 w-4" />
                       </Button>
@@ -237,14 +281,14 @@ export default function Research() {
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-medium">AI-Powered Data Visualization</h3>
+                    <h3 className="text-lg font-medium">The Great Reset and National Sovereignty</h3>
                     <p className="text-muted-foreground mt-2">
-                      This research explores how artificial intelligence is enhancing 
-                      data visualization capabilities and automating insights generation.
+                      This research explores how the WEF's Great Reset initiative impacts 
+                      national sovereignty, democratic processes, and individual freedoms.
                     </p>
                     <div className="flex justify-between items-center mt-4">
                       <span className="text-sm text-muted-foreground">Published: February 2023</span>
-                      <Button variant="link" size="sm" className="gap-1">
+                      <Button variant="link" size="sm" className="gap-1 hover:text-highlight">
                         Read Full Study
                         <ArrowRight className="h-4 w-4" />
                       </Button>
@@ -267,7 +311,7 @@ export default function Research() {
                 <div className="space-y-2">
                   {categories.map((category, index) => (
                     <div key={index} className="flex justify-between items-center">
-                      <Link href="#" className="hover:underline">
+                      <Link href="#" className="hover:text-highlight">
                         {category.name}
                       </Link>
                       <span className="text-sm text-muted-foreground">
@@ -278,7 +322,7 @@ export default function Research() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button variant="outline" className="w-full">View All Categories</Button>
+                <Button variant="outline" className="w-full hover:text-highlight hover:border-highlight">View All Categories</Button>
               </CardFooter>
             </Card>
             
@@ -305,7 +349,7 @@ export default function Research() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Subscribe</Button>
+                <Button className="w-full bg-highlight hover:bg-amber-600 text-white">Subscribe</Button>
               </CardFooter>
             </Card>
           </div>
