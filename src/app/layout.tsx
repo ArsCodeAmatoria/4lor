@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DataViz - Interactive Data Visualization Platform",
-  description: "A modern data visualization and analysis platform",
+  title: "4lor - Critical Analysis of Cultural Marxism & WEF",
+  description: "Data-driven analysis of Cultural Marxism and the World Economic Forum's influence on society, economy, and policy",
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
           <footer className="border-t py-6 md:py-0">
             <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
               <p className="text-sm text-muted-foreground">
-                &copy; {new Date().getFullYear()} DataViz. All rights reserved.
+                &copy; {new Date().getFullYear()} 4lor. All rights reserved.
               </p>
             </div>
           </footer>

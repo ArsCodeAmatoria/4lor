@@ -15,119 +15,134 @@ import {
   Zap,
   Code,
   Users,
-  BookOpen
+  BookOpen,
+  Globe,
+  Building,
+  Scale,
+  FileText
 } from "lucide-react";
 
 export default function About() {
   return (
     <div className="container py-10">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">About DataViz</h1>
+        <h1 className="text-4xl font-bold mb-6">About 4lor</h1>
         
         <div className="prose prose-slate dark:prose-invert max-w-none">
           <p className="text-xl text-muted-foreground mb-8">
-            DataViz is a modern data visualization and analysis platform designed to help users transform complex data into actionable insights through interactive visualizations and comprehensive analytics.
+            4lor is a data-driven analysis platform focused on providing critical insights into Cultural Marxism and the World Economic Forum (WEF). We examine the intellectual origins, influence, and real-world consequences of these ideologies and organizations.
           </p>
           
           <h2 className="text-2xl font-bold mt-8 mb-4">Our Mission</h2>
           <p>
-            Our mission is to democratize data analysis by providing powerful yet intuitive tools that enable users of all skill levels to explore, analyze, and visualize their data effectively. We believe that data-driven decision making should be accessible to everyone, not just data scientists and analysts.
+            Our mission is to provide well-researched, data-driven analysis of Cultural Marxism and the World Economic Forum, examining their intellectual origins, influence on institutions, and real-world consequences. We aim to offer a critical perspective that helps people understand the connections between ideology and socio-economic outcomes.
           </p>
           
-          <h2 className="text-2xl font-bold mt-8 mb-4">Key Features</h2>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Research Focus</h2>
           
           <div className="grid gap-6 md:grid-cols-2 mt-6 mb-8">
             <Card>
               <CardHeader className="flex flex-row items-center gap-4">
-                <Database className="h-8 w-8 text-primary" />
+                <BookOpen className="h-8 w-8 text-primary" />
                 <div>
-                  <CardTitle>Data Analysis</CardTitle>
+                  <CardTitle>Cultural Marxism</CardTitle>
                   <CardDescription>
-                    Powerful tools for analyzing complex datasets
+                    Intellectual origins and institutional influence
                   </CardDescription>
                 </div>
               </CardHeader>
               <CardContent>
-                <p>Transform raw data into actionable insights with our advanced analysis tools. Filter, sort, and manipulate your data with ease.</p>
+                <p>We analyze the development of Cultural Marxism from the Frankfurt School to its expansion through postmodernist ideology, critical theory, and its influence on modern institutions, media, and policy-making.</p>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader className="flex flex-row items-center gap-4">
-                <Layers className="h-8 w-8 text-primary" />
+                <Globe className="h-8 w-8 text-primary" />
                 <div>
-                  <CardTitle>Interactive Visualizations</CardTitle>
+                  <CardTitle>World Economic Forum</CardTitle>
                   <CardDescription>
-                    Create stunning visualizations with ease
+                    Goals, influence, and socio-economic outcomes
                   </CardDescription>
                 </div>
               </CardHeader>
               <CardContent>
-                <p>Build interactive charts, graphs, and maps to communicate your data effectively. Customize every aspect of your visualizations.</p>
+                <p>We examine the WEF's stated goals versus their actual socio-economic outcomes, focusing on the centralization of power, ESG mandates, stakeholder capitalism, and global governance.</p>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader className="flex flex-row items-center gap-4">
-                <Zap className="h-8 w-8 text-primary" />
+                <Building className="h-8 w-8 text-primary" />
                 <div>
-                  <CardTitle>Real-time Dashboards</CardTitle>
+                  <CardTitle>Institutional Analysis</CardTitle>
                   <CardDescription>
-                    Monitor key metrics in real-time
+                    Impact on key social institutions
                   </CardDescription>
                 </div>
               </CardHeader>
               <CardContent>
-                <p>Create customizable dashboards to track and visualize your most important data. Set up alerts and notifications for critical changes.</p>
+                <p>We analyze how these ideologies have shaped political discourse, education systems, corporate governance, media narratives, and public policy, with documented real-world consequences.</p>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader className="flex flex-row items-center gap-4">
-                <Code className="h-8 w-8 text-primary" />
+                <Scale className="h-8 w-8 text-primary" />
                 <div>
-                  <CardTitle>Developer-Friendly</CardTitle>
+                  <CardTitle>Sovereignty & Freedom</CardTitle>
                   <CardDescription>
-                    Built with modern web technologies
+                    Impact on nations and individuals
                   </CardDescription>
                 </div>
               </CardHeader>
               <CardContent>
-                <p>DataViz is built with Next.js, React, TypeScript, and Tailwind CSS, making it fast, responsive, and easy to extend.</p>
+                <p>We assess the impact on national sovereignty, economic structures, and individual freedoms through data-driven insights and comprehensive analysis.</p>
               </CardContent>
             </Card>
           </div>
           
-          <h2 className="text-2xl font-bold mt-8 mb-4">Technology Stack</h2>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Our Methodology</h2>
           <p>
-            DataViz is built with the following technologies:
+            Our analysis is based on rigorous research, primary sources, and data-driven insights. We examine:
           </p>
           <ul className="list-disc pl-6 mt-4 space-y-2">
-            <li><strong>Next.js:</strong> A React framework for building server-rendered applications</li>
-            <li><strong>React:</strong> A JavaScript library for building user interfaces</li>
-            <li><strong>TypeScript:</strong> A typed superset of JavaScript that compiles to plain JavaScript</li>
-            <li><strong>Tailwind CSS:</strong> A utility-first CSS framework for rapidly building custom designs</li>
-            <li><strong>shadcn/ui:</strong> A collection of reusable UI components built with Radix UI and Tailwind CSS</li>
-            <li><strong>Chart.js:</strong> Simple yet flexible JavaScript charting library</li>
-            <li><strong>Nivo:</strong> A rich set of dataviz components, built on top of D3 and React</li>
-            <li><strong>Framer Motion:</strong> A production-ready motion library for React</li>
+            <li><strong>Primary Sources:</strong> Original texts, speeches, and policy documents from key figures and organizations</li>
+            <li><strong>Historical Context:</strong> Tracing the development of ideas and their implementation over time</li>
+            <li><strong>Institutional Impact:</strong> Analyzing changes in education, media, corporate governance, and policy</li>
+            <li><strong>Economic Data:</strong> Examining economic outcomes, market distortions, and financial trends</li>
+            <li><strong>Policy Analysis:</strong> Evaluating the implementation and consequences of specific policies</li>
+            <li><strong>Comparative Studies:</strong> Contrasting stated goals with actual outcomes across different regions</li>
           </ul>
           
-          <h2 className="text-2xl font-bold mt-8 mb-4">Our Team</h2>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Technology Stack</h2>
           <p>
-            DataViz is developed by a team of passionate developers, designers, and data scientists who are committed to creating the best data visualization platform possible.
+            4lor is built with modern web technologies to provide an engaging and informative experience:
+          </p>
+          <ul className="list-disc pl-6 mt-4 space-y-2">
+            <li><strong>Next.js & React:</strong> For a responsive, interactive user interface</li>
+            <li><strong>Chart.js & Nivo:</strong> For data visualization and interactive analytics</li>
+            <li><strong>WebDataRocks:</strong> For pivot tables and deep-dive data analysis</li>
+            <li><strong>Tailwind CSS & shadcn/ui:</strong> For a clean, modern design</li>
+            <li><strong>Framer Motion:</strong> For smooth animations that enhance storytelling</li>
+            <li><strong>Sanity:</strong> For structured content management of research articles</li>
+          </ul>
+          
+          <h2 className="text-2xl font-bold mt-8 mb-4">Our Commitment</h2>
+          <p>
+            We are committed to providing factual, well-researched analysis that helps people understand the complex interplay between ideology, institutions, and socio-economic outcomes. Our goal is to foster informed discussion and critical thinking about important issues that affect our society.
           </p>
           
           <div className="flex items-center justify-center mt-12 mb-8">
             <div className="flex flex-col items-center">
               <div className="flex space-x-4">
-                <BarChart3 className="h-12 w-12 text-primary" />
-                <LineChart className="h-12 w-12 text-primary" />
-                <PieChart className="h-12 w-12 text-primary" />
-                <AreaChart className="h-12 w-12 text-primary" />
+                <FileText className="h-12 w-12 text-primary" />
+                <Globe className="h-12 w-12 text-primary" />
+                <Building className="h-12 w-12 text-primary" />
+                <Scale className="h-12 w-12 text-primary" />
               </div>
               <p className="text-center text-muted-foreground mt-4">
-                Transforming data into insights
+                Analyzing ideology and impact through data
               </p>
             </div>
           </div>

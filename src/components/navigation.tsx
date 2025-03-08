@@ -25,7 +25,7 @@ export function Navigation() {
       <div className="container flex h-16 items-center px-4">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="text-xl font-bold">DataViz</span>
+            <span className="text-xl font-bold">4lor</span>
           </Link>
           <div className="flex items-center space-x-4">
             {navItems.map((item) => (
@@ -49,9 +49,9 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent side="left">
               <SheetHeader>
-                <SheetTitle>DataViz</SheetTitle>
+                <SheetTitle>4lor</SheetTitle>
                 <SheetDescription>
-                  Interactive data visualization platform
+                  Critical Analysis of Cultural Marxism & WEF
                 </SheetDescription>
               </SheetHeader>
               <div className="grid gap-4 py-4">
@@ -68,7 +68,7 @@ export function Navigation() {
             </SheetContent>
           </Sheet>
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">DataViz</span>
+            <span className="text-xl font-bold">4lor</span>
           </Link>
         </div>
         <div className="ml-auto flex items-center space-x-4">

@@ -1,14 +1,22 @@
-# DataViz - Interactive Data Visualization Platform
+# 4lor - Data-Driven Analysis Platform
 
-DataViz is a modern web application for data visualization and analysis, built with Next.js, React, TypeScript, and Tailwind CSS.
+4lor is a modern web application for data visualization and analysis, focused on providing critical insights into Cultural Marxism and the World Economic Forum (WEF). The platform examines the intellectual origins, influence, and real-world consequences of these ideologies and organizations.
 
 ## Features
 
-- **Interactive Dashboards**: Monitor key metrics with real-time dashboards
-- **Advanced Visualizations**: Create stunning visualizations with Chart.js and Nivo
-- **Data Analysis**: Analyze complex datasets with powerful tools
-- **Research & Insights**: Access the latest research on data visualization
+- **Interactive Dashboards**: Monitor key metrics and trends related to ideological influence
+- **Advanced Visualizations**: Create stunning visualizations of complex socio-economic data
+- **Data Analysis**: Analyze datasets showing the impact of policies and ideologies
+- **Research & Insights**: Access well-researched articles on Cultural Marxism and the WEF
 - **Pivot Tables**: Explore data from different angles with interactive pivot tables
+
+## Content Focus
+
+- **Cultural Marxism Analysis**: Deep dive into its intellectual origins from the Frankfurt School to postmodernist ideology and critical theory
+- **Institutional Influence**: Examination of how these ideas have shaped political discourse, education, corporate governance, and public policy
+- **WEF Analysis**: Critical assessment of the World Economic Forum's stated goals versus actual socio-economic outcomes
+- **Policy Impact**: Analysis of centralization of power, ESG mandates, stakeholder capitalism, and global governance
+- **Sovereignty & Freedom**: Data-driven insights on impacts to national sovereignty, economic structures, and individual freedoms
 
 ## Tech Stack
 
@@ -37,8 +45,8 @@ DataViz is a modern web application for data visualization and analysis, built w
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/dataviz.git
-   cd dataviz
+   git clone https://github.com/ArsCodeAmatoria/4lor.git
+   cd 4lor
    ```
 
 2. Install dependencies:
@@ -60,7 +68,7 @@ DataViz is a modern web application for data visualization and analysis, built w
 ## Project Structure
 
 ```
-dataviz/
+4lor/
 ├── src/
 │   ├── app/                  # Next.js App Router
 │   │   ├── about/            # About page
@@ -80,12 +88,12 @@ dataviz/
 
 ## Pages
 
-- **Home**: Landing page with overview of the platform
-- **Dashboard**: Interactive dashboard with key metrics
-- **Data Analysis**: Tools for analyzing complex datasets
-- **Visualizations**: Advanced visualization examples using Nivo
-- **Research**: Research articles and insights
-- **About**: Information about the platform
+- **Home**: Landing page with overview of the platform and key findings
+- **Dashboard**: Interactive dashboard with key metrics on ideological influence
+- **Data Analysis**: Tools for analyzing datasets on Cultural Marxism and WEF impact
+- **Visualizations**: Advanced visualization of socio-economic trends and policy outcomes
+- **Research**: Well-researched articles and critical analysis
+- **About**: Information about the platform and methodology
 
 ## License
 
