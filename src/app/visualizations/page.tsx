@@ -15,108 +15,95 @@ import { ResponsivePie } from '@nivo/pie';
 import { ResponsiveSankey } from '@nivo/sankey';
 import { motion } from "framer-motion";
 
-// Sample data for Nivo charts
-const barData = [
-  { country: 'AD', 'hot dog': 96, 'hot dogColor': 'hsl(229, 70%, 50%)', burger: 28, burgerColor: 'hsl(296, 70%, 50%)', sandwich: 129, sandwichColor: 'hsl(97, 70%, 50%)', kebab: 92, kebabColor: 'hsl(340, 70%, 50%)', fries: 168, friesColor: 'hsl(141, 70%, 50%)', donut: 110, donutColor: 'hsl(224, 70%, 50%)' },
-  { country: 'AE', 'hot dog': 190, 'hot dogColor': 'hsl(296, 70%, 50%)', burger: 89, burgerColor: 'hsl(95, 70%, 50%)', sandwich: 11, sandwichColor: 'hsl(96, 70%, 50%)', kebab: 108, kebabColor: 'hsl(86, 70%, 50%)', fries: 69, friesColor: 'hsl(340, 70%, 50%)', donut: 69, donutColor: 'hsl(221, 70%, 50%)' },
-  { country: 'AF', 'hot dog': 11, 'hot dogColor': 'hsl(229, 70%, 50%)', burger: 167, burgerColor: 'hsl(292, 70%, 50%)', sandwich: 47, sandwichColor: 'hsl(97, 70%, 50%)', kebab: 175, kebabColor: 'hsl(340, 70%, 50%)', fries: 149, friesColor: 'hsl(141, 70%, 50%)', donut: 52, donutColor: 'hsl(224, 70%, 50%)' },
-  { country: 'AG', 'hot dog': 175, 'hot dogColor': 'hsl(296, 70%, 50%)', burger: 66, burgerColor: 'hsl(95, 70%, 50%)', sandwich: 113, sandwichColor: 'hsl(96, 70%, 50%)', kebab: 97, kebabColor: 'hsl(86, 70%, 50%)', fries: 151, friesColor: 'hsl(340, 70%, 50%)', donut: 112, donutColor: 'hsl(221, 70%, 50%)' },
-  { country: 'AI', 'hot dog': 149, 'hot dogColor': 'hsl(229, 70%, 50%)', burger: 51, burgerColor: 'hsl(292, 70%, 50%)', sandwich: 197, sandwichColor: 'hsl(97, 70%, 50%)', kebab: 118, kebabColor: 'hsl(340, 70%, 50%)', fries: 107, friesColor: 'hsl(141, 70%, 50%)', donut: 49, donutColor: 'hsl(224, 70%, 50%)' },
-  { country: 'AL', 'hot dog': 134, 'hot dogColor': 'hsl(296, 70%, 50%)', burger: 149, burgerColor: 'hsl(95, 70%, 50%)', sandwich: 165, sandwichColor: 'hsl(96, 70%, 50%)', kebab: 83, kebabColor: 'hsl(86, 70%, 50%)', fries: 51, friesColor: 'hsl(340, 70%, 50%)', donut: 126, donutColor: 'hsl(221, 70%, 50%)' },
-  { country: 'AM', 'hot dog': 55, 'hot dogColor': 'hsl(229, 70%, 50%)', burger: 147, burgerColor: 'hsl(292, 70%, 50%)', sandwich: 167, sandwichColor: 'hsl(97, 70%, 50%)', kebab: 117, kebabColor: 'hsl(340, 70%, 50%)', fries: 106, friesColor: 'hsl(141, 70%, 50%)', donut: 186, donutColor: 'hsl(224, 70%, 50%)' },
-];
-
-const lineData = [
+// Data for institutional influence over time
+const institutionalInfluenceData = [
   {
-    id: 'japan',
+    id: 'Universities',
+    color: 'hsl(340, 70%, 50%)',
+    data: [
+      { x: '2010', y: 45 },
+      { x: '2012', y: 52 },
+      { x: '2014', y: 58 },
+      { x: '2016', y: 65 },
+      { x: '2018', y: 75 },
+      { x: '2020', y: 85 },
+      { x: '2022', y: 92 },
+      { x: '2023', y: 95 },
+    ],
+  },
+  {
+    id: 'Media',
     color: 'hsl(229, 70%, 50%)',
     data: [
-      { x: 'Jan', y: 240 },
-      { x: 'Feb', y: 139 },
-      { x: 'Mar', y: 180 },
-      { x: 'Apr', y: 281 },
-      { x: 'May', y: 156 },
-      { x: 'Jun', y: 255 },
-      { x: 'Jul', y: 240 },
-      { x: 'Aug', y: 265 },
-      { x: 'Sep', y: 175 },
-      { x: 'Oct', y: 149 },
-      { x: 'Nov', y: 179 },
-      { x: 'Dec', y: 271 },
+      { x: '2010', y: 55 },
+      { x: '2012', y: 60 },
+      { x: '2014', y: 68 },
+      { x: '2016', y: 72 },
+      { x: '2018', y: 78 },
+      { x: '2020', y: 82 },
+      { x: '2022', y: 85 },
+      { x: '2023', y: 88 },
     ],
   },
   {
-    id: 'france',
+    id: 'Corporate',
     color: 'hsl(296, 70%, 50%)',
     data: [
-      { x: 'Jan', y: 170 },
-      { x: 'Feb', y: 270 },
-      { x: 'Mar', y: 153 },
-      { x: 'Apr', y: 156 },
-      { x: 'May', y: 214 },
-      { x: 'Jun', y: 190 },
-      { x: 'Jul', y: 120 },
-      { x: 'Aug', y: 140 },
-      { x: 'Sep', y: 239 },
-      { x: 'Oct', y: 159 },
-      { x: 'Nov', y: 189 },
-      { x: 'Dec', y: 231 },
-    ],
-  },
-  {
-    id: 'us',
-    color: 'hsl(97, 70%, 50%)',
-    data: [
-      { x: 'Jan', y: 190 },
-      { x: 'Feb', y: 160 },
-      { x: 'Mar', y: 140 },
-      { x: 'Apr', y: 281 },
-      { x: 'May', y: 256 },
-      { x: 'Jun', y: 155 },
-      { x: 'Jul', y: 140 },
-      { x: 'Aug', y: 265 },
-      { x: 'Sep', y: 275 },
-      { x: 'Oct', y: 149 },
-      { x: 'Nov', y: 179 },
-      { x: 'Dec', y: 271 },
+      { x: '2010', y: 25 },
+      { x: '2012', y: 30 },
+      { x: '2014', y: 38 },
+      { x: '2016', y: 45 },
+      { x: '2018', y: 58 },
+      { x: '2020', y: 68 },
+      { x: '2022', y: 75 },
+      { x: '2023', y: 80 },
     ],
   },
 ];
 
-const pieData = [
-  { id: 'javascript', label: 'javascript', value: 195, color: 'hsl(229, 70%, 50%)' },
-  { id: 'ruby', label: 'ruby', value: 490, color: 'hsl(296, 70%, 50%)' },
-  { id: 'scala', label: 'scala', value: 301, color: 'hsl(97, 70%, 50%)' },
-  { id: 'haskell', label: 'haskell', value: 210, color: 'hsl(340, 70%, 50%)' },
-  { id: 'css', label: 'css', value: 110, color: 'hsl(141, 70%, 50%)' },
+// Data for CRT components prevalence
+const crtComponentsData = [
+  { institution: 'Universities', 'Systemic Racism': 95, 'White Privilege': 90, 'Intersectionality': 85, 'Anti-Meritocracy': 80, 'Identity Politics': 88 },
+  { institution: 'K-12 Schools', 'Systemic Racism': 75, 'White Privilege': 70, 'Intersectionality': 65, 'Anti-Meritocracy': 60, 'Identity Politics': 72 },
+  { institution: 'Media', 'Systemic Racism': 85, 'White Privilege': 82, 'Intersectionality': 78, 'Anti-Meritocracy': 75, 'Identity Politics': 80 },
+  { institution: 'Tech Companies', 'Systemic Racism': 70, 'White Privilege': 75, 'Intersectionality': 72, 'Anti-Meritocracy': 68, 'Identity Politics': 73 },
+  { institution: 'Government', 'Systemic Racism': 60, 'White Privilege': 55, 'Intersectionality': 50, 'Anti-Meritocracy': 45, 'Identity Politics': 52 },
 ];
 
-const sankeyData = {
+// Data for ideological distribution
+const ideologicalData = [
+  { id: 'Critical Race Theory', label: 'Critical Race Theory', value: 35, color: 'hsl(340, 70%, 50%)' },
+  { id: 'Cultural Marxism', label: 'Cultural Marxism', value: 25, color: 'hsl(229, 70%, 50%)' },
+  { id: 'Postmodernism', label: 'Postmodernism', value: 20, color: 'hsl(296, 70%, 50%)' },
+  { id: 'Intersectionality', label: 'Intersectionality', value: 15, color: 'hsl(97, 70%, 50%)' },
+  { id: 'Other Critical Theories', label: 'Other Critical Theories', value: 5, color: 'hsl(141, 70%, 50%)' },
+];
+
+// Data for influence flow
+const influenceFlowData = {
   nodes: [
-    { id: 'John', nodeColor: 'hsl(229, 70%, 50%)' },
-    { id: 'Raoul', nodeColor: 'hsl(296, 70%, 50%)' },
-    { id: 'Jane', nodeColor: 'hsl(97, 70%, 50%)' },
-    { id: 'Marcel', nodeColor: 'hsl(340, 70%, 50%)' },
-    { id: 'Ibrahim', nodeColor: 'hsl(141, 70%, 50%)' },
-    { id: 'Junko', nodeColor: 'hsl(224, 70%, 50%)' },
+    { id: 'Frankfurt School', color: 'hsl(340, 70%, 50%)' },
+    { id: 'Critical Theory', color: 'hsl(229, 70%, 50%)' },
+    { id: 'Universities', color: 'hsl(296, 70%, 50%)' },
+    { id: 'Media', color: 'hsl(97, 70%, 50%)' },
+    { id: 'K-12 Education', color: 'hsl(141, 70%, 50%)' },
+    { id: 'Corporate', color: 'hsl(43, 70%, 50%)' },
+    { id: 'Government', color: 'hsl(283, 70%, 50%)' },
   ],
   links: [
-    { source: 'John', target: 'Jane', value: 46 },
-    { source: 'John', target: 'Marcel', value: 24 },
-    { source: 'John', target: 'Ibrahim', value: 95 },
-    { source: 'John', target: 'Junko', value: 71 },
-    { source: 'Raoul', target: 'Jane', value: 47 },
-    { source: 'Raoul', target: 'Marcel', value: 158 },
-    { source: 'Raoul', target: 'Ibrahim', value: 165 },
-    { source: 'Raoul', target: 'Junko', value: 47 },
-    { source: 'Jane', target: 'Marcel', value: 108 },
-    { source: 'Jane', target: 'Ibrahim', value: 41 },
-    { source: 'Jane', target: 'Junko', value: 16 },
+    { source: 'Frankfurt School', target: 'Critical Theory', value: 100 },
+    { source: 'Critical Theory', target: 'Universities', value: 90 },
+    { source: 'Universities', target: 'Media', value: 75 },
+    { source: 'Universities', target: 'K-12 Education', value: 65 },
+    { source: 'Media', target: 'Corporate', value: 60 },
+    { source: 'Media', target: 'Government', value: 50 },
+    { source: 'K-12 Education', target: 'Corporate', value: 40 },
+    { source: 'Corporate', target: 'Government', value: 35 },
   ],
 };
 
 export default function Visualizations() {
-  const [activeTab, setActiveTab] = useState("bar");
+  const [activeTab, setActiveTab] = useState("trends");
 
   return (
     <div className="container py-10">
@@ -125,119 +112,46 @@ export default function Visualizations() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-3xl font-bold mb-6">Advanced Visualizations</h1>
+        <h1 className="text-3xl font-bold mb-6">Data Visualizations</h1>
         
-        <Tabs defaultValue="bar" className="w-full" onValueChange={setActiveTab}>
+        <Tabs defaultValue="trends" className="w-full" onValueChange={setActiveTab}>
           <TabsList className="grid w-full grid-cols-4 mb-8">
-            <TabsTrigger value="bar">Bar Chart</TabsTrigger>
-            <TabsTrigger value="line">Line Chart</TabsTrigger>
-            <TabsTrigger value="pie">Pie Chart</TabsTrigger>
-            <TabsTrigger value="sankey">Sankey Diagram</TabsTrigger>
+            <TabsTrigger value="trends">Historical Trends</TabsTrigger>
+            <TabsTrigger value="components">CRT Components</TabsTrigger>
+            <TabsTrigger value="distribution">Ideological Distribution</TabsTrigger>
+            <TabsTrigger value="flow">Influence Flow</TabsTrigger>
           </TabsList>
           
-          <TabsContent value="bar" className="space-y-6">
+          <TabsContent value="trends" className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Advanced Bar Chart</CardTitle>
-                <CardDescription>Interactive bar chart with Nivo</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="h-[500px]">
-                  <ResponsiveBar
-                    data={barData}
-                    keys={['hot dog', 'burger', 'sandwich', 'kebab', 'fries', 'donut']}
-                    indexBy="country"
-                    margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-                    padding={0.3}
-                    valueScale={{ type: 'linear' }}
-                    indexScale={{ type: 'band', round: true }}
-                    colors={{ scheme: 'nivo' }}
-                    borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
-                    axisTop={null}
-                    axisRight={null}
-                    axisBottom={{
-                      tickSize: 5,
-                      tickPadding: 5,
-                      tickRotation: 0,
-                      legend: 'country',
-                      legendPosition: 'middle',
-                      legendOffset: 32,
-                    }}
-                    axisLeft={{
-                      tickSize: 5,
-                      tickPadding: 5,
-                      tickRotation: 0,
-                      legend: 'food',
-                      legendPosition: 'middle',
-                      legendOffset: -40,
-                    }}
-                    labelSkipWidth={12}
-                    labelSkipHeight={12}
-                    labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
-                    legends={[
-                      {
-                        dataFrom: 'keys',
-                        anchor: 'bottom-right',
-                        direction: 'column',
-                        justify: false,
-                        translateX: 120,
-                        translateY: 0,
-                        itemsSpacing: 2,
-                        itemWidth: 100,
-                        itemHeight: 20,
-                        itemDirection: 'left-to-right',
-                        itemOpacity: 0.85,
-                        symbolSize: 20,
-                        effects: [
-                          {
-                            on: 'hover',
-                            style: {
-                              itemOpacity: 1,
-                            },
-                          },
-                        ],
-                      },
-                    ]}
-                    role="application"
-                    ariaLabel="Nivo bar chart demo"
-                    barAriaLabel={(e) => `${e.id}: ${e.formattedValue} in country: ${e.indexValue}`}
-                  />
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="line" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Advanced Line Chart</CardTitle>
-                <CardDescription>Interactive line chart with Nivo</CardDescription>
+                <CardTitle>Institutional Influence Over Time</CardTitle>
+                <CardDescription>Tracking the rise of Cultural Marxism across institutions (2010-2023)</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="h-[500px]">
                   <ResponsiveLine
-                    data={lineData}
+                    data={institutionalInfluenceData}
                     margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
                     xScale={{ type: 'point' }}
-                    yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: false, reverse: false }}
-                    yFormat=" >-.2f"
+                    yScale={{ type: 'linear', min: 0, max: 100 }}
                     axisTop={null}
                     axisRight={null}
                     axisBottom={{
                       tickSize: 5,
                       tickPadding: 5,
                       tickRotation: 0,
-                      legend: 'Month',
+                      legend: 'Year',
                       legendOffset: 36,
-                      legendPosition: 'middle',
+                      legendPosition: 'middle'
                     }}
                     axisLeft={{
                       tickSize: 5,
                       tickPadding: 5,
                       tickRotation: 0,
-                      legend: 'Value',
+                      legend: 'Influence Level (%)',
                       legendOffset: -40,
-                      legendPosition: 'middle',
+                      legendPosition: 'middle'
                     }}
                     pointSize={10}
                     pointColor={{ theme: 'background' }}
@@ -265,11 +179,11 @@ export default function Visualizations() {
                             on: 'hover',
                             style: {
                               itemBackground: 'rgba(0, 0, 0, .03)',
-                              itemOpacity: 1,
-                            },
-                          },
-                        ],
-                      },
+                              itemOpacity: 1
+                            }
+                          }
+                        ]
+                      }
                     ]}
                   />
                 </div>
@@ -277,16 +191,84 @@ export default function Visualizations() {
             </Card>
           </TabsContent>
           
-          <TabsContent value="pie" className="space-y-6">
+          <TabsContent value="components" className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Advanced Pie Chart</CardTitle>
-                <CardDescription>Interactive pie chart with Nivo</CardDescription>
+                <CardTitle>CRT Components by Institution</CardTitle>
+                <CardDescription>Distribution of Critical Race Theory components across different sectors</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="h-[500px]">
+                  <ResponsiveBar
+                    data={crtComponentsData}
+                    keys={['Systemic Racism', 'White Privilege', 'Intersectionality', 'Anti-Meritocracy', 'Identity Politics']}
+                    indexBy="institution"
+                    margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+                    padding={0.3}
+                    valueScale={{ type: 'linear' }}
+                    indexScale={{ type: 'band', round: true }}
+                    colors={{ scheme: 'nivo' }}
+                    borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+                    axisTop={null}
+                    axisRight={null}
+                    axisBottom={{
+                      tickSize: 5,
+                      tickPadding: 5,
+                      tickRotation: -45,
+                      legend: 'Institution',
+                      legendPosition: 'middle',
+                      legendOffset: 45
+                    }}
+                    axisLeft={{
+                      tickSize: 5,
+                      tickPadding: 5,
+                      tickRotation: 0,
+                      legend: 'Prevalence (%)',
+                      legendPosition: 'middle',
+                      legendOffset: -40
+                    }}
+                    labelSkipWidth={12}
+                    labelSkipHeight={12}
+                    legends={[
+                      {
+                        dataFrom: 'keys',
+                        anchor: 'bottom-right',
+                        direction: 'column',
+                        justify: false,
+                        translateX: 120,
+                        translateY: 0,
+                        itemsSpacing: 2,
+                        itemWidth: 100,
+                        itemHeight: 20,
+                        itemDirection: 'left-to-right',
+                        itemOpacity: 0.85,
+                        symbolSize: 20,
+                        effects: [
+                          {
+                            on: 'hover',
+                            style: {
+                              itemOpacity: 1
+                            }
+                          }
+                        ]
+                      }
+                    ]}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+          
+          <TabsContent value="distribution" className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Ideological Distribution</CardTitle>
+                <CardDescription>Breakdown of Critical Theory influence by ideology type</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="h-[500px]">
                   <ResponsivePie
-                    data={pieData}
+                    data={ideologicalData}
                     margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
                     innerRadius={0.5}
                     padAngle={0.7}
@@ -300,36 +282,6 @@ export default function Visualizations() {
                     arcLinkLabelsColor={{ from: 'color' }}
                     arcLabelsSkipAngle={10}
                     arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
-                    defs={[
-                      {
-                        id: 'dots',
-                        type: 'patternDots',
-                        background: 'inherit',
-                        color: 'rgba(255, 255, 255, 0.3)',
-                        size: 4,
-                        padding: 1,
-                        stagger: true,
-                      },
-                      {
-                        id: 'lines',
-                        type: 'patternLines',
-                        background: 'inherit',
-                        color: 'rgba(255, 255, 255, 0.3)',
-                        rotation: -45,
-                        lineWidth: 6,
-                        spacing: 10,
-                      },
-                    ]}
-                    fill={[
-                      { match: { id: 'ruby' }, id: 'dots' },
-                      { match: { id: 'c' }, id: 'dots' },
-                      { match: { id: 'go' }, id: 'dots' },
-                      { match: { id: 'python' }, id: 'dots' },
-                      { match: { id: 'scala' }, id: 'lines' },
-                      { match: { id: 'lisp' }, id: 'lines' },
-                      { match: { id: 'elixir' }, id: 'lines' },
-                      { match: { id: 'javascript' }, id: 'lines' },
-                    ]}
                     legends={[
                       {
                         anchor: 'bottom',
@@ -349,11 +301,11 @@ export default function Visualizations() {
                           {
                             on: 'hover',
                             style: {
-                              itemTextColor: '#000',
-                            },
-                          },
-                        ],
-                      },
+                              itemTextColor: '#000'
+                            }
+                          }
+                        ]
+                      }
                     ]}
                   />
                 </div>
@@ -361,16 +313,16 @@ export default function Visualizations() {
             </Card>
           </TabsContent>
           
-          <TabsContent value="sankey" className="space-y-6">
+          <TabsContent value="flow" className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Sankey Diagram</CardTitle>
-                <CardDescription>Interactive flow diagram with Nivo</CardDescription>
+                <CardTitle>Influence Flow Analysis</CardTitle>
+                <CardDescription>Tracing the flow of Cultural Marxist influence through institutions</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="h-[500px]">
                   <ResponsiveSankey
-                    data={sankeyData}
+                    data={influenceFlowData}
                     margin={{ top: 40, right: 160, bottom: 40, left: 50 }}
                     align="justify"
                     colors={{ scheme: 'category10' }}
@@ -384,30 +336,9 @@ export default function Visualizations() {
                     linkHoverOthersOpacity={0.1}
                     enableLinkGradient={true}
                     labelPosition="outside"
-                    labelOrientation="vertical"
+                    labelOrientation="horizontal"
                     labelPadding={16}
                     labelTextColor={{ from: 'color', modifiers: [['darker', 1]] }}
-                    legends={[
-                      {
-                        anchor: 'bottom-right',
-                        direction: 'column',
-                        translateX: 130,
-                        itemWidth: 100,
-                        itemHeight: 14,
-                        itemDirection: 'right-to-left',
-                        itemsSpacing: 2,
-                        itemTextColor: '#999',
-                        symbolSize: 14,
-                        effects: [
-                          {
-                            on: 'hover',
-                            style: {
-                              itemTextColor: '#000',
-                            },
-                          },
-                        ],
-                      },
-                    ]}
                   />
                 </div>
               </CardContent>
