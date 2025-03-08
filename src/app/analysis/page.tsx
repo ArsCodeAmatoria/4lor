@@ -125,306 +125,312 @@ export default function Analysis() {
   }, {} as Record<string, number>);
 
   return (
-    <div className="container py-10">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="text-3xl font-bold mb-6">Data Analysis</h1>
-        
-        <div className="grid gap-6 md:grid-cols-3 mb-8">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: 0.1 }}
-          >
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle>Total CRT Programs</CardTitle>
-                <CardDescription>Across all institutions</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold">{totalCRTPrograms.toFixed(1)}%</div>
-              </CardContent>
-            </Card>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-          >
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle>Total Critical Theory Alignment</CardTitle>
-                <CardDescription>Across all institutions</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold">{totalAlignment.toFixed(1)}%</div>
-              </CardContent>
-            </Card>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
-          >
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle>Avg. Change</CardTitle>
-                <CardDescription>Percentage of CRT programs and alignment</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold">{avgChange}%</div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-        
-        <Tabs defaultValue="data" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="data">Raw Data</TabsTrigger>
-            <TabsTrigger value="summary">Summary</TabsTrigger>
-            <TabsTrigger value="insights">Insights</TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="data" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <CardTitle>Institutional Analysis</CardTitle>
-                    <CardDescription>Click on column headers to sort</CardDescription>
-                  </div>
-                  <div className="flex space-x-2">
-                    <Button variant="outline" size="sm">
-                      <Filter className="h-4 w-4 mr-2" />
-                      Filter
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Download className="h-4 w-4 mr-2" />
-                      Export
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="rounded-md border">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead 
-                          className="cursor-pointer hover:bg-muted/50"
-                          onClick={() => handleSort("id")}
-                        >
-                          ID {sortColumn === "id" && (sortDirection === "asc" ? "↑" : "↓")}
-                        </TableHead>
-                        <TableHead 
-                          className="cursor-pointer hover:bg-muted/50"
-                          onClick={() => handleSort("institution")}
-                        >
-                          Institution {sortColumn === "institution" && (sortDirection === "asc" ? "↑" : "↓")}
-                        </TableHead>
-                        <TableHead 
-                          className="cursor-pointer hover:bg-muted/50"
-                          onClick={() => handleSort("category")}
-                        >
-                          Category {sortColumn === "category" && (sortDirection === "asc" ? "↑" : "↓")}
-                        </TableHead>
-                        <TableHead 
-                          className="cursor-pointer hover:bg-muted/50 text-right"
-                          onClick={() => handleSort("crtPrograms")}
-                        >
-                          CRT Programs % {sortColumn === "crtPrograms" && (sortDirection === "asc" ? "↑" : "↓")}
-                        </TableHead>
-                        <TableHead 
-                          className="cursor-pointer hover:bg-muted/50 text-right"
-                          onClick={() => handleSort("marxistFaculty")}
-                        >
-                          Critical Theory Alignment % {sortColumn === "marxistFaculty" && (sortDirection === "asc" ? "↑" : "↓")}
-                        </TableHead>
-                        <TableHead 
-                          className="cursor-pointer hover:bg-muted/50"
-                          onClick={() => handleSort("year")}
-                        >
-                          Year {sortColumn === "year" && (sortDirection === "asc" ? "↑" : "↓")}
-                        </TableHead>
-                        <TableHead 
-                          className="cursor-pointer hover:bg-muted/50"
-                          onClick={() => handleSort("quarter")}
-                        >
-                          Quarter {sortColumn === "quarter" && (sortDirection === "asc" ? "↑" : "↓")}
-                        </TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {sortedData.map((item) => (
-                        <TableRow key={item.id}>
-                          <TableCell>{item.id}</TableCell>
-                          <TableCell>{item.institution}</TableCell>
-                          <TableCell>{item.category}</TableCell>
-                          <TableCell className="text-right">{item.crtPrograms}%</TableCell>
-                          <TableCell className="text-right">{item.marxistFaculty}%</TableCell>
-                          <TableCell>{item.year}</TableCell>
-                          <TableCell>{item.quarter}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="summary" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Data Summary</CardTitle>
-                <CardDescription>Key metrics and aggregations</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div>
-                    <h3 className="text-lg font-medium mb-4">Influence by Institution Type</h3>
-                    <div className="space-y-4">
-                      {Object.entries(institutionData).map(([institution, percentage]) => (
-                        <div key={institution} className="flex justify-between items-center">
-                          <span>{institution}</span>
-                          <span className="font-medium">{(percentage / 3).toFixed(1)}%</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-lg font-medium mb-4">Influence by Category</h3>
-                    <div className="space-y-4">
-                      {Object.entries(categoryData).map(([category, percentage]) => (
-                        <div key={category} className="flex justify-between items-center">
-                          <span>{category}</span>
-                          <span className="font-medium">{(percentage / 3).toFixed(1)}%</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+    <div className="flex justify-center bg-background">
+      <div className="w-full max-w-7xl">
+        <section className="w-full py-10">
+          <div className="container px-4 md:px-6 mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-3xl font-bold mb-6">Data Analysis</h1>
+              
+              <div className="grid gap-6 md:grid-cols-3 mb-8">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
+                >
+                  <Card>
+                    <CardHeader className="pb-2">
+                      <CardTitle>Total CRT Programs</CardTitle>
+                      <CardDescription>Across all institutions</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="text-3xl font-bold">{totalCRTPrograms.toFixed(1)}%</div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
                 
-                <div className="mt-8">
-                  <h3 className="text-lg font-medium mb-4">Quarterly Performance</h3>
-                  <div className="rounded-md border">
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead>Quarter</TableHead>
-                          <TableHead className="text-right">Avg CRT Programs %</TableHead>
-                          <TableHead className="text-right">Avg Critical Theory Alignment %</TableHead>
-                          <TableHead className="text-right">Change</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {["Q1", "Q2", "Q3"].map((quarter) => {
-                          const quarterData = sampleData.filter(item => item.quarter === quarter);
-                          const qtCRT = quarterData.reduce((sum, item) => sum + item.crtPrograms, 0) / quarterData.length;
-                          const qtAlignment = quarterData.reduce((sum, item) => sum + item.marxistFaculty, 0) / quarterData.length;
-                          const qtChange = ((qtCRT / quarterData.length) * 100).toFixed(1);
-                          
-                          return (
-                            <TableRow key={quarter}>
-                              <TableCell>{quarter}</TableCell>
-                              <TableCell className="text-right">{qtCRT.toFixed(1)}%</TableCell>
-                              <TableCell className="text-right">{qtAlignment.toFixed(1)}%</TableCell>
-                              <TableCell className="text-right">{qtChange}%</TableCell>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                >
+                  <Card>
+                    <CardHeader className="pb-2">
+                      <CardTitle>Total Critical Theory Alignment</CardTitle>
+                      <CardDescription>Across all institutions</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="text-3xl font-bold">{totalAlignment.toFixed(1)}%</div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.3 }}
+                >
+                  <Card>
+                    <CardHeader className="pb-2">
+                      <CardTitle>Avg. Change</CardTitle>
+                      <CardDescription>Percentage of CRT programs and alignment</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="text-3xl font-bold">{avgChange}%</div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </div>
+              
+              <Tabs defaultValue="data" className="w-full" onValueChange={setActiveTab}>
+                <TabsList className="grid w-full grid-cols-3 mb-8">
+                  <TabsTrigger value="data">Raw Data</TabsTrigger>
+                  <TabsTrigger value="summary">Summary</TabsTrigger>
+                  <TabsTrigger value="insights">Insights</TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="data" className="space-y-6">
+                  <Card>
+                    <CardHeader>
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <CardTitle>Institutional Analysis</CardTitle>
+                          <CardDescription>Click on column headers to sort</CardDescription>
+                        </div>
+                        <div className="flex space-x-2">
+                          <Button variant="outline" size="sm">
+                            <Filter className="h-4 w-4 mr-2" />
+                            Filter
+                          </Button>
+                          <Button variant="outline" size="sm">
+                            <Download className="h-4 w-4 mr-2" />
+                            Export
+                          </Button>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="rounded-md border">
+                        <Table>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead 
+                                className="cursor-pointer hover:bg-muted/50"
+                                onClick={() => handleSort("id")}
+                              >
+                                ID {sortColumn === "id" && (sortDirection === "asc" ? "↑" : "↓")}
+                              </TableHead>
+                              <TableHead 
+                                className="cursor-pointer hover:bg-muted/50"
+                                onClick={() => handleSort("institution")}
+                              >
+                                Institution {sortColumn === "institution" && (sortDirection === "asc" ? "↑" : "↓")}
+                              </TableHead>
+                              <TableHead 
+                                className="cursor-pointer hover:bg-muted/50"
+                                onClick={() => handleSort("category")}
+                              >
+                                Category {sortColumn === "category" && (sortDirection === "asc" ? "↑" : "↓")}
+                              </TableHead>
+                              <TableHead 
+                                className="cursor-pointer hover:bg-muted/50 text-right"
+                                onClick={() => handleSort("crtPrograms")}
+                              >
+                                CRT Programs % {sortColumn === "crtPrograms" && (sortDirection === "asc" ? "↑" : "↓")}
+                              </TableHead>
+                              <TableHead 
+                                className="cursor-pointer hover:bg-muted/50 text-right"
+                                onClick={() => handleSort("marxistFaculty")}
+                              >
+                                Critical Theory Alignment % {sortColumn === "marxistFaculty" && (sortDirection === "asc" ? "↑" : "↓")}
+                              </TableHead>
+                              <TableHead 
+                                className="cursor-pointer hover:bg-muted/50"
+                                onClick={() => handleSort("year")}
+                              >
+                                Year {sortColumn === "year" && (sortDirection === "asc" ? "↑" : "↓")}
+                              </TableHead>
+                              <TableHead 
+                                className="cursor-pointer hover:bg-muted/50"
+                                onClick={() => handleSort("quarter")}
+                              >
+                                Quarter {sortColumn === "quarter" && (sortDirection === "asc" ? "↑" : "↓")}
+                              </TableHead>
                             </TableRow>
-                          );
-                        })}
-                      </TableBody>
-                    </Table>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="insights" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Key Insights</CardTitle>
-                <CardDescription>Analysis and recommendations based on the data</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  {insights.map((insight, index) => (
-                    <AccordionItem key={index} value={`item-${index}`}>
-                      <AccordionTrigger>{insight.title}</AccordionTrigger>
-                      <AccordionContent>
-                        <div className="space-y-4">
-                          <div>
-                            <h4 className="text-sm font-medium text-muted-foreground">Observation</h4>
-                            <p>{insight.description}</p>
-                          </div>
-                          <div>
-                            <h4 className="text-sm font-medium text-muted-foreground">Recommendation</h4>
-                            <p>{insight.recommendation}</p>
+                          </TableHeader>
+                          <TableBody>
+                            {sortedData.map((item) => (
+                              <TableRow key={item.id}>
+                                <TableCell>{item.id}</TableCell>
+                                <TableCell>{item.institution}</TableCell>
+                                <TableCell>{item.category}</TableCell>
+                                <TableCell className="text-right">{item.crtPrograms}%</TableCell>
+                                <TableCell className="text-right">{item.marxistFaculty}%</TableCell>
+                                <TableCell>{item.year}</TableCell>
+                                <TableCell>{item.quarter}</TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                
+                <TabsContent value="summary" className="space-y-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Data Summary</CardTitle>
+                      <CardDescription>Key metrics and aggregations</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div>
+                          <h3 className="text-lg font-medium mb-4">Influence by Institution Type</h3>
+                          <div className="space-y-4">
+                            {Object.entries(institutionData).map(([institution, percentage]) => (
+                              <div key={institution} className="flex justify-between items-center">
+                                <span>{institution}</span>
+                                <span className="font-medium">{(percentage / 3).toFixed(1)}%</span>
+                              </div>
+                            ))}
                           </div>
                         </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </CardContent>
-            </Card>
-            
-            <div className="grid gap-6 md:grid-cols-3">
-              <Card>
-                <CardHeader className="pb-2">
-                  <div className="flex items-center space-x-2">
-                    <BarChart3 className="h-5 w-5 text-primary" />
-                    <CardTitle>Most Affected Institution</CardTitle>
+                        
+                        <div>
+                          <h3 className="text-lg font-medium mb-4">Influence by Category</h3>
+                          <div className="space-y-4">
+                            {Object.entries(categoryData).map(([category, percentage]) => (
+                              <div key={category} className="flex justify-between items-center">
+                                <span>{category}</span>
+                                <span className="font-medium">{(percentage / 3).toFixed(1)}%</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="mt-8">
+                        <h3 className="text-lg font-medium mb-4">Quarterly Performance</h3>
+                        <div className="rounded-md border">
+                          <Table>
+                            <TableHeader>
+                              <TableRow>
+                                <TableHead>Quarter</TableHead>
+                                <TableHead className="text-right">Avg CRT Programs %</TableHead>
+                                <TableHead className="text-right">Avg Critical Theory Alignment %</TableHead>
+                                <TableHead className="text-right">Change</TableHead>
+                              </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                              {["Q1", "Q2", "Q3"].map((quarter) => {
+                                const quarterData = sampleData.filter(item => item.quarter === quarter);
+                                const qtCRT = quarterData.reduce((sum, item) => sum + item.crtPrograms, 0) / quarterData.length;
+                                const qtAlignment = quarterData.reduce((sum, item) => sum + item.marxistFaculty, 0) / quarterData.length;
+                                const qtChange = ((qtCRT / quarterData.length) * 100).toFixed(1);
+                                
+                                return (
+                                  <TableRow key={quarter}>
+                                    <TableCell>{quarter}</TableCell>
+                                    <TableCell className="text-right">{qtCRT.toFixed(1)}%</TableCell>
+                                    <TableCell className="text-right">{qtAlignment.toFixed(1)}%</TableCell>
+                                    <TableCell className="text-right">{qtChange}%</TableCell>
+                                  </TableRow>
+                                );
+                              })}
+                            </TableBody>
+                          </Table>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                
+                <TabsContent value="insights" className="space-y-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Key Insights</CardTitle>
+                      <CardDescription>Analysis and recommendations based on the data</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Accordion type="single" collapsible className="w-full">
+                        {insights.map((insight, index) => (
+                          <AccordionItem key={index} value={`item-${index}`}>
+                            <AccordionTrigger>{insight.title}</AccordionTrigger>
+                            <AccordionContent>
+                              <div className="space-y-4">
+                                <div>
+                                  <h4 className="text-sm font-medium text-muted-foreground">Observation</h4>
+                                  <p>{insight.description}</p>
+                                </div>
+                                <div>
+                                  <h4 className="text-sm font-medium text-muted-foreground">Recommendation</h4>
+                                  <p>{insight.recommendation}</p>
+                                </div>
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
+                        ))}
+                      </Accordion>
+                    </CardContent>
+                  </Card>
+                  
+                  <div className="grid gap-6 md:grid-cols-3">
+                    <Card>
+                      <CardHeader className="pb-2">
+                        <div className="flex items-center space-x-2">
+                          <BarChart3 className="h-5 w-5 text-primary" />
+                          <CardTitle>Most Affected Institution</CardTitle>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="text-2xl font-bold">Universities</div>
+                        <p className="text-sm text-muted-foreground mt-2">
+                          92% CRT program adoption rate
+                        </p>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardHeader className="pb-2">
+                        <div className="flex items-center space-x-2">
+                          <PieChart className="h-5 w-5 text-primary" />
+                          <CardTitle>Highest Impact Category</CardTitle>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="text-2xl font-bold">Education</div>
+                        <p className="text-sm text-muted-foreground mt-2">
+                          85% average Critical Theory alignment
+                        </p>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardHeader className="pb-2">
+                        <div className="flex items-center space-x-2">
+                          <LineChart className="h-5 w-5 text-primary" />
+                          <CardTitle>Fastest Growing Sector</CardTitle>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="text-2xl font-bold">Tech Companies</div>
+                        <p className="text-sm text-muted-foreground mt-2">
+                          +15% increase in CRT adoption
+                        </p>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold">Universities</div>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    92% CRT program adoption rate
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader className="pb-2">
-                  <div className="flex items-center space-x-2">
-                    <PieChart className="h-5 w-5 text-primary" />
-                    <CardTitle>Highest Impact Category</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold">Education</div>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    85% average Critical Theory alignment
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader className="pb-2">
-                  <div className="flex items-center space-x-2">
-                    <LineChart className="h-5 w-5 text-primary" />
-                    <CardTitle>Fastest Growing Sector</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold">Tech Companies</div>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    +15% increase in CRT adoption
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-        </Tabs>
-      </motion.div>
+                </TabsContent>
+              </Tabs>
+            </motion.div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 } 

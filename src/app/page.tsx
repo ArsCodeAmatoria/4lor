@@ -95,7 +95,7 @@ export default function Home() {
         <div className="flex justify-center">
           <div className="w-full max-w-7xl">
             <section className="w-full py-12 md:py-24 lg:py-32">
-              <div className="container px-4 md:px-6 mx-auto">
+              <div className="container flex flex-col items-center px-4 md:px-6 mx-auto">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                   <div className="space-y-2 text-white">
                     <div className="inline-block bg-white/10 px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
@@ -109,7 +109,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
+                <div className="w-full grid grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
                   <Card className="bg-white border-none shadow-lg hover:shadow-xl transition-all">
                     <CardHeader>
                       <BookOpen className="h-10 w-10 text-highlight mb-2" />
@@ -235,7 +235,7 @@ export default function Home() {
           <div className="w-full max-w-7xl">
             <section className="w-full py-12 md:py-24 lg:py-32">
               <div className="container px-4 md:px-6 mx-auto">
-                <div className="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+                <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                   <div className="space-y-2">
                     <div className="inline-block bg-highlight px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
                       Research Focus
@@ -248,76 +248,213 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="grid gap-6 md:grid-cols-2">
-                  <Card className="border-l-4 border-l-highlight">
-                    <CardHeader>
-                      <CardTitle className="flex items-center">
-                        <Building className="h-5 w-5 mr-2 text-highlight" />
+
+                <div className="grid gap-8 md:grid-cols-2">
+                  <Card className="bg-white border-none shadow-lg hover:shadow-xl transition-all overflow-hidden">
+                    <CardHeader className="border-b border-zinc-100 bg-zinc-50/50">
+                      <CardTitle className="flex items-center text-2xl">
+                        <div className="bg-highlight/10 p-2 rounded-lg mr-3">
+                          <Building className="h-6 w-6 text-highlight" />
+                        </div>
                         Institutional Influence
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>Education systems and curriculum changes</li>
-                        <li>Media narratives and representation</li>
-                        <li>Corporate governance and ESG policies</li>
-                        <li>Political discourse and policy-making</li>
-                        <li>Legal frameworks and judicial activism</li>
-                      </ul>
+                    <CardContent className="pt-6">
+                      <div className="space-y-4">
+                        {[
+                          {
+                            title: "Education Systems",
+                            description: "Curriculum changes and academic influence",
+                            icon: BookOpen
+                          },
+                          {
+                            title: "Media Control",
+                            description: "Narratives and representation patterns",
+                            icon: Globe
+                          },
+                          {
+                            title: "Corporate Governance",
+                            description: "ESG policies and structural changes",
+                            icon: Building
+                          },
+                          {
+                            title: "Political Framework",
+                            description: "Policy-making and discourse control",
+                            icon: Layers
+                          },
+                          {
+                            title: "Legal Systems",
+                            description: "Judicial activism and framework modifications",
+                            icon: Database
+                          }
+                        ].map((item, index) => (
+                          <div key={index} className="flex items-start space-x-4">
+                            <div className="bg-highlight/5 p-1.5 rounded-lg mt-0.5">
+                              <item.icon className="h-4 w-4 text-highlight" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-900">{item.title}</h4>
+                              <p className="text-sm text-muted-foreground">{item.description}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </CardContent>
                   </Card>
-                  
-                  <Card className="border-l-4 border-l-highlight">
-                    <CardHeader>
-                      <CardTitle className="flex items-center">
-                        <TrendingUp className="h-5 w-5 mr-2 text-highlight" />
+
+                  <Card className="bg-white border-none shadow-lg hover:shadow-xl transition-all overflow-hidden">
+                    <CardHeader className="border-b border-zinc-100 bg-zinc-50/50">
+                      <CardTitle className="flex items-center text-2xl">
+                        <div className="bg-highlight/10 p-2 rounded-lg mr-3">
+                          <TrendingUp className="h-6 w-6 text-highlight" />
+                        </div>
                         Economic Impact
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>Stakeholder capitalism vs. shareholder value</li>
-                        <li>ESG mandates and market distortions</li>
-                        <li>Global governance and regulatory frameworks</li>
-                        <li>Public-private partnerships and conflicts of interest</li>
-                        <li>Central bank policies and financial sovereignty</li>
-                      </ul>
+                    <CardContent className="pt-6">
+                      <div className="space-y-4">
+                        {[
+                          {
+                            title: "Stakeholder Capitalism",
+                            description: "Shift from shareholder value models",
+                            icon: TrendingUp
+                          },
+                          {
+                            title: "ESG Framework",
+                            description: "Mandates and market implications",
+                            icon: Layers
+                          },
+                          {
+                            title: "Global Governance",
+                            description: "Regulatory framework integration",
+                            icon: Globe
+                          },
+                          {
+                            title: "Public-Private Nexus",
+                            description: "Partnership structures and conflicts",
+                            icon: Building
+                          },
+                          {
+                            title: "Financial Control",
+                            description: "Central bank policies and sovereignty",
+                            icon: Database
+                          }
+                        ].map((item, index) => (
+                          <div key={index} className="flex items-start space-x-4">
+                            <div className="bg-highlight/5 p-1.5 rounded-lg mt-0.5">
+                              <item.icon className="h-4 w-4 text-highlight" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-900">{item.title}</h4>
+                              <p className="text-sm text-muted-foreground">{item.description}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </CardContent>
                   </Card>
-                  
-                  <Card className="border-l-4 border-l-highlight">
-                    <CardHeader>
-                      <CardTitle className="flex items-center">
-                        <BookOpen className="h-5 w-5 mr-2 text-highlight" />
+
+                  <Card className="bg-white border-none shadow-lg hover:shadow-xl transition-all overflow-hidden">
+                    <CardHeader className="border-b border-zinc-100 bg-zinc-50/50">
+                      <CardTitle className="flex items-center text-2xl">
+                        <div className="bg-highlight/10 p-2 rounded-lg mr-3">
+                          <BookOpen className="h-6 w-6 text-highlight" />
+                        </div>
                         Cultural Transformation
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>Traditional values and social cohesion</li>
-                        <li>Identity politics and group categorization</li>
-                        <li>Language policing and concept redefinition</li>
-                        <li>Historical revisionism and cultural memory</li>
-                        <li>Religious institutions and spiritual frameworks</li>
-                      </ul>
+                    <CardContent className="pt-6">
+                      <div className="space-y-4">
+                        {[
+                          {
+                            title: "Social Cohesion",
+                            description: "Traditional values and community bonds",
+                            icon: BookOpen
+                          },
+                          {
+                            title: "Identity Politics",
+                            description: "Group categorization and division",
+                            icon: Layers
+                          },
+                          {
+                            title: "Language Control",
+                            description: "Terminology and concept redefinition",
+                            icon: Globe
+                          },
+                          {
+                            title: "Historical Narrative",
+                            description: "Memory and revisionist approaches",
+                            icon: Database
+                          },
+                          {
+                            title: "Religious Impact",
+                            description: "Spiritual framework modifications",
+                            icon: Building
+                          }
+                        ].map((item, index) => (
+                          <div key={index} className="flex items-start space-x-4">
+                            <div className="bg-highlight/5 p-1.5 rounded-lg mt-0.5">
+                              <item.icon className="h-4 w-4 text-highlight" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-900">{item.title}</h4>
+                              <p className="text-sm text-muted-foreground">{item.description}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </CardContent>
                   </Card>
-                  
-                  <Card className="border-l-4 border-l-highlight">
-                    <CardHeader>
-                      <CardTitle className="flex items-center">
-                        <Globe className="h-5 w-5 mr-2 text-highlight" />
+
+                  <Card className="bg-white border-none shadow-lg hover:shadow-xl transition-all overflow-hidden">
+                    <CardHeader className="border-b border-zinc-100 bg-zinc-50/50">
+                      <CardTitle className="flex items-center text-2xl">
+                        <div className="bg-highlight/10 p-2 rounded-lg mr-3">
+                          <Globe className="h-6 w-6 text-highlight" />
+                        </div>
                         Governance & Sovereignty
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>National sovereignty vs. global governance</li>
-                        <li>Democratic accountability and technocracy</li>
-                        <li>Supranational organizations and policy alignment</li>
-                        <li>Digital IDs and surveillance infrastructure</li>
-                        <li>Crisis response and emergency powers</li>
-                      </ul>
+                    <CardContent className="pt-6">
+                      <div className="space-y-4">
+                        {[
+                          {
+                            title: "National Authority",
+                            description: "Sovereignty vs. global governance",
+                            icon: Globe
+                          },
+                          {
+                            title: "Democratic Systems",
+                            description: "Accountability and technocratic control",
+                            icon: Building
+                          },
+                          {
+                            title: "Global Organizations",
+                            description: "Supranational policy alignment",
+                            icon: Layers
+                          },
+                          {
+                            title: "Digital Control",
+                            description: "ID systems and surveillance",
+                            icon: Database
+                          },
+                          {
+                            title: "Crisis Management",
+                            description: "Emergency powers and response",
+                            icon: TrendingUp
+                          }
+                        ].map((item, index) => (
+                          <div key={index} className="flex items-start space-x-4">
+                            <div className="bg-highlight/5 p-1.5 rounded-lg mt-0.5">
+                              <item.icon className="h-4 w-4 text-highlight" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-900">{item.title}</h4>
+                              <p className="text-sm text-muted-foreground">{item.description}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
@@ -331,7 +468,7 @@ export default function Home() {
       <div className="flex justify-center bg-background">
         <div className="w-full max-w-7xl">
           <section className="w-full py-12 md:py-24">
-            <div className="container px-4 md:px-6 mx-auto">
+            <div className="container flex flex-col items-center px-4 md:px-6 mx-auto">
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                 <div className="space-y-2">
                   <div className="inline-block bg-highlight px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
@@ -346,7 +483,9 @@ export default function Home() {
                 </div>
               </div>
               
-              <CorrelationAnalysis />
+              <div className="w-full">
+                <CorrelationAnalysis />
+              </div>
             </div>
           </section>
         </div>
@@ -357,7 +496,7 @@ export default function Home() {
         <div className="flex justify-center">
           <div className="w-full max-w-7xl">
             <section className="w-full py-12 md:py-24">
-              <div className="container px-4 md:px-6 mx-auto">
+              <div className="container flex flex-col items-center px-4 md:px-6 mx-auto">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                   <div className="space-y-2">
                     <div className="inline-block bg-red-500 px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
@@ -372,9 +511,11 @@ export default function Home() {
                   </div>
                 </div>
 
-                <CorruptionCharts />
+                <div className="w-full">
+                  <CorruptionCharts />
+                </div>
 
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
+                <div className="w-full grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
                   <Card className="bg-zinc-800 border-none text-white">
                     <CardHeader>
                       <div className="flex items-center justify-between">
@@ -433,7 +574,7 @@ export default function Home() {
                   </Card>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2">
+                <div className="w-full grid gap-6 md:grid-cols-2">
                   <Card className="bg-zinc-800 border-none text-white">
                     <CardHeader>
                       <CardTitle className="text-xl">Key Findings</CardTitle>
@@ -527,7 +668,7 @@ export default function Home() {
       <div className="flex justify-center bg-background">
         <div className="w-full max-w-7xl">
           <section className="w-full py-12 md:py-24">
-            <div className="container px-4 md:px-6 mx-auto">
+            <div className="container flex flex-col items-center px-4 md:px-6 mx-auto">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <div className="inline-block bg-highlight px-3 py-1 rounded-md text-white text-sm font-medium mb-2">
