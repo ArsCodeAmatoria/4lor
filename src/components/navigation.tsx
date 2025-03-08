@@ -12,6 +12,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -24,9 +25,32 @@ const navItems = [
 
 export function Navigation() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   return (
-    <nav className="border-b bg-background sticky top-0 z-50">
+    <nav 
+      className={`border-b sticky top-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-background/80 backdrop-blur-md shadow-sm' 
+          : 'bg-background'
+      }`}
+    >
       <div className="container mx-auto flex h-16 items-center px-4 justify-between">
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2 mr-8">
