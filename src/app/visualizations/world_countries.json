@@ -1,0 +1,77 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "United States",
+        "iso_a2": "US",
+        "iso_a3": "USA"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": []
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "United Kingdom",
+        "iso_a2": "GB",
+        "iso_a3": "GBR"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": []
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Germany",
+        "iso_a2": "DE",
+        "iso_a3": "DEU"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": []
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "France",
+        "iso_a2": "FR",
+        "iso_a3": "FRA"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": []
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canada",
+        "iso_a2": "CA",
+        "iso_a3": "CAN"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": []
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Australia",
+        "iso_a2": "AU",
+        "iso_a3": "AUS"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": []
+      }
+    }
+  ]
+} 

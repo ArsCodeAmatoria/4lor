@@ -33,125 +33,87 @@ const ResponsiveSankey = dynamic(() => import('@nivo/sankey').then(mod => mod.Re
   loading: () => <div className="h-[500px] flex items-center justify-center">Loading chart...</div>
 });
 
-// Data for institutional influence over time
-const institutionalInfluenceData = [
-  {
-    id: 'Universities',
-    color: 'hsl(340, 70%, 50%)',
-    data: [
-      { x: '2010', y: 45 },
-      { x: '2012', y: 52 },
-      { x: '2014', y: 58 },
-      { x: '2016', y: 65 },
-      { x: '2018', y: 75 },
-      { x: '2020', y: 85 },
-      { x: '2022', y: 92 },
-      { x: '2023', y: 95 },
-    ],
-  },
-  {
-    id: 'Media',
-    color: 'hsl(229, 70%, 50%)',
-    data: [
-      { x: '2010', y: 55 },
-      { x: '2012', y: 60 },
-      { x: '2014', y: 68 },
-      { x: '2016', y: 72 },
-      { x: '2018', y: 78 },
-      { x: '2020', y: 82 },
-      { x: '2022', y: 85 },
-      { x: '2023', y: 88 },
-    ],
-  },
-  {
-    id: 'Corporate',
-    color: 'hsl(296, 70%, 50%)',
-    data: [
-      { x: '2010', y: 25 },
-      { x: '2012', y: 30 },
-      { x: '2014', y: 38 },
-      { x: '2016', y: 45 },
-      { x: '2018', y: 58 },
-      { x: '2020', y: 68 },
-      { x: '2022', y: 75 },
-      { x: '2023', y: 80 },
-    ],
-  },
+const ResponsiveTimeRange = dynamic(() => import('@nivo/calendar').then(mod => mod.ResponsiveTimeRange), { ssr: false });
+const ResponsiveChoropleth = dynamic(() => import('@nivo/geo').then(mod => mod.ResponsiveChoropleth), { ssr: false });
+
+// Import world map data
+import worldCountries from './world_countries.json';
+
+// Timeline data connecting Cultural Marxism and WEF events
+const timelineData = [
+  { year: 1923, event: "Frankfurt School Founded", type: "cultural_marxism" },
+  { year: 1937, event: "Critical Theory Introduced", type: "cultural_marxism" },
+  { year: 1971, event: "WEF Founded by Klaus Schwab", type: "wef" },
+  { year: 1987, event: "Davos Manifesto Published", type: "wef" },
+  { year: 2020, event: "Great Reset Initiative Launched", type: "wef" },
+  { year: 2021, event: "You'll Own Nothing Campaign", type: "wef" },
+  { year: 2023, event: "AI Governance Framework", type: "wef" },
 ];
 
-// Data for CRT components prevalence
-const crtComponentsData = [
-  { institution: 'Universities', 'Systemic Racism': 95, 'White Privilege': 90, 'Intersectionality': 85, 'Anti-Meritocracy': 80, 'Identity Politics': 88 },
-  { institution: 'K-12 Schools', 'Systemic Racism': 75, 'White Privilege': 70, 'Intersectionality': 65, 'Anti-Meritocracy': 60, 'Identity Politics': 72 },
-  { institution: 'Media', 'Systemic Racism': 85, 'White Privilege': 82, 'Intersectionality': 78, 'Anti-Meritocracy': 75, 'Identity Politics': 80 },
-  { institution: 'Tech Companies', 'Systemic Racism': 70, 'White Privilege': 75, 'Intersectionality': 72, 'Anti-Meritocracy': 68, 'Identity Politics': 73 },
-  { institution: 'Government', 'Systemic Racism': 60, 'White Privilege': 55, 'Intersectionality': 50, 'Anti-Meritocracy': 45, 'Identity Politics': 52 },
+// World map data for WEF member influence
+const wefInfluenceMapData = [
+  { id: "USA", value: 89 },
+  { id: "GBR", value: 85 },
+  { id: "DEU", value: 92 },
+  { id: "FRA", value: 88 },
+  { id: "CAN", value: 86 },
+  { id: "AUS", value: 82 },
+  // Add more countries...
 ];
 
-// Data for ideological distribution
-const ideologicalData = [
-  { id: 'Critical Race Theory', label: 'Critical Race Theory', value: 35, color: 'hsl(340, 70%, 50%)' },
-  { id: 'Cultural Marxism', label: 'Cultural Marxism', value: 25, color: 'hsl(229, 70%, 50%)' },
-  { id: 'Postmodernism', label: 'Postmodernism', value: 20, color: 'hsl(296, 70%, 50%)' },
-  { id: 'Intersectionality', label: 'Intersectionality', value: 15, color: 'hsl(97, 70%, 50%)' },
-  { id: 'Other Critical Theories', label: 'Other Critical Theories', value: 5, color: 'hsl(141, 70%, 50%)' },
+// Voter irregularity data
+const voterIrregularityData = [
+  {
+    id: "Mail-in Ballots",
+    data: [
+      { x: "2016", y: 15 },
+      { x: "2018", y: 25 },
+      { x: "2020", y: 85 },
+      { x: "2022", y: 72 },
+    ]
+  },
+  {
+    id: "Ballot Harvesting",
+    data: [
+      { x: "2016", y: 8 },
+      { x: "2018", y: 18 },
+      { x: "2020", y: 65 },
+      { x: "2022", y: 55 },
+    ]
+  },
+  // Add more metrics...
 ];
 
-// Data for influence flow
-const influenceFlowData = {
+// COVID-19 overreach metrics
+const covidOverreachData = [
+  { id: "Lockdowns", value: 85, label: "Lockdown Severity" },
+  { id: "Mandates", value: 78, label: "Mandate Implementation" },
+  { id: "Censorship", value: 92, label: "Information Control" },
+  { id: "Surveillance", value: 88, label: "Digital Surveillance" },
+  { id: "Economic", value: 95, label: "Economic Impact" },
+];
+
+// WEF member positions data
+const wefMemberPositionsData = {
   nodes: [
-    { id: 'Frankfurt School', color: 'hsl(340, 70%, 50%)' },
-    { id: 'Critical Theory', color: 'hsl(229, 70%, 50%)' },
-    { id: 'Universities', color: 'hsl(296, 70%, 50%)' },
-    { id: 'Media', color: 'hsl(97, 70%, 50%)' },
-    { id: 'K-12 Education', color: 'hsl(141, 70%, 50%)' },
-    { id: 'Corporate', color: 'hsl(43, 70%, 50%)' },
-    { id: 'Government', color: 'hsl(283, 70%, 50%)' },
+    { id: "WEF", label: "World Economic Forum" },
+    { id: "GOV", label: "Governments" },
+    { id: "CORP", label: "Corporations" },
+    { id: "MEDIA", label: "Media Organizations" },
+    { id: "NGO", label: "NGOs" },
+    { id: "TECH", label: "Tech Companies" },
   ],
   links: [
-    { source: 'Frankfurt School', target: 'Critical Theory', value: 100 },
-    { source: 'Critical Theory', target: 'Universities', value: 90 },
-    { source: 'Universities', target: 'Media', value: 75 },
-    { source: 'Universities', target: 'K-12 Education', value: 65 },
-    { source: 'Media', target: 'Corporate', value: 60 },
-    { source: 'Media', target: 'Government', value: 50 },
-    { source: 'K-12 Education', target: 'Corporate', value: 40 },
-    { source: 'Corporate', target: 'Government', value: 35 },
-  ],
+    { source: "WEF", target: "GOV", value: 85 },
+    { source: "WEF", target: "CORP", value: 92 },
+    { source: "WEF", target: "MEDIA", value: 78 },
+    { source: "WEF", target: "NGO", value: 65 },
+    { source: "WEF", target: "TECH", value: 88 },
+  ]
 };
 
-// Add new data for WEF influence
-const wefInfluenceData = [
-  {
-    id: 'Great Reset Agenda',
-    color: 'hsl(340, 70%, 50%)',
-    data: [
-      { x: 'Stakeholder Capitalism', y: 85 },
-      { x: 'Digital Identity', y: 78 },
-      { x: 'Climate Action', y: 92 },
-      { x: 'Global Governance', y: 88 },
-      { x: 'AI Regulation', y: 75 },
-      { x: 'Social Credit', y: 70 },
-      { x: 'CBDCs', y: 82 },
-    ],
-  },
-  {
-    id: 'Implementation Progress',
-    color: 'hsl(229, 70%, 50%)',
-    data: [
-      { x: 'Stakeholder Capitalism', y: 65 },
-      { x: 'Digital Identity', y: 55 },
-      { x: 'Climate Action', y: 75 },
-      { x: 'Global Governance', y: 60 },
-      { x: 'AI Regulation', y: 45 },
-      { x: 'Social Credit', y: 35 },
-      { x: 'CBDCs', y: 50 },
-    ],
-  },
-];
-
 export default function Visualizations() {
-  const [activeTab, setActiveTab] = useState("trends");
+  const [activeTab, setActiveTab] = useState("timeline");
 
   return (
     <div className="flex justify-center bg-background">
@@ -163,234 +125,107 @@ export default function Visualizations() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-3xl font-bold mb-6">Data Visualizations</h1>
+              <h1 className="text-3xl font-bold mb-6">Global Analysis & Visualizations</h1>
               
-              <Tabs defaultValue="trends" className="w-full" onValueChange={setActiveTab}>
-                <TabsList className="grid w-full grid-cols-5 mb-8">
-                  <TabsTrigger value="trends">Historical Trends</TabsTrigger>
-                  <TabsTrigger value="components">CRT Components</TabsTrigger>
-                  <TabsTrigger value="distribution">Ideological Distribution</TabsTrigger>
-                  <TabsTrigger value="flow">Influence Flow</TabsTrigger>
-                  <TabsTrigger value="wef">WEF Agenda</TabsTrigger>
+              <Tabs defaultValue="timeline" className="w-full" onValueChange={setActiveTab}>
+                <TabsList className="grid w-full grid-cols-6 mb-8">
+                  <TabsTrigger value="timeline">Historical Timeline</TabsTrigger>
+                  <TabsTrigger value="world">Global Influence</TabsTrigger>
+                  <TabsTrigger value="elections">Election Analysis</TabsTrigger>
+                  <TabsTrigger value="covid">COVID Overreach</TabsTrigger>
+                  <TabsTrigger value="wef">WEF Network</TabsTrigger>
+                  <TabsTrigger value="impact">Impact Analysis</TabsTrigger>
                 </TabsList>
                 
-                <TabsContent value="trends" className="space-y-6">
+                <TabsContent value="timeline" className="space-y-6">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Institutional Influence Over Time</CardTitle>
-                      <CardDescription>Tracking the rise of Cultural Marxism across institutions (2010-2023)</CardDescription>
+                      <CardTitle>Cultural Marxism & WEF Timeline</CardTitle>
+                      <CardDescription>Historical progression and interconnection of Cultural Marxist ideology and WEF initiatives</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="h-[600px]">
+                        <ResponsiveTimeRange
+                          data={timelineData}
+                          from={new Date(1920, 0, 1)}
+                          to={new Date(2024, 0, 1)}
+                          emptyColor="#eeeeee"
+                          colors={['#f59e0b', '#ef4444']}
+                          margin={{ top: 40, right: 40, bottom: 100, left: 40 }}
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                
+                <TabsContent value="world" className="space-y-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Global WEF Member Influence</CardTitle>
+                      <CardDescription>Geographic distribution of WEF member positions in governments and institutions</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="h-[600px]">
+                        <ResponsiveChoropleth
+                          data={wefInfluenceMapData}
+                          features={worldCountries.features}
+                          margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+                          colors="YlOrRd"
+                          domain={[0, 100]}
+                          unknownColor="#666666"
+                          label="properties.name"
+                          projectionScale={140}
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                
+                <TabsContent value="elections" className="space-y-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Election Integrity Analysis</CardTitle>
+                      <CardDescription>Tracking election irregularities and systemic vulnerabilities</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="h-[500px]">
                         <ResponsiveLine
-                          data={institutionalInfluenceData}
+                          data={voterIrregularityData}
                           margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
                           xScale={{ type: 'point' }}
                           yScale={{ type: 'linear', min: 0, max: 100 }}
                           axisTop={null}
                           axisRight={null}
-                          axisBottom={{
-                            tickSize: 5,
-                            tickPadding: 5,
-                            tickRotation: 0,
-                            legend: 'Year',
-                            legendOffset: 36,
-                            legendPosition: 'middle'
-                          }}
-                          axisLeft={{
-                            tickSize: 5,
-                            tickPadding: 5,
-                            tickRotation: 0,
-                            legend: 'Influence Level (%)',
-                            legendOffset: -40,
-                            legendPosition: 'middle'
-                          }}
                           pointSize={10}
                           pointColor={{ theme: 'background' }}
                           pointBorderWidth={2}
                           pointBorderColor={{ from: 'serieColor' }}
                           pointLabelYOffset={-12}
                           useMesh={true}
-                          legends={[
-                            {
-                              anchor: 'bottom-right',
-                              direction: 'column',
-                              justify: false,
-                              translateX: 100,
-                              translateY: 0,
-                              itemsSpacing: 0,
-                              itemDirection: 'left-to-right',
-                              itemWidth: 80,
-                              itemHeight: 20,
-                              itemOpacity: 0.75,
-                              symbolSize: 12,
-                              symbolShape: 'circle',
-                              symbolBorderColor: 'rgba(0, 0, 0, .5)',
-                              effects: [
-                                {
-                                  on: 'hover',
-                                  style: {
-                                    itemBackground: 'rgba(0, 0, 0, .03)',
-                                    itemOpacity: 1
-                                  }
-                                }
-                              ]
-                            }
-                          ]}
                         />
                       </div>
                     </CardContent>
                   </Card>
                 </TabsContent>
                 
-                <TabsContent value="components" className="space-y-6">
+                <TabsContent value="covid" className="space-y-6">
                   <Card>
                     <CardHeader>
-                      <CardTitle>CRT Components by Institution</CardTitle>
-                      <CardDescription>Distribution of Critical Race Theory components across different sectors</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="h-[500px]">
-                        <ResponsiveBar
-                          data={crtComponentsData}
-                          keys={['Systemic Racism', 'White Privilege', 'Intersectionality', 'Anti-Meritocracy', 'Identity Politics']}
-                          indexBy="institution"
-                          margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-                          padding={0.3}
-                          valueScale={{ type: 'linear' }}
-                          indexScale={{ type: 'band', round: true }}
-                          colors={{ scheme: 'nivo' }}
-                          borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
-                          axisTop={null}
-                          axisRight={null}
-                          axisBottom={{
-                            tickSize: 5,
-                            tickPadding: 5,
-                            tickRotation: -45,
-                            legend: 'Institution',
-                            legendPosition: 'middle',
-                            legendOffset: 45
-                          }}
-                          axisLeft={{
-                            tickSize: 5,
-                            tickPadding: 5,
-                            tickRotation: 0,
-                            legend: 'Prevalence (%)',
-                            legendPosition: 'middle',
-                            legendOffset: -40
-                          }}
-                          labelSkipWidth={12}
-                          labelSkipHeight={12}
-                          legends={[
-                            {
-                              dataFrom: 'keys',
-                              anchor: 'bottom-right',
-                              direction: 'column',
-                              justify: false,
-                              translateX: 120,
-                              translateY: 0,
-                              itemsSpacing: 2,
-                              itemWidth: 100,
-                              itemHeight: 20,
-                              itemDirection: 'left-to-right',
-                              itemOpacity: 0.85,
-                              symbolSize: 20,
-                              effects: [
-                                {
-                                  on: 'hover',
-                                  style: {
-                                    itemOpacity: 1
-                                  }
-                                }
-                              ]
-                            }
-                          ]}
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </TabsContent>
-                
-                <TabsContent value="distribution" className="space-y-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Ideological Distribution</CardTitle>
-                      <CardDescription>Breakdown of Critical Theory influence by ideology type</CardDescription>
+                      <CardTitle>COVID-19 Policy Overreach</CardTitle>
+                      <CardDescription>Analysis of government overreach during the pandemic</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="h-[500px]">
                         <ResponsivePie
-                          data={ideologicalData}
+                          data={covidOverreachData}
                           margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
                           innerRadius={0.5}
                           padAngle={0.7}
                           cornerRadius={3}
                           activeOuterRadiusOffset={8}
+                          colors={{ scheme: 'red_yellow_blue' }}
                           borderWidth={1}
                           borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
-                          arcLinkLabelsSkipAngle={10}
-                          arcLinkLabelsTextColor="#333333"
-                          arcLinkLabelsThickness={2}
-                          arcLinkLabelsColor={{ from: 'color' }}
-                          arcLabelsSkipAngle={10}
-                          arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
-                          legends={[
-                            {
-                              anchor: 'bottom',
-                              direction: 'row',
-                              justify: false,
-                              translateX: 0,
-                              translateY: 56,
-                              itemsSpacing: 0,
-                              itemWidth: 100,
-                              itemHeight: 18,
-                              itemTextColor: '#999',
-                              itemDirection: 'left-to-right',
-                              itemOpacity: 1,
-                              symbolSize: 18,
-                              symbolShape: 'circle',
-                              effects: [
-                                {
-                                  on: 'hover',
-                                  style: {
-                                    itemTextColor: '#000'
-                                  }
-                                }
-                              ]
-                            }
-                          ]}
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </TabsContent>
-                
-                <TabsContent value="flow" className="space-y-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Influence Flow Analysis</CardTitle>
-                      <CardDescription>Tracing the flow of Cultural Marxist influence through institutions</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="h-[500px]">
-                        <ResponsiveSankey
-                          data={influenceFlowData}
-                          margin={{ top: 40, right: 160, bottom: 40, left: 50 }}
-                          align="justify"
-                          colors={{ scheme: 'category10' }}
-                          nodeOpacity={1}
-                          nodeThickness={18}
-                          nodeInnerPadding={3}
-                          nodeSpacing={24}
-                          nodeBorderWidth={0}
-                          nodeBorderColor={{ from: 'color', modifiers: [['darker', 0.8]] }}
-                          linkOpacity={0.5}
-                          linkHoverOthersOpacity={0.1}
-                          enableLinkGradient={true}
-                          labelPosition="outside"
-                          labelOrientation="horizontal"
-                          labelPadding={16}
-                          labelTextColor={{ from: 'color', modifiers: [['darker', 1]] }}
                         />
                       </div>
                     </CardContent>
@@ -400,71 +235,75 @@ export default function Visualizations() {
                 <TabsContent value="wef" className="space-y-6">
                   <Card>
                     <CardHeader>
-                      <CardTitle>WEF Great Reset Analysis</CardTitle>
-                      <CardDescription>Comparing WEF agenda goals with actual implementation progress</CardDescription>
+                      <CardTitle>WEF Member Network Analysis</CardTitle>
+                      <CardDescription>Mapping WEF member positions in key institutions</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <div className="h-[500px]">
-                        <ResponsiveBar
-                          data={wefInfluenceData[0].data.map((item, i) => ({
-                            category: item.x,
-                            'Agenda Goals': item.y,
-                            'Implementation': wefInfluenceData[1].data[i].y,
-                          }))}
-                          keys={['Agenda Goals', 'Implementation']}
-                          indexBy="category"
-                          margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-                          padding={0.3}
-                          groupMode="grouped"
-                          valueScale={{ type: 'linear' }}
-                          indexScale={{ type: 'band', round: true }}
-                          colors={{ scheme: 'paired' }}
-                          borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
-                          axisTop={null}
-                          axisRight={null}
-                          axisBottom={{
-                            tickSize: 5,
-                            tickPadding: 5,
-                            tickRotation: -45,
-                            legend: 'Category',
-                            legendPosition: 'middle',
-                            legendOffset: 45
-                          }}
-                          axisLeft={{
-                            tickSize: 5,
-                            tickPadding: 5,
-                            tickRotation: 0,
-                            legend: 'Progress (%)',
-                            legendPosition: 'middle',
-                            legendOffset: -40
-                          }}
-                          labelSkipWidth={12}
-                          labelSkipHeight={12}
-                          legends={[
-                            {
-                              dataFrom: 'keys',
-                              anchor: 'bottom-right',
-                              direction: 'column',
-                              justify: false,
-                              translateX: 120,
-                              translateY: 0,
-                              itemsSpacing: 2,
-                              itemWidth: 100,
-                              itemHeight: 20,
-                              itemDirection: 'left-to-right',
-                              itemOpacity: 0.85,
-                              symbolSize: 20,
-                              effects: [
-                                {
-                                  on: 'hover',
-                                  style: {
-                                    itemOpacity: 1
-                                  }
-                                }
-                              ]
-                            }
-                          ]}
+                      <div className="h-[600px]">
+                        <ResponsiveSankey
+                          data={wefMemberPositionsData}
+                          margin={{ top: 40, right: 160, bottom: 40, left: 50 }}
+                          align="justify"
+                          colors={{ scheme: 'category10' }}
+                          nodeOpacity={1}
+                          nodeThickness={18}
+                          nodeInnerPadding={3}
+                          nodeSpacing={24}
+                          nodeBorderWidth={0}
+                          linkOpacity={0.5}
+                          linkHoverOthersOpacity={0.1}
+                          enableLinkGradient={true}
                         />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                
+                <TabsContent value="impact" className="space-y-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Institutional Impact Assessment</CardTitle>
+                      <CardDescription>Measuring the combined effects of ideological subversion</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="h-[300px]">
+                          <ResponsiveBar
+                            data={[
+                              {
+                                metric: "Democratic Process",
+                                value: 85,
+                                color: "hsl(340, 70%, 50%)"
+                              },
+                              {
+                                metric: "Economic Freedom",
+                                value: 78,
+                                color: "hsl(229, 70%, 50%)"
+                              },
+                              {
+                                metric: "Individual Rights",
+                                value: 92,
+                                color: "hsl(296, 70%, 50%)"
+                              },
+                              {
+                                metric: "National Sovereignty",
+                                value: 88,
+                                color: "hsl(97, 70%, 50%)"
+                              }
+                            ]}
+                            keys={["value"]}
+                            indexBy="metric"
+                            margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+                            padding={0.3}
+                            valueScale={{ type: "linear" }}
+                            colors={{ scheme: "nivo" }}
+                            borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
+                            axisTop={null}
+                            axisRight={null}
+                            labelSkipWidth={12}
+                            labelSkipHeight={12}
+                          />
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
