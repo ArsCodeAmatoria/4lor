@@ -39,15 +39,39 @@ const ResponsiveChoropleth = dynamic(() => import('@nivo/geo').then(mod => mod.R
 // Import world map data
 import worldCountries from './world_countries.json';
 
+// Define types for timeline data
+interface TimelinePoint {
+  x: string;
+  y: number;
+  description: string;
+}
+
+interface TimelineSeries {
+  id: string;
+  data: TimelinePoint[];
+}
+
 // Timeline data connecting Cultural Marxism and WEF events
-const timelineData = [
-  { year: 1923, event: "Frankfurt School Founded", type: "cultural_marxism" },
-  { year: 1937, event: "Critical Theory Introduced", type: "cultural_marxism" },
-  { year: 1971, event: "WEF Founded by Klaus Schwab", type: "wef" },
-  { year: 1987, event: "Davos Manifesto Published", type: "wef" },
-  { year: 2020, event: "Great Reset Initiative Launched", type: "wef" },
-  { year: 2021, event: "You'll Own Nothing Campaign", type: "wef" },
-  { year: 2023, event: "AI Governance Framework", type: "wef" },
+const timelineData: TimelineSeries[] = [
+  {
+    id: "Cultural Marxism",
+    data: [
+      { x: "1923", y: 1, description: "Frankfurt School Founded" },
+      { x: "1937", y: 1, description: "Critical Theory Introduced" },
+      { x: "1950", y: 1, description: "The Authoritarian Personality Published" },
+      { x: "1967", y: 1, description: "New Left Movement Peaks" }
+    ]
+  },
+  {
+    id: "WEF",
+    data: [
+      { x: "1971", y: 2, description: "WEF Founded by Klaus Schwab" },
+      { x: "1987", y: 2, description: "Davos Manifesto Published" },
+      { x: "2020", y: 2, description: "Great Reset Initiative Launched" },
+      { x: "2021", y: 2, description: "You'll Own Nothing Campaign" },
+      { x: "2023", y: 2, description: "AI Governance Framework" }
+    ]
+  }
 ];
 
 // World map data for WEF member influence
@@ -145,13 +169,65 @@ export default function Visualizations() {
                     </CardHeader>
                     <CardContent>
                       <div className="h-[600px]">
-                        <ResponsiveTimeRange
+                        <ResponsiveLine
                           data={timelineData}
-                          from={new Date(1920, 0, 1)}
-                          to={new Date(2024, 0, 1)}
-                          emptyColor="#eeeeee"
-                          colors={['#f59e0b', '#ef4444']}
-                          margin={{ top: 40, right: 40, bottom: 100, left: 40 }}
+                          margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                          xScale={{ type: 'point' }}
+                          yScale={{ type: 'linear', min: 0, max: 3 }}
+                          axisTop={null}
+                          axisRight={null}
+                          axisBottom={{
+                            tickSize: 5,
+                            tickPadding: 5,
+                            tickRotation: -45,
+                            legend: 'Year',
+                            legendOffset: 40,
+                            legendPosition: 'middle'
+                          }}
+                          axisLeft={null}
+                          pointSize={10}
+                          pointColor={{ theme: 'background' }}
+                          pointBorderWidth={2}
+                          pointBorderColor={{ from: 'serieColor' }}
+                          pointLabelYOffset={-12}
+                          useMesh={true}
+                          enableSlices="x"
+                          sliceTooltip={({ slice }: { slice: any }) => (
+                            <div className="bg-white p-2 shadow rounded">
+                              <strong>{slice.points[0].data.xFormatted}</strong>
+                              {slice.points.map((point: any, i: number) => (
+                                <div key={i} style={{ color: point.serieColor }}>
+                                  {(point.data as TimelinePoint).description}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          legends={[
+                            {
+                              anchor: 'bottom-right',
+                              direction: 'column',
+                              justify: false,
+                              translateX: 100,
+                              translateY: 0,
+                              itemsSpacing: 0,
+                              itemDirection: 'left-to-right',
+                              itemWidth: 80,
+                              itemHeight: 20,
+                              itemOpacity: 0.75,
+                              symbolSize: 12,
+                              symbolShape: 'circle',
+                              symbolBorderColor: 'rgba(0, 0, 0, .5)',
+                              effects: [
+                                {
+                                  on: 'hover',
+                                  style: {
+                                    itemBackground: 'rgba(0, 0, 0, .03)',
+                                    itemOpacity: 1
+                                  }
+                                }
+                              ]
+                            }
+                          ]}
                         />
                       </div>
                     </CardContent>
