@@ -8,7 +8,7 @@ import Icon from "../components/Icon";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -74,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         <div className="flex min-h-screen flex-col">
           <Navigation />
           <main className="flex-1">
