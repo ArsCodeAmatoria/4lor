@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build --legacy-peer-deps",
+  "buildCommand": "npm install --legacy-peer-deps && npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "nextjs",
@@ -40,8 +40,7 @@
   ],
   "build": {
     "env": {
-      "NODE_OPTIONS": "--max-old-space-size=4096",
-      "NEXT_TELEMETRY_DISABLED": "1"
+      "NODE_OPTIONS": "--max-old-space-size=4096"
     }
   }
 } 
