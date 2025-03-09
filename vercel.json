@@ -40,8 +40,9 @@
   ],
   "build": {
     "env": {
-      "NODE_OPTIONS": "--legacy-peer-deps --max-old-space-size=4096",
-      "NEXT_TELEMETRY_DISABLED": "1"
+      "NODE_OPTIONS": "--max-old-space-size=4096",
+      "NEXT_TELEMETRY_DISABLED": "1",
+      "NPM_FLAGS": "--legacy-peer-deps"
     }
   }
 } 
