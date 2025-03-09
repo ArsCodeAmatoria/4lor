@@ -17,12 +17,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon.png',
+        url: '/github.png',
         type: 'image/png',
         sizes: '32x32',
       },
       {
-        url: '/icon.svg',
+        url: '/github.svg',
         type: 'image/svg+xml',
       },
     ],
