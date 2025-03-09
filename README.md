@@ -1,47 +1,42 @@
-# 4lor - Data-Driven Analysis Platform
+# 4lor
 
-4lor is a modern web application for data visualization and analysis, focused on providing critical insights into Cultural Marxism and the World Economic Forum (WEF). The platform examines the intellectual origins, influence, and real-world consequences of these ideologies and organizations.
+A data-driven analysis platform examining Cultural Marxism and World Economic Forum influence.
+
+## Overview
+
+4lor is a modern web application built with Next.js that provides comprehensive analysis and visualization of ideological influence patterns. The platform offers interactive data visualizations, research articles, and detailed analysis of institutional transformation.
 
 ## Features
 
-- **Interactive Dashboards**: Monitor key metrics and trends related to ideological influence
-- **Advanced Visualizations**: Create stunning visualizations of complex socio-economic data
-- **Data Analysis**: Analyze datasets showing the impact of policies and ideologies
-- **Research & Insights**: Access well-researched articles on Cultural Marxism and the WEF
-- **Pivot Tables**: Explore data from different angles with interactive pivot tables
+- **Interactive Data Visualizations**
+  - Correlation analysis between different influence factors
+  - Trend analysis with time-series data
+  - Institutional impact assessment
+  - Political corruption metrics
 
-## Content Focus
+- **Research Articles**
+  - Critical Theory Origins
+  - WEF Agenda Analysis
+  - Institutional Capture Studies
+  - Resistance Strategies
 
-- **Cultural Marxism Analysis**: Deep dive into its intellectual origins from the Frankfurt School to postmodernist ideology and critical theory
-- **Institutional Influence**: Examination of how these ideas have shaped political discourse, education, corporate governance, and public policy
-- **WEF Analysis**: Critical assessment of the World Economic Forum's stated goals versus actual socio-economic outcomes
-- **Policy Impact**: Analysis of centralization of power, ESG mandates, stakeholder capitalism, and global governance
-- **Sovereignty & Freedom**: Data-driven insights on impacts to national sovereignty, economic structures, and individual freedoms
+- **Analysis Tools**
+  - Data Dashboard
+  - Correlation Heatmaps
+  - Impact Assessment Charts
+  - Trend Visualization
 
-## Tech Stack
+## Technology Stack
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
-- **Icons**: [Lucide Icons](https://lucide.dev/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Charts**: 
-  - [Chart.js](https://www.chartjs.org/)
-  - [Nivo](https://nivo.rocks/)
-- **Data Analysis**:
-  - [WebDataRocks](https://www.webdatarocks.com/) for pivot tables
-- **Content Management**:
-  - [Sanity](https://www.sanity.io/) for blog and research content
+- Next.js 15.2
+- React
+- TypeScript
+- Tailwind CSS
+- Chart.js
+- Nivo Charts
+- Sharp for image processing
 
 ## Getting Started
-
-### Prerequisites
-
-- Node.js 18.0.0 or later
-- npm or yarn
-
-### Installation
 
 1. Clone the repository:
    ```bash
@@ -52,59 +47,42 @@
 2. Install dependencies:
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
 3. Run the development server:
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Project Structure
 
 ```
 4lor/
 ├── src/
-│   ├── app/                  # Next.js App Router
-│   │   ├── about/            # About page
-│   │   ├── analysis/         # Data analysis page
-│   │   ├── dashboard/        # Dashboard page
-│   │   ├── research/         # Research page
-│   │   ├── visualizations/   # Visualizations page
-│   │   ├── layout.tsx        # Root layout
-│   │   └── page.tsx          # Home page
-│   ├── components/           # React components
-│   │   ├── ui/               # UI components from shadcn/ui
-│   │   ├── navigation.tsx    # Navigation component
-│   │   └── PivotTable.tsx    # WebDataRocks pivot table component
-│   └── lib/                  # Utility functions
-└── public/                   # Static assets
+│   ├── app/                    # Next.js app directory
+│   │   ├── research/          # Research articles
+│   │   ├── analysis/          # Analysis tools
+│   │   └── dashboard/         # Data dashboard
+│   ├── components/            # Reusable components
+│   └── lib/                   # Utilities and helpers
+├── public/                    # Static assets
+└── scripts/                   # Build and utility scripts
 ```
 
-## Pages
+## Contributing
 
-- **Home**: Landing page with overview of the platform and key findings
-- **Dashboard**: Interactive dashboard with key metrics on ideological influence
-- **Data Analysis**: Tools for analyzing datasets on Cultural Marxism and WEF impact
-- **Visualizations**: Advanced visualization of socio-economic trends and policy outcomes
-- **Research**: Well-researched articles and critical analysis
-- **About**: Information about the platform and methodology
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a Pull Request
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
+## Contact
 
-- [shadcn/ui](https://ui.shadcn.com/) for the beautiful UI components
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Chart.js](https://www.chartjs.org/) and [Nivo](https://nivo.rocks/) for the visualization libraries
-- [WebDataRocks](https://www.webdatarocks.com/) for the pivot table functionality
-- [Framer Motion](https://www.framer.com/motion/) for the animations
-- [Lucide Icons](https://lucide.dev/) for the icons
-- [Sanity](https://www.sanity.io/) for the content management system
+For questions and support, please open an issue in the repository.
