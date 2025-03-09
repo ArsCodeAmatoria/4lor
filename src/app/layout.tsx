@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import Link from "next/link";
 import { Twitter, Github, MessageCircle, Rss } from "lucide-react";
-import Icon from "./icon";
+import Icon from "../components/Icon";
 
 const inter = Inter({
   subsets: ["latin"],
