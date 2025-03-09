@@ -12,26 +12,59 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "4lor - Critical Analysis of Cultural Marxism & WEF",
-  description: "Data-driven analysis of Cultural Marxism and the World Economic Forum's influence on society, economy, and policy",
-  icons: {
-    icon: [
+  metadataBase: new URL("https://4lor.co"),
+  title: {
+    default: "4lor - Cultural Marxism & WEF Analysis",
+    template: "%s | 4lor"
+  },
+  description: "In-depth analysis of Cultural Marxism and the World Economic Forum's influence on modern society.",
+  keywords: ["Cultural Marxism", "WEF", "Frankfurt School", "Critical Theory", "Globalism", "Political Analysis"],
+  authors: [{ name: "4lor Research" }],
+  creator: "4lor Research",
+  publisher: "4lor Research",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://4lor.co",
+    siteName: "4lor",
+    title: "4lor - Cultural Marxism & WEF Analysis",
+    description: "In-depth analysis of Cultural Marxism and the World Economic Forum's influence on modern society.",
+    images: [
       {
-        url: '/github.png',
-        type: 'image/png',
-        sizes: '32x32',
-      },
-      {
-        url: '/github.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: {
-      url: '/apple-icon.png',
-      type: 'image/png',
-      sizes: '180x180',
+        url: "https://4lor.co/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "4lor - Cultural Marxism & WEF Analysis"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "4lor - Cultural Marxism & WEF Analysis",
+    description: "In-depth analysis of Cultural Marxism and the World Economic Forum's influence on modern society.",
+    images: ["https://4lor.co/og-image.png"],
+    creator: "@4lorResearch"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+  verification: {
+    google: "your-google-site-verification", // Add this when you have it
+  }
 };
 
 export default function RootLayout({

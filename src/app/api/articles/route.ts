@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Article } from '@/types/article'
 
-const articles: Article[] = [
+export const articles: Article[] = [
   {
     id: 1,
     title: "The Bridge Between the Frankfurt School and the World Economic Forum",
