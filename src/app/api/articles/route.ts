@@ -5,5 +5,4 @@ export async function GET() {
   return NextResponse.json(articles)
 }
 
-// Export articles for internal use only
-export const getArticles = () => articles; 
+// Removed the getArticles export to comply with Next.js route requirements 

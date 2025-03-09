@@ -1,3 +1,5 @@
+// This file will be moved to the components directory.
+
 export default function Icon() {
   return (
     <svg
