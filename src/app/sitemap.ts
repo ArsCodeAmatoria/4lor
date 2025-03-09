@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { articles } from '@/app/api/articles/route'
+import { getArticles } from '@/app/api/articles/route'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://4lor.co'
@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Dynamic routes from articles
-  const articleRoutes = articles.map(article => ({
+  const articleRoutes = getArticles().map(article => ({
     url: `${baseUrl}/research/${article.slug}`,
     lastModified: new Date(article.date),
     changeFrequency: 'weekly' as const,

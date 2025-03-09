@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Article } from '@/types/article'
 
-export const articles: Article[] = [
+const articles: Article[] = [
   {
     id: 1,
     title: "The Bridge Between the Frankfurt School and the World Economic Forum",
@@ -19,4 +19,7 @@ export const articles: Article[] = [
 
 export async function GET() {
   return NextResponse.json(articles)
-} 
+}
+
+// Export articles for internal use only
+export const getArticles = () => articles; 
