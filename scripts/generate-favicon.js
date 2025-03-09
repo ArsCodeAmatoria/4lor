@@ -26,4 +26,19 @@ async function generateFavicons() {
   console.log('Favicons generated successfully!');
 }
 
-generateFavicons().catch(console.error); 
+async function generateGitHubIcon() {
+  try {
+    // Generate PNG favicon from SVG
+    await sharp(path.join(__dirname, '../public/github.svg'))
+      .resize(32, 32)
+      .png()
+      .toFile(path.join(__dirname, '../public/github.png'));
+
+    console.log('GitHub icon generated successfully!');
+  } catch (error) {
+    console.error('Error generating GitHub icon:', error);
+  }
+}
+
+generateFavicons().catch(console.error);
+generateGitHubIcon().catch(console.error); 
